@@ -35,5 +35,4 @@ build-job-pro-website:
     - npm i
     - gatsby build
     - echo "Déploiement FTP"
-    - ls
-    - lftp -c "set ftp:ssl-force true; set ssl:verify-certificate false; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Renv ./public ./"
+    - lftp -c "set ftp:ssl-force true; set ssl:verify-certificate false; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Renv ./pro-website/public ./"
