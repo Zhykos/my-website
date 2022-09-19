@@ -237,5 +237,4 @@ module.exports = {
       },
     },
   ],
-  sourceMaps : false,
 };
