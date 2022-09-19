@@ -35,4 +35,4 @@ build-job-pro-website:
     - npm i
     - gatsby build
     - echo "Déploiement FTP"
-    - lftp -c "set ftp:ssl-force true; set ssl:verify-certificate false; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -nv /builds/zhykos/website/pro-website/public ./"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rv /builds/zhykos/website/pro-website/public/ ./  --ignore-time --parallel=10 --exclude-glob .git* --exclude .git/"
