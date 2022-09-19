@@ -35,4 +35,4 @@ build-job-pro-website:
     - npm i
     - gatsby build
     - echo "Déploiement FTP"
-    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rv ./public .  --ignore-time --parallel=10 --exclude-glob .git* --exclude .git/"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rev ./public .  --ignore-time --parallel=10 --exclude-glob .git* --exclude .git/"
