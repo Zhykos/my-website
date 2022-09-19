@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     // Site URL for when it goes live
-    siteUrl: `https://www.zhykos.fr/`,
+    siteUrl: `http://pro.zhykos.fr/`,
     // Your Name
     name: 'Thomas Cicognani',
     // Main Site Title
