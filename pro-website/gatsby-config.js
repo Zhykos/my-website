@@ -180,7 +180,7 @@ module.exports = {
     benevolat: [
       {
         name: 'Équipier secouriste (PSE2)',
-        description: `UNASS Loire-Atlantique, formé PSE2 en avril 2022 (depuis octobre 2021)`,
+        description: `UNASS Loire-Atlantique depuis octobre 2021`,
         link: 'https://unass.fr/association/44-unass-loire-atlantique/'
       },
       {
