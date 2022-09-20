@@ -79,7 +79,7 @@ module.exports = {
       },
       {
         name: 'MAAF (Sodifrance)',
-        description: `Intégration front-end d'une application HTML Javascript migrée depuis GWT : simulateurs d'assurances habitation et automobile (4 mois)`,
+        description: `Intégration front-end d'une application HTML Javascript migrée depuis FLEX : simulateurs d'assurances habitation et automobile (4 mois)`,
         link: 'https://www.soprasteria.fr'
       },
       {
