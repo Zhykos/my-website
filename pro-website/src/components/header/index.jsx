@@ -84,6 +84,11 @@ const Header = ({ metadata = {}, noBlog = false }) => {
               Mon CV exhaustif
             </Link>
           </li>
+          <li className={classes.item}>
+            <Link className={classes.link} to="https://www.zhykos.fr/">
+              Retour au site principal
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
