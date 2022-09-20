@@ -18,6 +18,10 @@
 
 default:
   image: node:alpine3.15
+  before_script:
+    - echo "Installation des prérequis"
+    - npm install -g gatsby-cli
+    - apk add lftp
 
 stages:
   - build
@@ -28,12 +32,18 @@ build-job-pro-website:
   script:
     - echo "Mise à jour de la page professionnelle du site"
     - cd pro-website
-    - echo "Installation des prérequis"
-    - npm install -g gatsby-cli
-    - apk add lftp
     - echo "Build"
     - npm i
     - gatsby build
     - echo "Déploiement FTP"
-    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rev ./public . --ignore-time --parallel=10 --exclude \.map$"
-    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rev ./docs --ignore-time --parallel=10"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rev ./public ./pro --ignore-time --parallel=10 --exclude \.map$"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rev ./docs ./pro/docs --ignore-time --parallel=10"
+
+build-job-landing-page:
+  stage: build
+
+  script:
+    - echo "Mise à jour de la page d'accueil du site"
+    - echo "Déploiement FTP"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rev ./landing ./landing --ignore-time --parallel=10"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; put -O ./ index.html"
