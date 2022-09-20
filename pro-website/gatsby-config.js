@@ -147,9 +147,34 @@ module.exports = {
         link: `https://fr.wikipedia.org/wiki/Brevet_d'initiation_a%C3%A9ronautique`
       },
       {
-        name: 'Auto-formations',
-        description: `Udemy, OCR, etc. : Spring, Spring Boot, React, Vue.js`,
-        link: ''
+        name: 'Udemy : Bien débuter avec Spring et Spring Boot pour Java',
+        description: ` : Ce que vous devez absolument savoir pour développer avec Spring, Spring Boot, Spring MVC, Spring Data, Spring Cloud...`,
+        link: 'https://www.udemy.com/course/bien-debuter-avec-spring-et-spring-boot/'
+      },
+      {
+        name: 'Udemy : La plateforme Docker',
+        description: `Depuis les concepts de base jusqu'au déploiement en production`,
+        link: 'https://www.udemy.com/course/la-plateforme-docker/'
+      },
+      {
+        name: 'OpenClassrooms : Débutez avec React',
+        description: `Dans ce cours, vous construirez pas à pas votre première application React, en l'enrichissant de nouvelles fonctionnalités au fil des notions maîtrisées.`,
+        link: 'https://openclassrooms.com/fr/courses/7008001-debutez-avec-react'
+      },
+      {
+        name: 'OpenClassrooms : Créez une application React complète',
+        description: `Dans ce cours, vous irez au-delà des notions débutant en React. Vous construirez pas à pas votre première application complète, en l'enrichissant de nouvelles fonctionnalités au fil des notions maîtrisées.`,
+        link: 'https://openclassrooms.com/fr/courses/7150606-creez-une-application-react-complete'
+      },
+      {
+        name: 'OpenClassrooms : Construisez des microservices',
+        description: `Créer un Microservice / Tester et améliorer un Microservice.`,
+        link: 'https://openclassrooms.com/fr/courses/4668056-construisez-des-microservices'
+      },
+      {
+        name: 'Autoformation : Vue.js',
+        description: `The Ultimate Learning Resource for Vue.js Developers`,
+        link: 'https://www.vuemastery.com'
       },
     ],
     benevolat: [
