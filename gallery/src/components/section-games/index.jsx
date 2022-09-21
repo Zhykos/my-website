@@ -1,25 +1,73 @@
 import React from 'react';
 
 import Section from '../section';
-import Game from '../game-item';
+import GameAPlague from '../game-item-a-plague';
 
-const SectionGames = ({ games }) => {
-  if (!games.length) return null;
-
+const SectionGames = () => {
   return (
     <Section title="Games">
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 lg:gap-xl-12 text-center">
-        {games.map((item) => (
-          <Game
-            key={item.name}
-            name={item.name}
-            releaseYear={item.releaseYear}
-            screenLanguages={item.screenLanguages}
-            igdb={item.igdb}
-            platforms={item.platforms}
-            imgSrc={item.imgSrc}
-          />
-        ))}
+      <div className="grid md:grid-cols-3 gap-6 xl:gap-x-12 mb-16 text-center lg:text-left">
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
+        <GameAPlague />
       </div>
     </Section>
   );

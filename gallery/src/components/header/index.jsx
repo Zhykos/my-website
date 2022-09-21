@@ -31,9 +31,9 @@ const Header = ({ metadata = {} }) => {
         <p className={classes.description}>{metadata.description}</p>
         <ul className={classes.list}>
           <li className={classes.item}>
-            <Link className={classes.link} to="https://www.zhykos.fr/">
+            <a href="https://www.zhykos.fr/">
               Back to the homepage
-            </Link>
+            </a>
           </li>
         </ul>
       </div>

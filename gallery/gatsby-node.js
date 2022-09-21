@@ -72,16 +72,17 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       author: String
-      github: String
-      gitlab: String
-      linkedin: String
-      about: String
-      projects: [SectionItem]
-      experience: [SectionItem]
-      skills: [SectionItem]
+      games: [GameItem]
+      events: [EventItem]
     }
 
-    type SectionItem {
+    type GameItem {
+      name: String
+      releaseYear: String
+      imgName: String
+    }
+
+    type EventItem {
       name: String!
       description: String!
       link: String!
