@@ -1,0 +1,20 @@
+import React from 'react';
+
+import Section from '../../components/section';
+{{#games}}
+import {{.}} from '../{{.}}';
+{{/games}}
+
+const SectionGames = () => {
+  return (
+    <Section title="Games">
+      <div className="grid md:grid-cols-3 gap-6 xl:gap-x-12 mb-16 text-center lg:text-left">
+        {{#games}}
+        <{{.}} />
+        {{/games}}
+      </div>
+    </Section>
+  );
+};
+
+export default SectionGames;

@@ -1,0 +1,22 @@
+import React from 'react';
+import Game from "../../components/game-item"
+import imgSrc from '../../images/gallery/{{imgSrcName}}';
+
+const {{componentName}} = () => {
+  const screenshots = [
+    {{#screenshots}}
+    {
+      platform: '{{platform}}',
+      link: '{{{link}}}',
+      languages: '{{languages}}',
+      version: '{{version}}',
+    },
+    {{/screenshots}}
+  ];
+
+  return (
+    <Game name="{{name}}" releaseYear="{{releaseYear}}" igdb="{{{igdb}}}" imgSrc={imgSrc} screenshots={screenshots} />
+  );
+};
+
+export default {{componentName}};

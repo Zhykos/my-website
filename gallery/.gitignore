@@ -70,3 +70,5 @@ yarn-error.log
 
 # Custom
 gatsby-config.*js
+src/database/dist
+src/generated-components
