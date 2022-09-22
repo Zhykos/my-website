@@ -28,7 +28,7 @@ const GameItemIcons = ({ screenshotsURL, platformName, languages, version }) => 
         throw new Error(`Icone introuvable pour la plateforme : '${platformName}'.`);
     }
   }
-  return <span>{functionWithSwitch(platformName)}</span>;
+  return functionWithSwitch(platformName);
 };
 
 export default GameItemIcons;

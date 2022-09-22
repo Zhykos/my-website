@@ -1,6 +1,7 @@
 import React from 'react';
 import GameItemIcons from '../game-item-icons';
 
+// https://tailwind-elements.com/snippets/tailwind/tailwindelements/3766077
 const Game = ({ name, releaseYear, igdb, imgSrc, screenshots }) => {
   return (
     <div className="mb-6 lg:mb-0">
@@ -20,9 +21,11 @@ const Game = ({ name, releaseYear, igdb, imgSrc, screenshots }) => {
               </div>
               <div className="text-gray-500 mb-4">
                 Screenshots link{screenshots.length === 1 ? '' : 's'}: 
-                {screenshots.map((screenshot) => (
-                  <GameItemIcons key={screenshot.platform + '-' + screenshot.version} screenshotsURL={screenshot.link} platformName={screenshot.platform} languages={screenshot.languages} version={screenshot.version} />
-                ))}
+                <ul className="list-inside flex mx-auto justify-center lg:justify-start">
+                  {screenshots.map((screenshot) => (
+                    <GameItemIcons key={screenshot.platform + '-' + screenshot.version} screenshotsURL={screenshot.link} platformName={screenshot.platform} languages={screenshot.languages} version={screenshot.version} />
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
