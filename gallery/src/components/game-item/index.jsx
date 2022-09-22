@@ -21,7 +21,7 @@ const Game = ({ name, releaseYear, igdb, imgSrc, screenshots }) => {
               <div className="text-gray-500 mb-4">
                 Screenshots link{screenshots.length === 1 ? '' : 's'}: 
                 {screenshots.map((screenshot) => (
-                  <GameItemIcons key={screenshot.platform} screenshotsURL={screenshot.link} platformName={screenshot.platform} languages={screenshot.languages} version={screenshot.version} />
+                  <GameItemIcons key={screenshot.platform + '-' + screenshot.version} screenshotsURL={screenshot.link} platformName={screenshot.platform} languages={screenshot.languages} version={screenshot.version} />
                 ))}
               </div>
             </div>

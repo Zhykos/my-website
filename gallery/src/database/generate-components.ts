@@ -3,6 +3,8 @@ import * as Mustache from 'mustache';
 import { GameDatabase, ScreenshotDatabase } from './GameDatabase';
 import { GameMustache, ScreenshotMustache } from './GameMustache';
 
+const NUMBER_COMPONENT_PREFIX = 'NumberPrefix';
+
 main();
 
 function main(): void {
@@ -43,8 +45,8 @@ function mapGame(gameDatabase: GameDatabase): GameMustache {
     name: gameDatabase.name,
     releaseYear: gameDatabase.releaseYear,
     igdb: gameDatabase.igdb,
-    imgSrcName: getImageNameFromIgdbUrl(gameDatabase.igdb),
-    componentName: getComponentNameFromIgdbUrl(gameDatabase.igdb),
+    imgSrcName: getImageNameFrom(gameDatabase),
+    componentName: getComponentNameFrom(gameDatabase),
     screenshots: gameDatabase.screenshots.map(mapScreenshot),
   };
 }
@@ -58,13 +60,19 @@ function mapScreenshot(gameDatabase: ScreenshotDatabase): ScreenshotMustache {
   };
 }
 
-function getImageNameFromIgdbUrl(url: string): string {
-  return getLastPartFromIgdbUrl(url) + '.jpg';
+function getImageNameFrom(gameDatabase: GameDatabase): string {
+  return getLastPartFromIgdbUrl(gameDatabase.igdb) + '.jpg';
 }
 
-function getComponentNameFromIgdbUrl(url: string): string {
-  const lastPart: string = getLastPartFromIgdbUrl(url);
-  return mapSnakeToPascalCase(lastPart);
+function getComponentNameFrom(gameDatabase: GameDatabase): string {
+  const lastPart: string = getLastPartFromIgdbUrl(gameDatabase.igdb);
+  let prefixIfNumber = '';
+  if (lastPart.match(/^\d/)) {
+    prefixIfNumber = NUMBER_COMPONENT_PREFIX; // Workaround because Gatsby fails if the component starts with a number
+  }
+  return (
+    prefixIfNumber + mapSnakeToPascalCase(lastPart) + gameDatabase.releaseYear
+  );
 }
 
 function getLastPartFromIgdbUrl(url: string): string {
@@ -89,9 +97,28 @@ function generateSectionGamesComponent(): void {
     .readFileSync('_db_games.json')
     .toString();
   const gamesDatabase: GameDatabase[] = JSON.parse(gamesDatabaseRawData);
-  const gamesComponents: string[] = gamesDatabase
-    .map((game) => getComponentNameFromIgdbUrl(game.igdb))
-    .sort();
+  const gamesComponents: string[] = [...gamesDatabase]
+    .sort((gameDatabase1, gameDatabase2) => {
+      const component1: string = getComponentNameFrom(gameDatabase1);
+      const component2: string = getComponentNameFrom(gameDatabase2);
+      if (component1 === component2) {
+        return gameDatabase1.releaseYear - gameDatabase2.releaseYear;
+      }
+      if (
+        component1.startsWith(NUMBER_COMPONENT_PREFIX) &&
+        component2.startsWith(NUMBER_COMPONENT_PREFIX)
+      ) {
+        return component1.localeCompare(component2);
+      }
+      if (component1.startsWith(NUMBER_COMPONENT_PREFIX)) {
+        return -1;
+      }
+      if (component2.startsWith(NUMBER_COMPONENT_PREFIX)) {
+        return 1;
+      }
+      return component1.localeCompare(component2);
+    })
+    .map((gameDatabase) => getComponentNameFrom(gameDatabase));
 
   const sectionGamesComponentMustache: string = fs
     .readFileSync('section-games-component.mustache')
