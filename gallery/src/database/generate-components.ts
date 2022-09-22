@@ -8,7 +8,9 @@ const NUMBER_COMPONENT_PREFIX = 'NumberPrefix';
 main();
 
 function main(): void {
-  fs.rmSync('../generated-components/', { recursive: true });
+  if (fs.existsSync('../generated-components/')) {
+    fs.rmSync('../generated-components/', { recursive: true });
+  }
   fs.mkdirSync('../generated-components/');
 
   generateAllGamesComponents();
