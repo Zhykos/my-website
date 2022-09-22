@@ -46,8 +46,8 @@ build-job-landing-page:
     - echo "Mise à jour de la page d'accueil du site"
     - echo "Déploiement FTP"
     - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rev ./landing ./landing --ignore-time --parallel=10 --exclude index.+html"
-    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; put -O ./landing/index.html index.html"
-    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; put -O ./landing/index-empty.html ./landing/index.html"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; put -O ./ ./landing/index.html"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; put -O ./landing/ ./landing/index-empty.html -o index.html
 
 build-job-gallery-page:
   stage: build
