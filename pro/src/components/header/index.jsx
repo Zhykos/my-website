@@ -76,12 +76,12 @@ const Header = ({ metadata = {}, noBlog = false }) => {
           )}
           <li className={classes.item}>
             <Link className={classes.link} to="/docs/cv-thomas-cicognani-no-contact.pdf">
-              Mon CV
+              Téléchargez mon CV en PDF
             </Link>
           </li>
           <li className={classes.item}>
             <Link className={classes.link} to="/docs/cv-exhaustif-thomas-cicognani.pdf">
-              Mon CV exhaustif
+              Mon CV exhaustif (PDF)
             </Link>
           </li>
           <li className={classes.item}>
