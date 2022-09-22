@@ -34,7 +34,7 @@ module.exports = {
         name: 'VGG (Video Game Gallery)',
         description:
           `Ma galerie de captures d'écran de jeux vidéo. Car le jeu vidéo est aussi un art et la photo aussi. Enfin, quand on a du talent pour la photographie...`,
-        link: 'https://www.zhykos.fr/video-game-gallery.html',
+        link: 'https://video-game-gallery.zhykos.fr/',
       },
       {
         name: 'Advanced Playlist',
