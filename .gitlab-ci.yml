@@ -26,12 +26,12 @@ default:
 stages:
   - build
 
-build-job-pro-website:
+build-job-pro-page:
   stage: build
 
   script:
     - echo "Mise à jour de la page professionnelle du site"
-    - cd pro-website
+    - cd pro
     - echo "Build"
     - npm i
     - gatsby build
