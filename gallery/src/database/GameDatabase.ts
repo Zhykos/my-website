@@ -6,8 +6,8 @@ export interface GameDatabase {
 }
 
 export interface ScreenshotDatabase {
-  platform: 'PlayStation 4';
+  platform: string;
   link: string;
   languages: string[];
-  version: 'gold';
+  version: string;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 // https://www.svgrepo.com/svg/342122/playstation4
 const GamePlayStation4 = ({ screenshotsURL, languages, version }) => {
-  const title = `Open screenshots taken on PlayStation 4 (version: ${version}, languages: ${languages})`;
+  const title = `Open screenshots taken on PlayStation 4 (game version: ${version}, languages: ${languages})`;
   return (
     <a key="ps4" href={screenshotsURL} className="px-2 lg:pl-0 lg:pr-2" title={title}>
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
