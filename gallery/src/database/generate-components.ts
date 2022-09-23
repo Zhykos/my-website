@@ -1,5 +1,7 @@
 import * as fs from 'fs';
 import * as Mustache from 'mustache';
+import { EventDatabase } from './EventDatabase';
+import { EventMustache } from './EventMustache';
 import { GameDatabase, ScreenshotDatabase } from './GameDatabase';
 import { GameMustache, ScreenshotMustache } from './GameMustache';
 
@@ -15,6 +17,9 @@ function main(): void {
 
   generateAllGamesComponents();
   generateSectionGamesComponent();
+
+  generateAllEventsComponents();
+  generateSectionEventsComponent();
 }
 
 function generateAllGamesComponents(): void {
@@ -47,8 +52,8 @@ function mapGame(gameDatabase: GameDatabase): GameMustache {
     name: gameDatabase.name,
     releaseYear: gameDatabase.releaseYear,
     igdb: gameDatabase.igdb,
-    imgSrcName: getImageNameFrom(gameDatabase),
-    componentName: getComponentNameFrom(gameDatabase),
+    imgSrcName: getImageNameFromGameDatabase(gameDatabase),
+    componentName: getComponentNameFromGameDatabase(gameDatabase),
     screenshots: gameDatabase.screenshots.map(mapScreenshot),
   };
 }
@@ -62,11 +67,11 @@ function mapScreenshot(gameDatabase: ScreenshotDatabase): ScreenshotMustache {
   };
 }
 
-function getImageNameFrom(gameDatabase: GameDatabase): string {
+function getImageNameFromGameDatabase(gameDatabase: GameDatabase): string {
   return getLastPartFromIgdbUrl(gameDatabase.igdb) + '.jpg';
 }
 
-function getComponentNameFrom(gameDatabase: GameDatabase): string {
+function getComponentNameFromGameDatabase(gameDatabase: GameDatabase): string {
   const lastPart: string = getLastPartFromIgdbUrl(gameDatabase.igdb);
   let prefixIfNumber = '';
   if (lastPart.match(/^\d/)) {
@@ -101,8 +106,10 @@ function generateSectionGamesComponent(): void {
   const gamesDatabase: GameDatabase[] = JSON.parse(gamesDatabaseRawData);
   const gamesComponents: string[] = [...gamesDatabase]
     .sort((gameDatabase1, gameDatabase2) => {
-      const component1: string = getComponentNameFrom(gameDatabase1);
-      const component2: string = getComponentNameFrom(gameDatabase2);
+      const component1: string =
+        getComponentNameFromGameDatabase(gameDatabase1);
+      const component2: string =
+        getComponentNameFromGameDatabase(gameDatabase2);
       if (component1 === component2) {
         return gameDatabase1.releaseYear - gameDatabase2.releaseYear;
       }
@@ -120,7 +127,7 @@ function generateSectionGamesComponent(): void {
       }
       return component1.localeCompare(component2);
     })
-    .map((gameDatabase) => getComponentNameFrom(gameDatabase));
+    .map((gameDatabase) => getComponentNameFromGameDatabase(gameDatabase));
 
   const sectionGamesComponentMustache: string = fs
     .readFileSync('section-games-component.mustache')
@@ -134,5 +141,90 @@ function generateSectionGamesComponent(): void {
   fs.writeFileSync(
     `../generated-components/section-games/index.jsx`,
     generatedSectionGamesComponent
+  );
+}
+
+function generateAllEventsComponents(): void {
+  const eventsDatabaseRawData: string = fs
+    .readFileSync('_db_events.json')
+    .toString();
+  const eventsDatabase: EventDatabase[] = JSON.parse(eventsDatabaseRawData);
+  eventsDatabase.forEach((eventDatabase) =>
+    generateEventComponent(eventDatabase)
+  );
+}
+
+function generateEventComponent(eventDatabase: EventDatabase): void {
+  const eventMustache: EventMustache = mapEvent(eventDatabase);
+  const eventComponentMustache: string = fs
+    .readFileSync('event-component.mustache')
+    .toString();
+  const generatedEventComponent: string = Mustache.render(
+    eventComponentMustache,
+    eventMustache
+  );
+
+  fs.mkdirSync(`../generated-components/${eventMustache.componentName}`);
+  fs.writeFileSync(
+    `../generated-components/${eventMustache.componentName}/index.jsx`,
+    generatedEventComponent
+  );
+}
+
+function mapEvent(eventDatabase: EventDatabase): EventMustache {
+  return {
+    name: eventDatabase.name,
+    year: eventDatabase.year,
+    country: eventDatabase.country,
+    link: eventDatabase.link,
+    website: eventDatabase.website,
+    componentName: getComponentNameFromEventDatabase(eventDatabase),
+    imgSrcName: getImageNameFromEventDatabase(eventDatabase),
+  };
+}
+
+function getComponentNameFromEventDatabase(
+  eventDatabase: EventDatabase
+): string {
+  return (
+    mapSnakeToPascalCase(eventDatabase.name.replace(/ /g, '')) +
+    eventDatabase.year
+  );
+}
+
+function getImageNameFromEventDatabase(eventDatabase: EventDatabase): string {
+  return getComponentNameFromEventDatabase(eventDatabase) + '.jpg';
+}
+
+function generateSectionEventsComponent(): void {
+  const eventsDatabaseRawData: string = fs
+    .readFileSync('_db_events.json')
+    .toString();
+  const eventsDatabase: EventDatabase[] = JSON.parse(eventsDatabaseRawData);
+  const eventsComponents: string[] = [...eventsDatabase]
+    .sort((eventDatabase1, eventDatabase2) => {
+      const component1: string =
+        getComponentNameFromEventDatabase(eventDatabase1);
+      const component2: string =
+        getComponentNameFromEventDatabase(eventDatabase2);
+      if (component1 === component2) {
+        return eventDatabase1.year - eventDatabase2.year;
+      }
+      return component1.localeCompare(component2);
+    })
+    .map((eventDatabase) => getComponentNameFromEventDatabase(eventDatabase));
+
+  const sectionEventsComponentMustache: string = fs
+    .readFileSync('section-events-component.mustache')
+    .toString();
+  const generatedSectionEventsComponent: string = Mustache.render(
+    sectionEventsComponentMustache,
+    { nbEvents: eventsComponents.length, events: eventsComponents }
+  );
+
+  fs.mkdirSync(`../generated-components/section-events`);
+  fs.writeFileSync(
+    `../generated-components/section-events/index.jsx`,
+    generatedSectionEventsComponent
   );
 }
