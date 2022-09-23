@@ -127,7 +127,7 @@ function generateSectionGamesComponent(): void {
     .toString();
   const generatedSectionGamesComponent: string = Mustache.render(
     sectionGamesComponentMustache,
-    { games: gamesComponents }
+    { nbGames: gamesComponents.length, games: gamesComponents }
   );
 
   fs.mkdirSync(`../generated-components/section-games`);
