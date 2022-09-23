@@ -69,6 +69,5 @@ yarn-error.log
 .yarn-integrity
 
 # Custom
-gatsby-config.*js
 src/database/dist
 src/generated-components
