@@ -31,6 +31,12 @@ const Header = ({ metadata = {} }) => {
         <p className={classes.description}>{metadata.description}</p>
         <ul className={classes.list}>
           <li className={classes.item}>
+            <Link to="#games">Go to games</Link>
+          </li>
+          <li className={classes.item}>
+            <Link to="#events">Go to events</Link>
+          </li>
+          <li className={classes.item}>
             <a href="https://www.zhykos.fr/">
               Back to the homepage
             </a>

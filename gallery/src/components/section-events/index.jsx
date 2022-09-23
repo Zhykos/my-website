@@ -5,7 +5,7 @@ import Event from '../event-item';
 
 const SectionEvents = () => {
   return (
-    <Section title="Events">
+    <Section id="events" title="Events">
 
     </Section>
   );
