@@ -52,7 +52,7 @@ module.exports = {
         name: 'YMF',
         description:
           `Framework de gestion de méta-modèle, tout comme EMF, mais pas pareil : générateur de code à partir de méta-modèle déclaré en YAML ou autre (1.0 WIP)`,
-        link: 'https://gitlab.com/fr.zhykos/YModeL',
+        link: 'https://gitlab.com/zhykos/YMF',
       }
     ],
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
