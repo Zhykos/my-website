@@ -1,5 +1,5 @@
 # Zhykos' website
-🌍 My french personal website with static pages.
+🌍 My french personal and professional website with static pages: my resume, my video game screenshots museum and other stuff.
 
 👉 https://www.zhykos.fr 👈
 
