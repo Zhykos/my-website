@@ -58,6 +58,11 @@ module.exports = {
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
       {
+        name: 'Opéris (norsys)',
+        description: `Ingénieur d’études et développement, depuis octobre 2022`,
+        link: 'https://www.norsys.fr'
+      },
+      {
         name: 'cbp (norsys)',
         description: `Ingénieur d’études et développement, février à septembre 2022`,
         link: 'https://www.norsys.fr'
