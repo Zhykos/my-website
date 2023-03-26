@@ -55,6 +55,13 @@ build-job-gallery-page:
   script:
     - echo "Mise à jour de la page de la galerie"
     - cd gallery
+    - echo "Generate .env"
+    - cd src/database/
+    - echo "FLICKR_USER_ID = $FLICKR_USER_ID" > .env
+    - echo "FLICKR_SECRET = $FLICKR_SECRET" >> .env
+    - echo "IGDB_CLIENT_ID = $IGDB_CLIENT_ID" >> .env
+    - echo "IGDB_CLIENT_SECRET = $IGDB_CLIENT_SECRET" >> .env
+    - cd -
     - echo "Build"
     - npm i
     - npm run generate-components
