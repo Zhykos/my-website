@@ -4,7 +4,7 @@ import React from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import SectionGames from '../generated-components/section-games';
-import SectionEvents from '../generated-components/section-events';
+// import SectionEvents from '../generated-components/section-events';
 import SEO from '../components/seo';
 
 const Index = ({ data }) => {
@@ -13,7 +13,7 @@ const Index = ({ data }) => {
       <SEO />
       <Header metadata={data.site.siteMetadata} />
       <SectionGames />
-      <SectionEvents />
+      {/* <SectionEvents /> */}
     </Layout>
   );
 };

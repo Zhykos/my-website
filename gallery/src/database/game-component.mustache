@@ -1,6 +1,5 @@
 import React from 'react';
 import Game from "../../components/game-item"
-import imgSrc from '../../images/gallery/{{imgSrcName}}';
 
 const {{componentName}} = () => {
   const screenshots = [
@@ -15,7 +14,7 @@ const {{componentName}} = () => {
   ];
 
   return (
-    <Game name="{{name}}" releaseYear="{{releaseYear}}" igdb="{{{igdb}}}" imgSrc={imgSrc} screenshots={screenshots} />
+    <Game name="{{name}}" releaseYear="{{releaseYear}}" igdbURL="{{{igdbURL}}}" coverURL="{{{coverURL}}}" screenshots={screenshots} />
   );
 };
 
