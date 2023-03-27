@@ -6,6 +6,8 @@ import * as fs from 'fs';
 import * as Mustache from 'mustache';
 import { min, sift, unique } from 'radash';
 import {
+  EventMustache,
+  FlickrEventAlbum,
   FlickrPhotoset,
   FlickrRootPhotoset,
   FlickrVideoGameAlbum,
@@ -25,7 +27,14 @@ const NUMBER_COMPONENT_PREFIX = 'NumberPrefix';
 const main = async () => {
   const rootPhotoset: FlickrRootPhotoset = await retrieveFlickrPhotosets();
 
-  const videoGameAlbums: FlickrVideoGameAlbum[] = transformFlickr(rootPhotoset);
+  const flickrAlbums: (FlickrVideoGameAlbum | FlickrEventAlbum)[] =
+    transformFlickr(rootPhotoset);
+  const videoGameAlbums: FlickrVideoGameAlbum[] = flickrAlbums.filter(
+    (album) => album instanceof FlickrVideoGameAlbum
+  ) as FlickrVideoGameAlbum[];
+  const eventAlbums: FlickrEventAlbum[] = flickrAlbums.filter(
+    (album) => album instanceof FlickrEventAlbum
+  ) as FlickrEventAlbum[];
 
   const token: string = await retrieveAuthenticationTokenFromIGDB();
 
@@ -63,7 +72,7 @@ const main = async () => {
     videoGameAlbums
   );
 
-  generateAllComponents(videoGames);
+  generateAllComponents(videoGames, eventAlbums);
 };
 
 async function retrieveFlickrPhotosets(): Promise<FlickrRootPhotoset> {
@@ -93,8 +102,8 @@ async function retrieveFlickrPhotosets(): Promise<FlickrRootPhotoset> {
 
 function transformFlickr(
   rootPhotoset: FlickrRootPhotoset
-): FlickrVideoGameAlbum[] {
-  const flickrAlbums: (FlickrVideoGameAlbum | null)[] =
+): (FlickrVideoGameAlbum | FlickrEventAlbum)[] {
+  const flickrAlbums: (FlickrVideoGameAlbum | FlickrEventAlbum | null)[] =
     rootPhotoset.photosets.map((photoset) => {
       const matchArray: RegExpMatchArray | null =
         photoset.description.match(/vgg-meta:\s*(.+)$/m);
@@ -102,8 +111,7 @@ function transformFlickr(
         const vggMeta: any = JSON.parse(
           `{${Buffer.from(matchArray[1].trim(), 'base64')}}`
         );
-        const albumType: string = vggMeta.t;
-        if (albumType === 'g') {
+        if (vggMeta.t === 'g') {
           // "t":"g","s":"halo-combat-evolved-anniversary","p":"xboxone","o":"xboxone","l":"FR","v":"r"
           return new FlickrVideoGameAlbum(
             photoset.countPhotos,
@@ -117,6 +125,18 @@ function transformFlickr(
             vggMeta.l
           );
         }
+
+        // Events
+        //"t":"e","y":2018,"c":"Germany","cy":"Köln","n":"gamescom"
+        return new FlickrEventAlbum(
+          photoset.countPhotos,
+          photoset.countVideos,
+          vggMeta.n,
+          `https://www.flickr.com/photos/${process.env.FLICKR_USER_ID}/albums/${photoset.id}`,
+          vggMeta.y,
+          vggMeta.c,
+          vggMeta.cy
+        );
       }
       return null;
     });
@@ -299,7 +319,10 @@ function timeout(ms: number): Promise<number> {
 
 // ======================================================
 
-function generateAllComponents(videoGames: VideoGame[]): void {
+function generateAllComponents(
+  videoGames: VideoGame[],
+  eventAlbums: FlickrEventAlbum[]
+): void {
   if (fs.existsSync('../generated-components/')) {
     fs.rmSync('../generated-components/', { recursive: true });
   }
@@ -308,8 +331,8 @@ function generateAllComponents(videoGames: VideoGame[]): void {
   videoGames.forEach((videoGame) => generateGameComponent(videoGame));
   generateSectionGamesComponent(videoGames);
 
-  // generateAllEventsComponents();
-  // generateSectionEventsComponent();
+  eventAlbums.forEach((eventAlbum) => generateEventComponent(eventAlbum));
+  generateSectionEventsComponent(eventAlbums);
 }
 
 function generateGameComponent(videoGame: VideoGame): void {
@@ -421,90 +444,73 @@ function generateSectionGamesComponent(videoGames: VideoGame[]): void {
   );
 }
 
-// function generateAllEventsComponents(): void {
-//   const eventsDatabaseRawData: string = fs
-//     .readFileSync('_db_events.json')
-//     .toString();
-//   const eventsDatabase: EventDatabase[] = JSON.parse(eventsDatabaseRawData);
-//   eventsDatabase.forEach((eventDatabase) =>
-//     generateEventComponent(eventDatabase)
-//   );
-// }
-//
-// function generateEventComponent(eventDatabase: EventDatabase): void {
-//   const eventMustache: EventMustache = mapEvent(eventDatabase);
-//   const eventComponentMustache: string = fs
-//     .readFileSync('event-component.mustache')
-//     .toString();
-//   const generatedEventComponent: string = Mustache.render(
-//     eventComponentMustache,
-//     eventMustache
-//   );
+function generateEventComponent(eventAlbum: FlickrEventAlbum): void {
+  const eventMustache: EventMustache = mapEvent(eventAlbum);
+  const eventComponentMustache: string = fs
+    .readFileSync('event-component.mustache')
+    .toString();
+  const generatedEventComponent: string = Mustache.render(
+    eventComponentMustache,
+    eventMustache
+  );
 
-//   fs.mkdirSync(`../generated-components/${eventMustache.componentName}`);
-//   fs.writeFileSync(
-//     `../generated-components/${eventMustache.componentName}/index.jsx`,
-//     generatedEventComponent
-//   );
-// }
-//
-// function mapEvent(eventDatabase: EventDatabase): EventMustache {
-//   return {
-//     name: eventDatabase.name,
-//     year: eventDatabase.year,
-//     country: eventDatabase.country,
-//     link: eventDatabase.link,
-//     website: eventDatabase.website,
-//     componentName: getComponentNameFromEventDatabase(eventDatabase),
-//     imgSrcName: getImageNameFromEventDatabase(eventDatabase),
-//   };
-// }
-//
-// function getComponentNameFromEventDatabase(
-//   eventDatabase: EventDatabase
-// ): string {
-//   return (
-//     mapSnakeToPascalCase(eventDatabase.name.replace(/ /g, '')) +
-//     eventDatabase.year
-//   );
-// }
-//
+  fs.mkdirSync(`../generated-components/${eventMustache.componentName}`);
+  fs.writeFileSync(
+    `../generated-components/${eventMustache.componentName}/index.jsx`,
+    generatedEventComponent
+  );
+}
+
+function mapEvent(eventAlbum: FlickrEventAlbum): EventMustache {
+  return new EventMustache(
+    eventAlbum.title,
+    eventAlbum.year,
+    eventAlbum.country,
+    eventAlbum.url,
+    '',
+    getComponentNameFromEventDatabase(eventAlbum),
+    ''
+  );
+}
+
+function getComponentNameFromEventDatabase(
+  eventAlbum: FlickrEventAlbum
+): string {
+  return (
+    mapSnakeToPascalCase(eventAlbum.title.replace(/ /g, '')) + eventAlbum.year
+  );
+}
+
 // function getImageNameFromEventDatabase(eventDatabase: EventDatabase): string {
 //   return getComponentNameFromEventDatabase(eventDatabase) + '.jpg';
 // }
 //
-// function generateSectionEventsComponent(): void {
-//   const eventsDatabaseRawData: string = fs
-//     .readFileSync('_db_events.json')
-//     .toString();
-//   const eventsDatabase: EventDatabase[] = JSON.parse(eventsDatabaseRawData);
-//   const eventsComponents: string[] = [...eventsDatabase]
-//     .sort((eventDatabase1, eventDatabase2) => {
-//       const component1: string =
-//         getComponentNameFromEventDatabase(eventDatabase1);
-//       const component2: string =
-//         getComponentNameFromEventDatabase(eventDatabase2);
-//       if (component1 === component2) {
-//         return eventDatabase1.year - eventDatabase2.year;
-//       }
-//       return component1.localeCompare(component2);
-//     })
-//     .map((eventDatabase) => getComponentNameFromEventDatabase(eventDatabase));
+function generateSectionEventsComponent(eventAlbums: FlickrEventAlbum[]): void {
+  const eventsComponents: string[] = [...eventAlbums]
+    .sort((eventAlbum1, eventAlbum2) => {
+      const component1: string = getComponentNameFromEventDatabase(eventAlbum1);
+      const component2: string = getComponentNameFromEventDatabase(eventAlbum2);
+      if (component1 === component2) {
+        return eventAlbum1.year - eventAlbum2.year;
+      }
+      return component1.localeCompare(component2);
+    })
+    .map((eventDatabase) => getComponentNameFromEventDatabase(eventDatabase));
 
-//   const sectionEventsComponentMustache: string = fs
-//     .readFileSync('section-events-component.mustache')
-//     .toString();
-//   const generatedSectionEventsComponent: string = Mustache.render(
-//     sectionEventsComponentMustache,
-//     { nbEvents: eventsComponents.length, events: eventsComponents }
-//   );
+  const sectionEventsComponentMustache: string = fs
+    .readFileSync('section-events-component.mustache')
+    .toString();
+  const generatedSectionEventsComponent: string = Mustache.render(
+    sectionEventsComponentMustache,
+    { nbEvents: eventsComponents.length, events: eventsComponents }
+  );
 
-//   fs.mkdirSync(`../generated-components/section-events`);
-//   fs.writeFileSync(
-//     `../generated-components/section-events/index.jsx`,
-//     generatedSectionEventsComponent
-//   );
-// }
+  fs.mkdirSync(`../generated-components/section-events`);
+  fs.writeFileSync(
+    `../generated-components/section-events/index.jsx`,
+    generatedSectionEventsComponent
+  );
+}
 
 // ======================================================
 
