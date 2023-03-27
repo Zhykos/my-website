@@ -5,7 +5,18 @@ import * as Flickr from 'flickr-sdk';
 import * as fs from 'fs';
 import * as Mustache from 'mustache';
 import { min, sift, unique } from 'radash';
-import { GameMustache, ScreenshotMustache } from './GameMustache';
+import {
+  FlickrPhotoset,
+  FlickrRootPhotoset,
+  FlickrVideoGameAlbum,
+  GameMustache,
+  IGDBCover,
+  IGDBGame,
+  IGDBPlatform,
+  IGDBReleaseDate,
+  ScreenshotMustache,
+  VideoGame,
+} from './models';
 
 dotenv.config();
 
@@ -83,24 +94,42 @@ async function retrieveFlickrPhotosets(): Promise<FlickrRootPhotoset> {
 function transformFlickr(
   rootPhotoset: FlickrRootPhotoset
 ): FlickrVideoGameAlbum[] {
-  const videoGameAlbums: (FlickrVideoGameAlbum | null)[] =
+  const flickrAlbums: (FlickrVideoGameAlbum | null)[] =
     rootPhotoset.photosets.map((photoset) => {
-      const split: string[] = photoset.description.split(' ');
-      if (split.length === 4) {
-        return new FlickrVideoGameAlbum(
-          photoset.countPhotos,
-          photoset.countVideos,
-          photoset.title,
-          `https://www.flickr.com/photos/${process.env.FLICKR_USER_ID}/albums/${photoset.id}`,
-          split[0],
-          split[1],
-          split[2],
-          split[3]
+      const matchArray: RegExpMatchArray | null =
+        photoset.description.match(/vgg-meta:\s*(.+)$/m);
+      if (matchArray) {
+        const vggMeta: any = JSON.parse(
+          `{${Buffer.from(matchArray[1].trim(), 'base64')}}`
         );
+        const albumType: string = vggMeta.t;
+        if (albumType === 'g') {
+          // "t":"g","s":"halo-combat-evolved-anniversary","p":"xboxone","o":"xboxone","l":"FR","v":"r"
+          return new FlickrVideoGameAlbum(
+            photoset.countPhotos,
+            photoset.countVideos,
+            photoset.title,
+            `https://www.flickr.com/photos/${process.env.FLICKR_USER_ID}/albums/${photoset.id}`,
+            vggMeta.s,
+            vggMeta.p,
+            vggMeta.o,
+            mapVggMetaToVersion(vggMeta.v),
+            vggMeta.l
+          );
+        }
       }
       return null;
     });
-  return sift(videoGameAlbums);
+  return sift(flickrAlbums);
+}
+
+function mapVggMetaToVersion(shortVersion: string): string {
+  switch (shortVersion) {
+    case 'r':
+      return 'release';
+    default:
+      return '';
+  }
 }
 
 async function retrieveAuthenticationTokenFromIGDB(): Promise<string> {
@@ -343,35 +372,39 @@ function mapSnakeToPascalCase(str: string): string {
     .join('');
 }
 
+function compareVideoGames(
+  videoGame1: VideoGame,
+  videoGame2: VideoGame
+): number {
+  const component1: string = getComponentNameFromGameDatabase(videoGame1);
+  const component2: string = getComponentNameFromGameDatabase(videoGame2);
+
+  if (component1 === component2) {
+    return videoGame1.releaseYear - videoGame2.releaseYear;
+  }
+
+  if (
+    component1.startsWith(NUMBER_COMPONENT_PREFIX) &&
+    component2.startsWith(NUMBER_COMPONENT_PREFIX)
+  ) {
+    return component1.localeCompare(component2);
+  }
+
+  if (component1.startsWith(NUMBER_COMPONENT_PREFIX)) {
+    return -1;
+  }
+
+  if (component2.startsWith(NUMBER_COMPONENT_PREFIX)) {
+    return 1;
+  }
+
+  return component1.localeCompare(component2);
+}
+
 function generateSectionGamesComponent(videoGames: VideoGame[]): void {
-  // const gamesDatabaseRawData: string = fs
-  //   .readFileSync('_db_games.json')
-  //   .toString();
-  // const gamesDatabase: GameDatabase[] = JSON.parse(gamesDatabaseRawData);
-  const gamesComponents: string[] = videoGames
-    .sort((gameDatabase1, gameDatabase2) => {
-      const component1: string =
-        getComponentNameFromGameDatabase(gameDatabase1);
-      const component2: string =
-        getComponentNameFromGameDatabase(gameDatabase2);
-      if (component1 === component2) {
-        return gameDatabase1.releaseYear - gameDatabase2.releaseYear;
-      }
-      if (
-        component1.startsWith(NUMBER_COMPONENT_PREFIX) &&
-        component2.startsWith(NUMBER_COMPONENT_PREFIX)
-      ) {
-        return component1.localeCompare(component2);
-      }
-      if (component1.startsWith(NUMBER_COMPONENT_PREFIX)) {
-        return -1;
-      }
-      if (component2.startsWith(NUMBER_COMPONENT_PREFIX)) {
-        return 1;
-      }
-      return component1.localeCompare(component2);
-    })
-    .map((gameDatabase) => getComponentNameFromGameDatabase(gameDatabase));
+  const gamesComponents: string[] = [...videoGames]
+    .sort(compareVideoGames)
+    .map((videoGame) => getComponentNameFromGameDatabase(videoGame));
 
   const sectionGamesComponentMustache: string = fs
     .readFileSync('section-games-component.mustache')
@@ -478,80 +511,3 @@ function generateSectionGamesComponent(videoGames: VideoGame[]): void {
 main();
 
 // ======================================================
-
-class FlickrRootPhotoset {
-  constructor(
-    public readonly page: number,
-    public readonly pages: number,
-    public readonly total: number,
-    public readonly photosets: FlickrPhotoset[]
-  ) {}
-}
-
-class FlickrPhotoset {
-  constructor(
-    public readonly countPhotos: number,
-    public readonly countVideos: number,
-    public readonly title: string,
-    public readonly description: string,
-    public readonly id: string
-  ) {}
-}
-
-class FlickrVideoGameAlbum {
-  constructor(
-    public readonly countPhotos: number,
-    public readonly countVideos: number,
-    public readonly title: string,
-    public readonly url: string,
-    public readonly gameSlug: string,
-    public readonly platformVersionSlug: string,
-    public readonly playedOnPlatformSlug: string,
-    public readonly version: string
-  ) {}
-}
-
-class IGDBGame {
-  constructor(
-    public readonly coverId: number,
-    public readonly name: string,
-    public readonly platformsIds: number[],
-    public readonly releaseDatesIds: number[],
-    public readonly slug: string,
-    public readonly url: string
-  ) {}
-}
-
-class IGDBCover {
-  constructor(public readonly id: number, public readonly url: string) {}
-}
-
-class IGDBPlatform {
-  constructor(
-    public readonly id: number,
-    public readonly name: string,
-    public readonly slug: string
-  ) {}
-}
-
-class IGDBReleaseDate {
-  constructor(
-    public readonly id: number,
-    public readonly platform: number,
-    public readonly year: number
-  ) {}
-}
-
-class VideoGame {
-  constructor(
-    public readonly coverURL: string | undefined,
-    public readonly name: string,
-    public readonly slug: string,
-    public readonly platformVersion: string | undefined,
-    public readonly platformPlayedOn: string | undefined,
-    public readonly releaseYear: number | null,
-    public readonly igdbURL: string,
-    public readonly flickrURL: string | undefined,
-    public readonly version: string | undefined
-  ) {}
-}
