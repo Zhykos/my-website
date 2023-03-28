@@ -8,8 +8,6 @@ module.exports = {
     title: `VGG: Video Game Gallery`,
     // Description that goes under your name in main bio
     description: `My own little museum about video games.`,
-    // Optional: Twitter account handle
-    //author: `@rfitzio`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

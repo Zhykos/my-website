@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import Header from '../components/header';
+import Header from '../generated-components/header';
 import Layout from '../components/layout';
 import SectionGames from '../generated-components/section-games';
 import SectionEvents from '../generated-components/section-events';

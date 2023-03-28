@@ -329,6 +329,21 @@ function generateAllComponents(
 
   eventAlbums.forEach((eventAlbum) => generateEventComponent(eventAlbum));
   generateSectionEventsComponent(eventAlbums);
+
+  generateHeaderComponent(videoGames.length, eventAlbums.length);
+}
+
+function generateHeaderComponent(nbGames: number, nbEvents: number): void {
+  const headerMustache: string = fs.readFileSync('header.mustache').toString();
+  const generatedComponent: string = Mustache.render(headerMustache, {
+    nbGames,
+    nbEvents,
+  });
+  fs.mkdirSync('../generated-components/header');
+  fs.writeFileSync(
+    '../generated-components/header/index.jsx',
+    generatedComponent
+  );
 }
 
 function generateGameComponent(videoGame: VideoGame): void {
