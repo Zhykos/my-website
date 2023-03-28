@@ -1,30 +1,39 @@
 import React from 'react';
 
-const Event = ({ name, year, country, website, photos, imgSrc }) => {
+const Event = ({ name, year, country, city, flickrURL, countPhotos, countVideos, primaryPhotoURL }) => {
   return (
-    <div className="mb-6 lg:mb-0">
-      <div className="relative block rounded-lg shadow-lg bg-white p-6">
-        <div className="lg:flex flex-row items-center">
-          <div className="grow-0 shrink-0 basis-auto w-full lg:w-5/12 lg:pr-6">
-            <img src={imgSrc} alt={name} />
+    <div class="flex flex-col justify-start items-start h-[100vh] my-8">
+      <div class="relative flex flex-col items-center rounded-[20px] w-[400px] mx-auto p-4 bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:!shadow-none">
+          <div class="relative flex h-64 w-full justify-center rounded-xl bg-cover" >
+              <img src={primaryPhotoURL} alt={name} />
+          </div> 
+          <div class="mt-16 flex flex-col items-center">
+              <h4 class="text-xl font-bold text-navy-700">
+              {name}
+              </h4>
+              <p class="text-base font-normal text-gray-600">Year: {year}</p>
+              <p class="text-base font-normal text-gray-600">Where: {country}, {city}</p>
+          </div> 
+          <div class="mt-6 mb-3 flex gap-14 md:!gap-14">
+              <div class="flex flex-col items-center justify-center">
+              <p class="text-2xl font-bold text-navy-700">{countPhotos}</p>
+              <p class="text-sm font-normal text-gray-600">Photos</p>
+              </div>
+              <div class="flex flex-col items-center justify-center">
+              <p class="text-2xl font-bold text-navy-700">
+                {countVideos}
+              </p>
+              <p class="text-sm font-normal text-gray-600">Videos</p>
+              </div>
+              <div class="flex flex-col items-center justify-center">
+              <p class="text-2xl font-bold text-navy-700">
+                  <a href={flickrURL}>Flickr</a>
+              </p>
+              <p class="text-sm font-normal text-gray-600">Link</p>
+              </div>
           </div>
-          <div className="grow-0 shrink-0 basis-auto w-full lg:w-7/12">
-            <h5 className="text-lg font-bold mb-2">{name}</h5>
-            <div>
-              <div className="text-gray-500">
-                Year: {year}<br />
-                Country: {country}
-              </div>
-              <div className="text-gray-500 mb-4">
-                <a href={website} className="px-2 lg:pl-0 lg:pr-2">Open official website</a>
-              </div>
-              <div className="text-gray-500 mb-4">
-                <a href={photos} className="px-2 lg:pl-0 lg:pr-2">Open photos</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div>  
+      {/* <p class="font-normal text-navy-700 mt-20 mx-auto w-max">Profile Card component from <a href="https://horizon-ui.com?ref=tailwindcomponents.com" target="_blank" class="text-brand-500 font-bold">Horizon UI Tailwind React</a></p>   */}
     </div>
   );
 };

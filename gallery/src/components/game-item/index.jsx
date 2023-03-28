@@ -40,7 +40,7 @@ const Game = ({ name, coverURL, platformVersion, platformPlayedOn, releaseYear, 
           </div>
       </div>  
       {/* <p class="font-normal text-navy-700 mt-20 mx-auto w-max">Profile Card component from <a href="https://horizon-ui.com?ref=tailwindcomponents.com" target="_blank" class="text-brand-500 font-bold">Horizon UI Tailwind React</a></p>   */}
-  </div>
+    </div>
   );
 };
 

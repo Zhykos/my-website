@@ -6,7 +6,6 @@ import * as fs from 'fs';
 import * as Mustache from 'mustache';
 import { min, sift, unique } from 'radash';
 import {
-  EventMustache,
   FlickrEventAlbum,
   FlickrPhotoset,
   FlickrRootPhotoset,
@@ -427,31 +426,19 @@ function generateSectionGamesComponent(videoGames: VideoGame[]): void {
 }
 
 function generateEventComponent(eventAlbum: FlickrEventAlbum): void {
-  const eventMustache: EventMustache = mapEvent(eventAlbum);
+  const componentName: string = getComponentNameFromEventDatabase(eventAlbum);
   const eventComponentMustache: string = fs
     .readFileSync('event-component.mustache')
     .toString();
   const generatedEventComponent: string = Mustache.render(
     eventComponentMustache,
-    eventMustache
+    { ...eventAlbum, componentName }
   );
 
-  fs.mkdirSync(`../generated-components/${eventMustache.componentName}`);
+  fs.mkdirSync(`../generated-components/${componentName}`);
   fs.writeFileSync(
-    `../generated-components/${eventMustache.componentName}/index.jsx`,
+    `../generated-components/${componentName}/index.jsx`,
     generatedEventComponent
-  );
-}
-
-function mapEvent(eventAlbum: FlickrEventAlbum): EventMustache {
-  return new EventMustache(
-    eventAlbum.title,
-    eventAlbum.year,
-    eventAlbum.country,
-    eventAlbum.url,
-    '',
-    getComponentNameFromEventDatabase(eventAlbum),
-    ''
   );
 }
 
@@ -463,10 +450,6 @@ function getComponentNameFromEventDatabase(
   );
 }
 
-// function getImageNameFromEventDatabase(eventDatabase: EventDatabase): string {
-//   return getComponentNameFromEventDatabase(eventDatabase) + '.jpg';
-// }
-//
 function generateSectionEventsComponent(eventAlbums: FlickrEventAlbum[]): void {
   const eventsComponents: string[] = [...eventAlbums]
     .sort((eventAlbum1, eventAlbum2) => {

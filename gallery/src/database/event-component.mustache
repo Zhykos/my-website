@@ -3,7 +3,15 @@ import Event from "../../components/event-item"
 
 const {{componentName}} = () => {
   return (
-    <Event name="{{name}}" year="{{year}}" country="{{country}}" website="{{{website}}}" photos="{{{link}}}" imgSrc="" />
+    <Event
+      name="{{title}}"
+      year="{{year}}"
+      country="{{country}}"
+      city="{{city}}"
+      flickrURL="{{{url}}}"
+      countPhotos="{{countPhotos}}"
+      countVideos="{{countVideos}}"
+      primaryPhotoURL="{{{primaryPhotoURL}}}" />
   );
 };
 
