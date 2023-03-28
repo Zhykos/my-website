@@ -5,7 +5,7 @@ module.exports = {
     // Your Name
     name: 'VGG: Video Game Gallery',
     // Main Site Title
-    title: `Thomas Cicognani | Ingénieur concepteur`,
+    title: `VGG: Video Game Gallery`,
     // Description that goes under your name in main bio
     description: `My own little museum about video games.`,
     // Optional: Twitter account handle

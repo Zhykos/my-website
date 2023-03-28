@@ -2,19 +2,21 @@ import React from 'react';
 import Game from "../../components/game-item"
 
 const {{componentName}} = () => {
-  const screenshots = [
-    {{#screenshots}}
-    {
-      platform: '{{platform}}',
-      link: '{{{link}}}',
-      languages: '{{languages}}',
-      version: '{{version}}',
-    },
-    {{/screenshots}}
-  ];
-
   return (
-    <Game name="{{name}}" releaseYear="{{releaseYear}}" igdbURL="{{{igdbURL}}}" coverURL="{{{coverURL}}}" screenshots={screenshots} />
+    <Game
+      name="{{name}}"
+      releaseYear="{{releaseYear}}"
+      igdbURL="{{{igdbURL}}}"
+      coverURL="{{{coverURL}}}"
+      platformVersion="{{platformVersion}}"
+      platformVersion="{{platformVersion}}"
+      platformPlayedOn="{{{platformPlayedOn}}}"
+      flickrURL="{{flickrURL}}"
+      version="{{version}}"
+      countPhotos="{{countPhotos}}"
+      countVideos="{{countVideos}}"
+      primaryPhotoURL="{{{primaryPhotoURL}}}"
+    />
   );
 };
 

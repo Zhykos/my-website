@@ -11,12 +11,10 @@ import {
   FlickrPhotoset,
   FlickrRootPhotoset,
   FlickrVideoGameAlbum,
-  GameMustache,
   IGDBCover,
   IGDBGame,
   IGDBPlatform,
   IGDBReleaseDate,
-  ScreenshotMustache,
   VideoGame,
 } from './models';
 
@@ -79,6 +77,7 @@ async function retrieveFlickrPhotosets(): Promise<FlickrRootPhotoset> {
   const flickr = new Flickr(process.env.FLICKR_SECRET, null);
   const res: Request = await flickr.photosets.getList({
     user_id: process.env.FLICKR_USER_ID,
+    primary_photo_extras: 'url_m',
   });
 
   const photosetsRaw: any = JSON.parse(JSON.stringify(res.body)).photosets;
@@ -94,7 +93,8 @@ async function retrieveFlickrPhotosets(): Promise<FlickrRootPhotoset> {
           p.count_videos,
           p.title._content,
           p.description._content,
-          p.id
+          p.id,
+          p.primary_photo_extras.url_m
         )
     )
   );
@@ -112,17 +112,17 @@ function transformFlickr(
           `{${Buffer.from(matchArray[1].trim(), 'base64')}}`
         );
         if (vggMeta.t === 'g') {
-          // "t":"g","s":"halo-combat-evolved-anniversary","p":"xboxone","o":"xboxone","l":"FR","v":"r"
+          // "t":"g","s":"halo-combat-evolved-anniversary","p":"xboxone","o":"xboxone","v":"r"
           return new FlickrVideoGameAlbum(
             photoset.countPhotos,
             photoset.countVideos,
             photoset.title,
             `https://www.flickr.com/photos/${process.env.FLICKR_USER_ID}/albums/${photoset.id}`,
+            photoset.primaryPhotoURL,
             vggMeta.s,
             vggMeta.p,
             vggMeta.o,
-            mapVggMetaToVersion(vggMeta.v),
-            vggMeta.l
+            mapVggMetaToVersion(vggMeta.v)
           );
         }
 
@@ -133,6 +133,7 @@ function transformFlickr(
           photoset.countVideos,
           vggMeta.n,
           `https://www.flickr.com/photos/${process.env.FLICKR_USER_ID}/albums/${photoset.id}`,
+          photoset.primaryPhotoURL,
           vggMeta.y,
           vggMeta.c,
           vggMeta.cy
@@ -177,14 +178,7 @@ async function retrieveVideoGamesFromIGDB(
 
   return response.data.map(
     (obj: any) =>
-      new IGDBGame(
-        obj.cover,
-        obj.name,
-        obj.platforms,
-        obj.release_dates,
-        obj.slug,
-        obj.url
-      )
+      new IGDBGame(obj.cover, obj.name, obj.release_dates, obj.slug, obj.url)
   );
 }
 
@@ -248,7 +242,7 @@ async function retrieveReleaseDatesFromIGDB(
     .where(`id = (${releaseDateIds})`)
     .request('/release_dates');
   return response.data.map(
-    (obj: any) => new IGDBReleaseDate(obj.id, obj.platform, obj.y)
+    (obj: any) => new IGDBReleaseDate(obj.platform, obj.y)
   );
 }
 
@@ -300,7 +294,7 @@ function consolidateVideoGames(
     );
 
     return new VideoGame(
-      `https://${coverURL}`,
+      `https:${coverURL}`,
       igdbGame.name,
       igdbGame.slug,
       platformVersion?.name,
@@ -308,7 +302,10 @@ function consolidateVideoGames(
       releaseYear,
       igdbGame.url,
       album?.url,
-      album?.version
+      album?.version,
+      album.countPhotos,
+      album.countVideos,
+      album.primaryPhotoURL
     );
   });
 }
@@ -336,33 +333,18 @@ function generateAllComponents(
 }
 
 function generateGameComponent(videoGame: VideoGame): void {
-  const gameMustache = new GameMustache(
-    videoGame.name,
-    videoGame.releaseYear,
-    videoGame.igdbURL,
-    videoGame.coverURL,
-    getComponentNameFromGameDatabase(videoGame),
-    [
-      new ScreenshotMustache(
-        videoGame.platformPlayedOn,
-        videoGame.flickrURL,
-        'TODO',
-        videoGame.version
-      ),
-    ]
-  );
-
+  const componentName: string = getComponentNameFromGameDatabase(videoGame);
   const gameComponentMustache: string = fs
     .readFileSync('game-component.mustache')
     .toString();
   const generatedGameComponent: string = Mustache.render(
     gameComponentMustache,
-    gameMustache
+    { ...videoGame, componentName }
   );
 
-  fs.mkdirSync(`../generated-components/${gameMustache.componentName}`);
+  fs.mkdirSync(`../generated-components/${componentName}`);
   fs.writeFileSync(
-    `../generated-components/${gameMustache.componentName}/index.jsx`,
+    `../generated-components/${componentName}/index.jsx`,
     generatedGameComponent
   );
 }

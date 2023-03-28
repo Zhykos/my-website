@@ -1,37 +1,46 @@
 import React from 'react';
-import GameItemIcons from '../game-item-icons';
 
-// https://tailwind-elements.com/snippets/tailwind/tailwindelements/3766077
-const Game = ({ name, releaseYear, igdbURL, coverURL, screenshots }) => {
+const Game = ({ name, coverURL, platformVersion, platformPlayedOn, releaseYear, igdbURL, flickrURL, version, countPhotos, countVideos, primaryPhotoURL }) => {
   return (
-    <div className="mb-6 lg:mb-0">
-      <div className="relative block rounded-lg shadow-lg bg-white p-6">
-        <div className="lg:flex flex-row items-center">
-          <div className="grow-0 shrink-0 basis-auto w-full lg:w-5/12 lg:pr-6">
-            <img src={coverURL} alt={name} />
+    <div class="flex flex-col justify-start items-start h-[100vh] my-8">
+      <div class="relative flex flex-col items-center rounded-[20px] w-[400px] mx-auto p-4 bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:!shadow-none">
+          <div class="relative flex h-32 w-full justify-center rounded-xl bg-cover" >
+              <img src={primaryPhotoURL} alt={name} /> 
+              <div class="absolute -bottom-12 flex h-[87px] w-[87px] items-center justify-center rounded-full border-[4px] border-white bg-pink-400 dark:!border-navy-700">
+                  <a href={igdbURL}>
+                    <img class="h-full w-full rounded-full" src={coverURL} alt={name} />
+                  </a>
+              </div>
+          </div> 
+          <div class="mt-16 flex flex-col items-center">
+              <h4 class="text-xl font-bold text-navy-700">
+              {name}
+              </h4>
+              <p class="text-base font-normal text-gray-600">Release year: {releaseYear}</p>
+              <p class="text-base font-normal text-gray-600">Platform: {platformVersion}, played on {platformPlayedOn}</p>
+              <p class="text-base font-normal text-gray-600">Version: {version}</p>
+          </div> 
+          <div class="mt-6 mb-3 flex gap-14 md:!gap-14">
+              <div class="flex flex-col items-center justify-center">
+              <p class="text-2xl font-bold text-navy-700">{countPhotos}</p>
+              <p class="text-sm font-normal text-gray-600">Photos</p>
+              </div>
+              <div class="flex flex-col items-center justify-center">
+              <p class="text-2xl font-bold text-navy-700">
+                {countVideos}
+              </p>
+              <p class="text-sm font-normal text-gray-600">Videos</p>
+              </div>
+              <div class="flex flex-col items-center justify-center">
+              <p class="text-2xl font-bold text-navy-700">
+                  <a href={flickrURL}>Flickr</a>
+              </p>
+              <p class="text-sm font-normal text-gray-600">Link</p>
+              </div>
           </div>
-          <div className="grow-0 shrink-0 basis-auto w-full lg:w-7/12">
-            <h5 className="text-lg font-bold mb-2">{name}</h5>
-            <div>
-              <div className="text-gray-500">
-                Release year: {releaseYear}
-              </div>
-              <div className="text-gray-500 mb-4">
-                <a href={igdbURL} className="px-2 lg:pl-0 lg:pr-2">Open IGDB website</a>
-              </div>
-              <div className="text-gray-500 mb-4">
-                Screenshots link{screenshots.length === 1 ? '' : 's'}: 
-                <ul className="list-inside flex mx-auto justify-center lg:justify-start">
-                  {screenshots.map((screenshot) => (
-                    <GameItemIcons key={screenshot.platform + '-' + screenshot.version} screenshotsURL={screenshot.link} platformName={screenshot.platform} languages={screenshot.languages} version={screenshot.version} />
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </div>  
+      {/* <p class="font-normal text-navy-700 mt-20 mx-auto w-max">Profile Card component from <a href="https://horizon-ui.com?ref=tailwindcomponents.com" target="_blank" class="text-brand-500 font-bold">Horizon UI Tailwind React</a></p>   */}
+  </div>
   );
 };
 

@@ -13,7 +13,8 @@ export class FlickrPhotoset {
     public readonly countVideos: number,
     public readonly title: string,
     public readonly description: string,
-    public readonly id: string
+    public readonly id: string,
+    public readonly primaryPhotoURL: string
   ) {}
 }
 
@@ -22,7 +23,8 @@ abstract class AbstractFlickrAlbum {
     public readonly countPhotos: number,
     public readonly countVideos: number,
     public readonly title: string,
-    public readonly url: string
+    public readonly url: string,
+    public readonly primaryPhotoURL: string
   ) {}
 }
 
@@ -32,13 +34,13 @@ export class FlickrVideoGameAlbum extends AbstractFlickrAlbum {
     countVideos: number,
     title: string,
     url: string,
+    primaryPhotoURL: string,
     public readonly gameSlug: string,
     public readonly platformVersionSlug: string,
     public readonly playedOnPlatformSlug: string,
-    public readonly version: string,
-    public readonly languages: string
+    public readonly version: string
   ) {
-    super(countPhotos, countVideos, title, url);
+    super(countPhotos, countVideos, title, url, primaryPhotoURL);
   }
 }
 
@@ -48,11 +50,12 @@ export class FlickrEventAlbum extends AbstractFlickrAlbum {
     countVideos: number,
     title: string,
     url: string,
+    primaryPhotoURL: string,
     public readonly year: number,
     public readonly country: string,
     public readonly city: string
   ) {
-    super(countPhotos, countVideos, title, url);
+    super(countPhotos, countVideos, title, url, primaryPhotoURL);
   }
 }
 

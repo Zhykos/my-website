@@ -2,7 +2,6 @@ export class IGDBGame {
   constructor(
     public readonly coverId: number,
     public readonly name: string,
-    public readonly platformsIds: number[],
     public readonly releaseDatesIds: number[],
     public readonly slug: string,
     public readonly url: string
@@ -23,7 +22,6 @@ export class IGDBPlatform {
 
 export class IGDBReleaseDate {
   constructor(
-    public readonly id: number,
     public readonly platform: number,
     public readonly year: number
   ) {}

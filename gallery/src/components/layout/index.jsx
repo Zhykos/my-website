@@ -1,7 +1,7 @@
 import React from 'react';
 
 const classes = {
-  wrapper: 'p-8 relative xs:p-24',
+  wrapper: 'p-8 relative xs:p-4',
   outerWrapper: 'relative',
 };
 
