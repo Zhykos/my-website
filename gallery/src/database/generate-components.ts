@@ -111,7 +111,6 @@ function transformFlickr(
           `{${Buffer.from(matchArray[1].trim(), 'base64')}}`
         );
         if (vggMeta.t === 'g') {
-          // "t":"g","s":"halo-combat-evolved-anniversary","p":"xboxone","o":"xboxone","v":"r"
           return new FlickrVideoGameAlbum(
             photoset.countPhotos,
             photoset.countVideos,
@@ -126,7 +125,6 @@ function transformFlickr(
         }
 
         // Events
-        //"t":"e","y":2018,"c":"Germany","cy":"Köln","n":"gamescom"
         return new FlickrEventAlbum(
           photoset.countPhotos,
           photoset.countVideos,
