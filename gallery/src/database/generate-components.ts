@@ -73,7 +73,7 @@ const main = async () => {
 };
 
 async function retrieveFlickrPhotosets(): Promise<FlickrRootPhotoset> {
-  const flickr = new Flickr(process.env.FLICKR_SECRET, null);
+  const flickr = new Flickr(process.env.FLICKR_KEY, null);
   const res: Request = await flickr.photosets.getList({
     user_id: process.env.FLICKR_USER_ID,
     primary_photo_extras: 'url_m',
