@@ -7,7 +7,7 @@ const Event = ({ name, year, country, city, flickrURL, countPhotos, countVideos,
           <div class="relative flex h-64 w-full justify-center rounded-xl bg-cover" >
               <img src={primaryPhotoURL} alt={name} />
           </div> 
-          <div class="mt-16 flex flex-col items-center">
+          <div class="mt-16 flex flex-col items-center text-center">
               <h4 class="text-xl font-bold text-navy-700">
               {name}
               </h4>
