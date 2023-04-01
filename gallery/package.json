@@ -54,8 +54,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "generate-components": "cd src/database/ && tsc && node dist/generate-components.js",
-    "generate-flickr-description": "cd src/database/ && tsc --module nodenext && node dist/generate-flickr-description.mjs"
+    "tsc-generate-components": "cd src/database/ && tsc && node dist/generate-components.js",
+    "tsc-generate-flickr-description": "cd src/database/ && tsc --module nodenext && node dist/generate-flickr-description.mjs",
+    "generate-flickr-description": "cd src/database/ && node dist/generate-flickr-description.mjs"
   },
   "repository": {
     "type": "git",
