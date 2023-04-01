@@ -254,7 +254,7 @@ function createIGDBRequestOptions(token: string) {
       'Client-ID': process.env.IGDB_CLIENT_ID,
     },
     responseType: 'json',
-    timeout: 5000,
+    timeout: 50000,
   };
 }
 
