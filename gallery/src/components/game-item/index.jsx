@@ -4,7 +4,7 @@ const Game = ({ name, coverURL, platformVersion, platformPlayedOn, releaseYear, 
   return (
     <div class="flex flex-col justify-start items-start my-8">
       <div class="relative flex flex-col items-center rounded-[20px] w-[400px] mx-auto p-4 bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:!shadow-none">
-          <div class="relative flex h-32 w-full justify-center rounded-xl bg-cover" >
+          <div class="relative flex h-48 w-full justify-center rounded-xl bg-cover" >
               <img src={primaryPhotoURL} alt={name} /> 
               <div class="absolute -bottom-12 flex h-[87px] w-[87px] items-center justify-center rounded-full border-[4px] border-white bg-pink-400 dark:!border-navy-700">
                   <a href={igdbURL}>
