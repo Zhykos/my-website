@@ -7,6 +7,7 @@
   "dependencies": {
     "@types/mustache": "^4.2.1",
     "apicalypse": "^0.2.0",
+    "clipboardy": "^3.0.0",
     "dotenv": "^16.0.3",
     "flickr-sdk": "^6.1.0",
     "gatsby": "^4.23.0",
@@ -40,7 +41,6 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "@types/inquirer": "^9.0.3",
     "@types/node": "^18.15.9",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.1.8",
@@ -54,9 +54,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "tsc-generate-components": "cd src/database/ && tsc && node dist/generate-components.js",
-    "tsc-generate-flickr-description": "cd src/database/ && tsc --module nodenext && node dist/generate-flickr-description.mjs",
-    "generate-flickr-description": "cd src/database/ && node dist/generate-flickr-description.mjs"
+    "tsc-generate-components": "cd src/database/ && tsc generate-components.ts && node dist/generate-components.js",
+    "generate-flickr-description": "node src/database/generate-flickr-description.mjs"
   },
   "repository": {
     "type": "git",
