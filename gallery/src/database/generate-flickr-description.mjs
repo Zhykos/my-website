@@ -96,9 +96,9 @@ inquirer
       const vggMeta = `"t":"g","s":"${
         answers.slug
       }","p":"${mapPlatformIntoVggMeta(
-        answers.played
-      )}","o":"${mapPlatformIntoVggMeta(
         answers.origin
+      )}","o":"${mapPlatformIntoVggMeta(
+        answers.played
       )}","v":"${mapVersionIntoVggMeta(answers.version)}"`;
 
       const encodedVggMeta = Buffer.from(vggMeta).toString('base64');
