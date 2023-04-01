@@ -3,13 +3,14 @@ import inquirer from 'inquirer';
 
 const platforms = new Map([
   ['PC', 'win'],
-  ['Xbox One', 'xboxone'],
   ['Switch', 'switch'],
+  ['Xbox One', 'xboxone'],
+  ['Xbox Series X', 'series-x'],
 ]);
 
 const versions = new Map([['released', 'r']]);
 
-console.log([...platforms.keys()])
+console.log([...platforms.keys()]);
 
 inquirer
   .prompt([
