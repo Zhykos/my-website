@@ -55,6 +55,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "tsc-generate-components": "cd src/database/ && tsc && node dist/generate-components.js",
+    "generate-components-build": "cd src/database/ && node dist/generate-components.js && npm run build",
     "generate-flickr-description": "node src/database/generate-flickr-description.mjs"
   },
   "repository": {
