@@ -169,8 +169,9 @@ async function retrieveVideoGamesFromIGDB(
   const requestOptions = createIGDBRequestOptions(token);
 
   const response: AxiosResponse = await apicalypse(requestOptions)
-    .fields('*')
+    .fields('cover, name, release_dates, slug, url')
     .where(`slug = (${slugs})`)
+    .limit(500)
     .request('/games');
 
   return response.data.map(
@@ -190,8 +191,9 @@ async function retrieveCoversFromIGDB(
   const requestOptions = createIGDBRequestOptions(token);
 
   const response: AxiosResponse = await apicalypse(requestOptions)
-    .fields('*')
+    .fields('url')
     .where(`id = (${imageIds})`)
+    .limit(500)
     .request('/covers');
   return response.data.map((obj: any) => new IGDBCover(obj.id, obj.url));
 }
@@ -216,8 +218,9 @@ async function retrievePlatformsFromIGDB(
   const requestOptions = createIGDBRequestOptions(token);
 
   const response: AxiosResponse = await apicalypse(requestOptions)
-    .fields('*')
+    .fields('name, slug')
     .where(`slug = (${platformIds})`)
+    .limit(500)
     .request('/platforms');
   return response.data.map(
     (obj: any) => new IGDBPlatform(obj.id, obj.name, obj.slug)
@@ -235,8 +238,9 @@ async function retrieveReleaseDatesFromIGDB(
   const requestOptions = createIGDBRequestOptions(token);
 
   const response: AxiosResponse = await apicalypse(requestOptions)
-    .fields('*')
+    .fields('platform, y')
     .where(`id = (${releaseDateIds})`)
+    .limit(500)
     .request('/release_dates');
   return response.data.map(
     (obj: any) => new IGDBReleaseDate(obj.platform, obj.y)
