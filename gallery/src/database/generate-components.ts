@@ -42,6 +42,9 @@ const main = async () => {
     token
   );
 
+  // console.debug('igdbGames');
+  // console.debug(igdbGames);
+
   await timeout(500);
 
   const igdbCovers: IGDBCover[] = await retrieveCoversFromIGDB(
@@ -60,6 +63,9 @@ const main = async () => {
 
   const igdbReleaseDates: IGDBReleaseDate[] =
     await retrieveReleaseDatesFromIGDB(igdbGames, token);
+
+  // console.debug('igdbReleaseDates');
+  // console.debug(igdbReleaseDates);
 
   const videoGames: VideoGame[] = consolidateVideoGames(
     igdbGames,
@@ -243,7 +249,7 @@ async function retrieveReleaseDatesFromIGDB(
     .limit(500)
     .request('/release_dates');
   return response.data.map(
-    (obj: any) => new IGDBReleaseDate(obj.platform, obj.y)
+    (obj: any) => new IGDBReleaseDate(obj.id, obj.platform, obj.y)
   );
 }
 
@@ -287,12 +293,16 @@ function consolidateVideoGames(
     )?.name;
 
     const releaseDates: IGDBReleaseDate[] = igdbReleaseDates.filter(
-      (d) => d.platform == platformVersion?.id
+      (d) =>
+        d.platform == platformVersion?.id &&
+        igdbGame.releaseDatesIds.includes(d.id)
     );
 
     const releaseYear: number | null = min(
       releaseDates.map((date) => date.year)
     );
+
+    // console.debug(igdbGame.name + JSON.stringify(releaseDates));
 
     return new VideoGame(
       `https:${coverURL}`,

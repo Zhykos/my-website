@@ -22,6 +22,7 @@ export class IGDBPlatform {
 
 export class IGDBReleaseDate {
   constructor(
+    public readonly id: number,
     public readonly platform: number,
     public readonly year: number
   ) {}
