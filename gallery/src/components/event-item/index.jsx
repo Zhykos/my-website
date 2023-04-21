@@ -12,7 +12,7 @@ const Event = ({ name, year, country, city, flickrURL, countPhotos, countVideos,
               {name}
               </h4>
               <p class="text-base font-normal text-gray-600">Year: {year}</p>
-              <p class="text-base font-normal text-gray-600">Where: {country}, {city}</p>
+              <p class="text-base font-normal text-gray-600">Location: {country}, {city}</p>
           </div> 
           <div class="mt-6 mb-3 flex gap-14 md:!gap-14">
               <div class="flex flex-col items-center justify-center">

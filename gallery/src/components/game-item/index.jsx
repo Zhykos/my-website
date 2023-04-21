@@ -17,7 +17,8 @@ const Game = ({ name, coverURL, platformVersion, platformPlayedOn, releaseYear, 
               {name}
               </h4>
               <p class="text-base font-normal text-gray-600">Release year: {releaseYear}</p>
-              <p class="text-base font-normal text-gray-600">Platform: {platformVersion}, played on {platformPlayedOn}</p>
+              <p class="text-base font-normal text-gray-600">Platform: {platformVersion}</p>
+              <p class="text-base font-normal text-gray-600">Played on: {platformPlayedOn}</p>
               <p class="text-base font-normal text-gray-600">Version: {version}</p>
           </div> 
           <div class="mt-6 mb-3 flex gap-14 md:!gap-14">
