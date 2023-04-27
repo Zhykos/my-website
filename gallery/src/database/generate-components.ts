@@ -18,10 +18,14 @@ import {
 } from './models';
 const download = require('download');
 const Jimp = require('jimp');
+const compress_images = require('compress-images');
 
 dotenv.config();
 
 const NUMBER_COMPONENT_PREFIX = 'NumberPrefix';
+const pathPrefixDownload = '../images/download/';
+const pathPrefixResize = '../images/resize/';
+const pathPrefixCompress = '../images/compress/';
 
 async function main(): Promise<void> {
   const rootPhotoset: FlickrRootPhotoset = await retrieveFlickrPhotosets();
@@ -80,6 +84,8 @@ async function main(): Promise<void> {
   await downloadImages(videoGames, eventAlbums);
 
   await transformImages();
+
+  await compressImages();
 
   generateAllComponents(videoGames, eventAlbums);
 }
@@ -335,21 +341,17 @@ async function downloadImages(
   videoGames: VideoGame[],
   eventAlbums: FlickrEventAlbum[]
 ): Promise<void> {
-  const pathPrefix = '../images/download/';
-  if (fs.existsSync(pathPrefix)) {
-    fs.unlinkSync(pathPrefix);
-  }
-  fs.mkdirSync(pathPrefix);
+  fs.mkdirSync(pathPrefixDownload);
 
   for (const game of videoGames) {
     const componentName: string = getComponentNameFromGameDatabase(game);
     await downloadImage(
       game.primaryPhotoURL,
-      pathPrefix + componentName + '.jpg'
+      pathPrefixDownload + componentName + '.jpg'
     );
     await downloadImage(
       game.coverURL,
-      pathPrefix + componentName + '-cover.jpg'
+      pathPrefixDownload + componentName + '-cover.jpg'
     );
   }
 
@@ -357,7 +359,7 @@ async function downloadImages(
     const componentName: string = getComponentNameFromEventDatabase(event);
     await downloadImage(
       event.primaryPhotoURL,
-      pathPrefix + componentName + '.jpg'
+      pathPrefixDownload + componentName + '.jpg'
     );
   }
 }
@@ -366,16 +368,17 @@ async function downloadImage(url: string, filePath: string): Promise<void> {
   fs.writeFileSync(filePath, await download(url));
 }
 
-async function transformImages() {
-  const pathPrefixResize = '../images/resize/';
-  if (fs.existsSync(pathPrefixResize)) {
-    fs.unlinkSync(pathPrefixResize);
-  }
+async function transformImages(): Promise<void> {
   fs.mkdirSync(pathPrefixResize);
 
-  const pathPrefixDownload = '../images/download/';
-  const downloadedImagesPaths: string[] = fs.readdirSync(pathPrefixDownload);
-  for (const downloadedImagePath of downloadedImagesPaths) {
+  const imagesNames: string[] = fs.readdirSync(pathPrefixDownload);
+  for (const downloadedImagePath of imagesNames) {
+    // XXX : on copie tous les fichiers avant, car il y a un bug qui ne retourne pas certaines images
+    fs.copyFileSync(
+      pathPrefixDownload + downloadedImagePath,
+      pathPrefixResize + downloadedImagePath
+    );
+
     const image = await Jimp.read(pathPrefixDownload + downloadedImagePath);
     if (downloadedImagePath.includes('-cover')) {
       await image.resize(79, 79).write(pathPrefixResize + downloadedImagePath);
@@ -385,6 +388,31 @@ async function transformImages() {
         .write(pathPrefixResize + downloadedImagePath);
     }
   }
+}
+
+async function compressImages(): Promise<void> {
+  fs.mkdirSync(pathPrefixCompress);
+  await compressImagesPath('../images/resize/*.jpg');
+}
+
+async function compressImagesPath(toCompress: string): Promise<void> {
+  await compress_images(
+    toCompress,
+    pathPrefixCompress,
+    { compress_force: true, statistic: false, autoupdate: true },
+    false,
+    { jpg: { engine: 'webp', command: false } },
+    { png: { engine: false, command: false } },
+    { svg: { engine: false, command: false } },
+    { gif: { engine: false, command: false } },
+    function (error: unknown, completed: boolean, statistic: unknown) {
+      // console.debug('-------------');
+      // console.debug(error);
+      // console.debug(completed);
+      // console.debug(statistic);
+      // console.debug('-------------');
+    }
+  );
 }
 
 // ======================================================

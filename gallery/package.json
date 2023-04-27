@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.15.9",
+    "compress-images": "^2.0.5",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.1.8",
     "typescript": "^4.8.3"
@@ -58,9 +59,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "tsc-generate-components": "cd src/database/ && tsc && node dist/generate-components.js",
-    "generate-components-build": "cd src/database/ && node dist/generate-components.js && npm run build",
-    "rm-images-tsc-generate-components-build-serve": "rm -fr src/images/download && rm -fr src/images/resize && npm run tsc-generate-components && npm run build && npm run serve",
+    "rm-images-tsc-generate-components": "rm -fr src/images/download && rm -fr src/images/resize && rm -fr src/images/compress && cd src/database/ && tsc && node dist/generate-components.js",
+    "rm-images-tsc-generate-components-build-serve": "npm run rm-images-tsc-generate-components && npm run build && npm run serve",
     "generate-flickr-description": "node src/database/generate-flickr-description.mjs"
   },
   "repository": {

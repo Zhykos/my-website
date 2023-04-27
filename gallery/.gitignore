@@ -70,6 +70,8 @@ yarn-error.log
 
 # Custom
 src/database/dist
+src/database/log
 src/generated-components
+src/images/compress
 src/images/download
 src/images/resize
