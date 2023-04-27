@@ -17,6 +17,7 @@ import {
   VideoGame,
 } from './models';
 const download = require('download');
+const Jimp = require('jimp');
 
 dotenv.config();
 
@@ -77,6 +78,8 @@ async function main(): Promise<void> {
   );
 
   await downloadImages(videoGames, eventAlbums);
+
+  await transformImages();
 
   generateAllComponents(videoGames, eventAlbums);
 }
@@ -361,6 +364,27 @@ async function downloadImages(
 
 async function downloadImage(url: string, filePath: string): Promise<void> {
   fs.writeFileSync(filePath, await download(url));
+}
+
+async function transformImages() {
+  const pathPrefixResize = '../images/resize/';
+  if (fs.existsSync(pathPrefixResize)) {
+    fs.unlinkSync(pathPrefixResize);
+  }
+  fs.mkdirSync(pathPrefixResize);
+
+  const pathPrefixDownload = '../images/download/';
+  const downloadedImagesPaths: string[] = fs.readdirSync(pathPrefixDownload);
+  for (const downloadedImagePath of downloadedImagesPaths) {
+    const image = await Jimp.read(pathPrefixDownload + downloadedImagePath);
+    if (downloadedImagePath.includes('-cover')) {
+      await image.resize(79, 79).write(pathPrefixResize + downloadedImagePath);
+    } else {
+      await image
+        .resize(368, 192)
+        .write(pathPrefixResize + downloadedImagePath);
+    }
+  }
 }
 
 // ======================================================

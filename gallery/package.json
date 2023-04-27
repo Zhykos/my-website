@@ -30,6 +30,7 @@
     "gatsby-transformer-sharp": "^5.8.0",
     "i": "^0.3.7",
     "inquirer": "^9.1.5",
+    "jimp": "^0.22.7",
     "lazysizes": "^5.3.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
@@ -59,7 +60,7 @@
     "clean": "gatsby clean",
     "tsc-generate-components": "cd src/database/ && tsc && node dist/generate-components.js",
     "generate-components-build": "cd src/database/ && node dist/generate-components.js && npm run build",
-    "rm-downloads-tsc-generate-components-build-serve": "rm -fr src/images/download && npm run tsc-generate-components && npm run build && npm run serve",
+    "rm-images-tsc-generate-components-build-serve": "rm -fr src/images/download && rm -fr src/images/resize && npm run tsc-generate-components && npm run build && npm run serve",
     "generate-flickr-description": "node src/database/generate-flickr-description.mjs"
   },
   "repository": {

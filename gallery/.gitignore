@@ -72,3 +72,4 @@ yarn-error.log
 src/database/dist
 src/generated-components
 src/images/download
+src/images/resize
