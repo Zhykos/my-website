@@ -18,7 +18,7 @@ import {
 } from './models';
 const download = require('download');
 const Jimp = require('jimp');
-const compress_images = require('compress-images');
+const sharp = require('sharp');
 
 dotenv.config();
 
@@ -372,47 +372,31 @@ async function transformImages(): Promise<void> {
   fs.mkdirSync(pathPrefixResize);
 
   const imagesNames: string[] = fs.readdirSync(pathPrefixDownload);
-  for (const downloadedImagePath of imagesNames) {
+  for (const imageName of imagesNames) {
     // XXX : on copie tous les fichiers avant, car il y a un bug qui ne retourne pas certaines images
     fs.copyFileSync(
-      pathPrefixDownload + downloadedImagePath,
-      pathPrefixResize + downloadedImagePath
+      pathPrefixDownload + imageName,
+      pathPrefixResize + imageName
     );
 
-    const image = await Jimp.read(pathPrefixDownload + downloadedImagePath);
-    if (downloadedImagePath.includes('-cover')) {
-      await image.resize(79, 79).write(pathPrefixResize + downloadedImagePath);
+    const image = await Jimp.read(pathPrefixDownload + imageName);
+    if (imageName.includes('-cover')) {
+      await image.resize(79, 79).write(pathPrefixResize + imageName);
     } else {
-      await image
-        .resize(368, 192)
-        .write(pathPrefixResize + downloadedImagePath);
+      await image.resize(368, 192).write(pathPrefixResize + imageName);
     }
   }
 }
 
 async function compressImages(): Promise<void> {
   fs.mkdirSync(pathPrefixCompress);
-  await compressImagesPath('../images/resize/*.jpg');
-}
 
-async function compressImagesPath(toCompress: string): Promise<void> {
-  await compress_images(
-    toCompress,
-    pathPrefixCompress,
-    { compress_force: true, statistic: false, autoupdate: true },
-    false,
-    { jpg: { engine: 'webp', command: false } },
-    { png: { engine: false, command: false } },
-    { svg: { engine: false, command: false } },
-    { gif: { engine: false, command: false } },
-    function (error: unknown, completed: boolean, statistic: unknown) {
-      // console.debug('-------------');
-      // console.debug(error);
-      // console.debug(completed);
-      // console.debug(statistic);
-      // console.debug('-------------');
-    }
-  );
+  const imagesNames: string[] = fs.readdirSync(pathPrefixResize);
+  for (const imageName of imagesNames) {
+    await sharp(pathPrefixResize + imageName)
+      .webp({ quality: 20 })
+      .toFile(pathPrefixCompress + imageName.replace('.jpg', '.webp'));
+  }
 }
 
 // ======================================================
