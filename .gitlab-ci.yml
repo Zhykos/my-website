@@ -64,7 +64,7 @@ build-job-gallery-page:
     - cd -
     - echo "Build"
     - npm i
-    - npm run tsc-generate-components
-    - gatsby build
+    - npm run rm-images-tsc-generate-components
+    - npm run build
     - echo "Déploiement FTP"
     - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rev ./public ./gallery --ignore-time --parallel=10 --exclude \.map$"
