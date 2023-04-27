@@ -71,3 +71,4 @@ yarn-error.log
 # Custom
 src/database/dist
 src/generated-components
+src/images/download

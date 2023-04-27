@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Event = ({ name, year, country, city, flickrURL, countPhotos, countVideos, primaryPhotoURL }) => {
+const Event = ({ name, year, country, city, flickrURL, countPhotos, countVideos, primaryLocalImg }) => {
   return (
     <div class="flex flex-col justify-start items-start my-8">
       <div class="relative flex flex-col items-center rounded-[20px] w-[400px] mx-auto p-4 bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:!shadow-none">
           <div class="relative flex h-64 w-full justify-center rounded-xl bg-cover" >
-              <img src={primaryPhotoURL} alt={name} />
+              <img src={primaryLocalImg} alt={name} />
           </div> 
           <div class="mt-16 flex flex-col items-center text-center">
               <h4 class="text-xl font-bold text-navy-700">

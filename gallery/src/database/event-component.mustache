@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Event from "../../components/event-item"
+import primaryLocalImg from '../../images/download/{{componentName}}.jpg';
 
 const {{componentName}} = () => {
   return (
@@ -11,7 +13,8 @@ const {{componentName}} = () => {
       flickrURL="{{{url}}}"
       countPhotos="{{countPhotos}}"
       countVideos="{{countVideos}}"
-      primaryPhotoURL="{{{primaryPhotoURL}}}" />
+      primaryLocalImg={primaryLocalImg}
+    />
   );
 };
 

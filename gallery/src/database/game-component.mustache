@@ -1,5 +1,8 @@
 import React from 'react';
+
 import Game from "../../components/game-item"
+import primaryLocalImg from '../../images/download/{{componentName}}.jpg';
+import coverLocalImg from '../../images/download/{{componentName}}-cover.jpg';
 
 const {{componentName}} = () => {
   return (
@@ -7,14 +10,14 @@ const {{componentName}} = () => {
       name="{{name}}"
       releaseYear="{{releaseYear}}"
       igdbURL="{{{igdbURL}}}"
-      coverURL="{{{coverURL}}}"
       platformVersion="{{platformVersion}}"
       platformPlayedOn="{{{platformPlayedOn}}}"
       flickrURL="{{flickrURL}}"
       version="{{version}}"
       countPhotos="{{countPhotos}}"
       countVideos="{{countVideos}}"
-      primaryPhotoURL="{{{primaryPhotoURL}}}"
+      primaryLocalImg={primaryLocalImg}
+      coverLocalImg={coverLocalImg}
     />
   );
 };

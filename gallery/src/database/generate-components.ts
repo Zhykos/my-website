@@ -16,12 +16,13 @@ import {
   IGDBReleaseDate,
   VideoGame,
 } from './models';
+const download = require('download');
 
 dotenv.config();
 
 const NUMBER_COMPONENT_PREFIX = 'NumberPrefix';
 
-const main = async () => {
+async function main(): Promise<void> {
   const rootPhotoset: FlickrRootPhotoset = await retrieveFlickrPhotosets();
 
   const flickrAlbums: (FlickrVideoGameAlbum | FlickrEventAlbum)[] =
@@ -75,8 +76,10 @@ const main = async () => {
     videoGameAlbums
   );
 
+  await downloadImages(videoGames, eventAlbums);
+
   generateAllComponents(videoGames, eventAlbums);
-};
+}
 
 async function retrieveFlickrPhotosets(): Promise<FlickrRootPhotoset> {
   const flickr = new Flickr(process.env.FLICKR_KEY, null);
@@ -321,8 +324,43 @@ function consolidateVideoGames(
   });
 }
 
-function timeout(ms: number): Promise<number> {
+async function timeout(ms: number): Promise<number> {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function downloadImages(
+  videoGames: VideoGame[],
+  eventAlbums: FlickrEventAlbum[]
+): Promise<void> {
+  const pathPrefix = '../images/download/';
+  if (fs.existsSync(pathPrefix)) {
+    fs.unlinkSync(pathPrefix);
+  }
+  fs.mkdirSync(pathPrefix);
+
+  for (const game of videoGames) {
+    const componentName: string = getComponentNameFromGameDatabase(game);
+    await downloadImage(
+      game.primaryPhotoURL,
+      pathPrefix + componentName + '.jpg'
+    );
+    await downloadImage(
+      game.coverURL,
+      pathPrefix + componentName + '-cover.jpg'
+    );
+  }
+
+  for (const event of eventAlbums) {
+    const componentName: string = getComponentNameFromEventDatabase(event);
+    await downloadImage(
+      event.primaryPhotoURL,
+      pathPrefix + componentName + '.jpg'
+    );
+  }
+}
+
+async function downloadImage(url: string, filePath: string): Promise<void> {
+  fs.writeFileSync(filePath, await download(url));
 }
 
 // ======================================================
