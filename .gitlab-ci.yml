@@ -56,7 +56,7 @@ build-job-gallery-page:
     - echo "Mise à jour de la page de la galerie"
     - cd gallery
     - echo "Generate .env"
-    - cd src/database/
+    - cd src/generation/
     - echo "FLICKR_USER_ID = $FLICKR_USER_ID" > .env
     - echo "FLICKR_KEY = $FLICKR_KEY" >> .env
     - echo "IGDB_CLIENT_ID = $IGDB_CLIENT_ID" >> .env

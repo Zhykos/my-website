@@ -69,8 +69,8 @@ yarn-error.log
 .yarn-integrity
 
 # Custom
-src/database/dist
-src/database/log
+src/generation/dist
+src/generation/log
 src/generated-components
 src/images/compress
 src/images/download

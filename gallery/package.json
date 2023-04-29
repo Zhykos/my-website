@@ -54,9 +54,9 @@
   "scripts": {
     "build": "gatsby clean && gatsby build",
     "serve": "gatsby serve",
-    "rm-images-tsc-generate-components": "rm -fr src/images/download && rm -fr src/images/compress && cd src/database/ && tsc && node dist/generate-components.js",
+    "rm-images-tsc-generate-components": "rm -fr src/images/download && rm -fr src/images/compress && cd src/generation/ && tsc && node dist/generate-components.js",
     "rm-images-tsc-generate-components-build-serve": "npm run rm-images-tsc-generate-components && npm run build && npm run serve",
-    "generate-flickr-description": "node src/database/generate-flickr-description.mjs"
+    "generate-flickr-description": "node src/generation/generate-flickr-description.mjs"
   },
   "repository": {
     "type": "git",
