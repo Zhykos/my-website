@@ -1,19 +1,42 @@
 import React from 'react';
 
-import Section from '../../components/section';
 {{#events}}
 import {{.}} from '../{{.}}';
 {{/events}}
 
 const SectionEvents = () => {
   return (
-    <Section title="{{nbEvents}} Events">
-      <div id="events" className="grid md:grid-cols-3 gap-6 xl:gap-x-12 mb-16 text-center lg:text-left">
-        {{#events}}
-        <{{.}} />
-        {{/events}}
+    <div id="events" class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Event name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Year
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Country
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        City
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        # Photos
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Flickr gallery link
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#events}}
+              <{{.}} />
+              {{/events}}
+            </tbody>
+        </table>
       </div>
-    </Section>
   );
 };
 

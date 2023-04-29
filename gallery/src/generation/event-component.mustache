@@ -1,20 +1,32 @@
 import React from 'react';
 
-import Event from "../../components/event-item"
 import primaryLocalImg from '../../images/compress/{{componentName}}.jpg';
 
 const {{componentName}} = () => {
   return (
-    <Event
-      name="{{title}}"
-      year="{{year}}"
-      country="{{country}}"
-      city="{{city}}"
-      flickrURL="{{{url}}}"
-      countPhotos="{{countPhotos}}"
-      countVideos="{{countVideos}}"
-      primaryLocalImg={primaryLocalImg}
-    />
+    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+        <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+            <img class="w-10 h-10 rounded-full" src={primaryLocalImg} alt="{{name}}" />
+            <div class="pl-3">
+                <div class="text-base font-semibold">{{name}}</div>
+            </div>  
+        </th>
+        <td class="px-6 py-4">
+            {{year}}
+        </td>
+        <td class="px-6 py-4">
+            {{country}}
+        </td>
+        <td class="px-6 py-4">
+            {{city}}
+        </td>
+        <td class="px-6 py-4">
+            {{countPhotos}}
+        </td>
+        <td class="px-6 py-4">
+            <a href="{{flickrURL}}" type="button" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Flickr</a>
+        </td>
+    </tr>
   );
 };
 
