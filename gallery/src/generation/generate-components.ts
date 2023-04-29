@@ -345,10 +345,6 @@ async function downloadImages(
       game.primaryPhotoURL,
       pathPrefixDownloadedImages + componentName + '.jpg'
     );
-    await downloadImage(
-      game.coverURL,
-      pathPrefixDownloadedImages + componentName + '-cover.jpg'
-    );
   }
 
   for (const event of eventAlbums) {
@@ -369,14 +365,8 @@ async function transformImages(): Promise<void> {
 
   const imagesNames: string[] = fs.readdirSync(pathPrefixDownloadedImages);
   for (const imageName of imagesNames) {
-    let h = 192;
-    let w = 368;
-    if (imageName.includes('-cover')) {
-      h = 79;
-      w = 79;
-    }
     await sharp(pathPrefixDownloadedImages + imageName)
-      .resize(w, h)
+      .resize(40, 40)
       .jpeg({ mozjpeg: true })
       .toFile(pathPrefixTransformedImages + imageName);
   }
