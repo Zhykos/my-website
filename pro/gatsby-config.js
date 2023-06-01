@@ -58,8 +58,13 @@ module.exports = {
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
       {
-        name: 'Opéris (norsys)',
-        description: `Ingénieur d’études et développement, depuis octobre 2022`,
+        name: 'Ippon Technologies',
+        description: `Ingénieur fullstack, depuis mai 2023`,
+        link: 'https://fr.ippon.tech'
+      },
+      {
+        name: 'Operis (norsys)',
+        description: `Ingénieur d’études et développement, octobre 2022 à avril 2023`,
         link: 'https://www.norsys.fr'
       },
       {
@@ -180,6 +185,11 @@ module.exports = {
         name: 'Autoformation : Vue.js',
         description: `The Ultimate Learning Resource for Vue.js Developers`,
         link: 'https://www.vuemastery.com'
+      },
+      {
+        name: 'Testing Spring Boot Applications Primer',
+        description: 'Online course to get started with unit, integration, and end-to-end testing of Spring Boot applications.',
+        link: 'https://rieckpil.de/courses/testing-spring-boot-applications-primer/'
       },
     ],
     benevolat: [
