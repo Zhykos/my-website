@@ -1,21 +1,21 @@
-import { graphql } from 'gatsby';
-import React from 'react';
+import { graphql } from "gatsby";
+import React from "react";
 
-import Header from '../generated-components/header';
-import Layout from '../components/layout';
-import SectionGames from '../generated-components/section-games';
-import SectionEvents from '../generated-components/section-events';
-import SEO from '../components/seo';
+import Header from "../generated-components/header";
+import Layout from "../components/layout";
+import SectionGames from "../generated-components/section-games";
+import SectionEvents from "../generated-components/section-events";
+import SEO from "../components/seo";
 
 const Index = ({ data }) => {
-  return (
-    <Layout>
-      <SEO />
-      <Header metadata={data.site.siteMetadata} />
-      <SectionGames />
-      <SectionEvents />
-    </Layout>
-  );
+	return (
+		<Layout>
+			<SEO />
+			<Header metadata={data.site.siteMetadata} />
+			<SectionGames />
+			<SectionEvents />
+		</Layout>
+	);
 };
 
 export default Index;

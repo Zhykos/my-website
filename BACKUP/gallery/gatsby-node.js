@@ -1,6 +1,6 @@
 exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
-  const typeDefs = `
+	const { createTypes } = actions;
+	const typeDefs = `
     type SiteSiteMetadata {
       siteUrl: String
       name: String
@@ -23,5 +23,5 @@ exports.createSchemaCustomization = ({ actions }) => {
       link: String!
     }
   `;
-  createTypes(typeDefs);
+	createTypes(typeDefs);
 };

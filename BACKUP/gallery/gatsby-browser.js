@@ -1,2 +1,2 @@
-import 'lazysizes';
-import './src/css/index.css';
+import "lazysizes";
+import "./src/css/index.css";

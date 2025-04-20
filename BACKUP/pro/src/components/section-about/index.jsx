@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import Section from '../section';
+import Section from "../section";
 
 const SectionAbout = ({ about }) => {
-  return (
-    <Section title="À propos">
-      <div className="mb-6">
-        <p>{about}</p>
-      </div>
-    </Section>
-  );
+	return (
+		<Section title="À propos">
+			<div className="mb-6">
+				<p>{about}</p>
+			</div>
+		</Section>
+	);
 };
 
 export default SectionAbout;

@@ -1,3 +1,3 @@
-export * from './Flickr';
-export * from './IGDB';
-export * from './VideoGame';
+export * from "./Flickr";
+export * from "./IGDB";
+export * from "./VideoGame";
