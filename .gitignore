@@ -5,5 +5,5 @@
 /node/etc/
 video-game-gallery.html
 coverage/
-backup/
 *.afpub
+.DS_Store
