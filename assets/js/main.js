@@ -146,7 +146,7 @@
 	});
 
 	// Porfolio isotope and filter
-	$(window).on("load", function () {
+	/*$(window).on("load", function () {
 		var portfolioIsotope = $(".portfolio-container").isotope({
 			itemSelector: ".portfolio-item",
 			layoutMode: "fitRows",
@@ -160,10 +160,8 @@
 				filter: $(this).data("filter"),
 			});
 		});
-	});
+		});*/
 
 	// Initiate venobox (lightbox feature used in portofilo)
-	$(document).ready(function () {
-		$(".venobox").venobox();
-	});
+	$(document).ready(() => $(".venobox").venobox());
 })(jQuery);
