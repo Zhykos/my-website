@@ -5,5 +5,7 @@
 /node/etc/
 video-game-gallery.html
 coverage/
-backup/
 *.afpub
+.DS_Store
+*resume*.pdf
+/complete-resume/rendercv_output/

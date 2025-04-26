@@ -1,0 +1,70 @@
+# This file is a template, and might need editing before it works on your project.
+# This is a sample GitLab CI/CD configuration file that should run without any modifications.
+# It demonstrates a basic 3 stage CI/CD pipeline. Instead of real tests or scripts,
+# it uses echo commands to simulate the pipeline execution.
+#
+# A pipeline is composed of independent jobs that run scripts, grouped into stages.
+# Stages run in sequential order, but jobs within stages run in parallel.
+#
+# For more information, see: https://docs.gitlab.com/ee/ci/yaml/index.html#stages
+#
+# You can copy and paste this template into a new `.gitlab-ci.yml` file.
+# You should not add this template to an existing `.gitlab-ci.yml` file by using the `include:` keyword.
+#
+# To contribute improvements to CI/CD templates, please follow the Development guide at:
+# https://docs.gitlab.com/ee/development/cicd/templates.html
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
+
+default:
+  image: node:alpine3.15
+  before_script:
+    - echo "Installation des prérequis"
+    - npm install -g gatsby-cli
+    - apk add lftp
+
+stages:
+  - build
+
+build-job-pro-page:
+  stage: build
+
+  script:
+    - echo "Mise à jour de la page professionnelle du site"
+    - cd pro
+    - echo "Build"
+    - npm i
+    - gatsby build
+    - echo "Déploiement FTP"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rev ./public ./pro --ignore-time --parallel=10 --exclude \.map$"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rev ./docs ./pro/docs --ignore-time --parallel=10"
+
+build-job-landing-page:
+  stage: build
+
+  script:
+    - echo "Mise à jour de la page d'accueil du site"
+    - echo "Déploiement FTP"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rev ./landing ./landing --ignore-time --parallel=10 --exclude index.+html"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; put -O ./ ./landing/index.html"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; put -O ./landing/ ./landing/index-empty.html -o index.html"
+
+build-job-gallery-page:
+  stage: build
+
+  script:
+    - echo "Mise à jour de la page de la galerie"
+    - cd gallery
+    - echo "Generate .env"
+    - cd src/generation/
+    - echo "FLICKR_USER_ID = $FLICKR_USER_ID" > .env
+    - echo "FLICKR_KEY = $FLICKR_KEY" >> .env
+    - echo "IGDB_CLIENT_ID = $IGDB_CLIENT_ID" >> .env
+    - echo "IGDB_CLIENT_SECRET = $IGDB_CLIENT_SECRET" >> .env
+    - cd -
+    - echo "Build"
+    - npm i
+    - npm run rm-images-tsc-generate-components
+    - npm run build
+    - echo "Déploiement FTP"
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -Rev ./public ./gallery --ignore-time --parallel=10 --exclude \.map$"

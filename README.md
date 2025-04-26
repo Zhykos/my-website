@@ -1,20 +1,37 @@
 # Zhykos' website
-🌍 My french personal and professional website with static pages: my resume, my video game screenshots museum and other stuff.
+
+🌍 My french personal and professional website with static pages: my resume, my experiences and personal projects.
 
 👉 https://www.zhykos.fr 👈
 
-## Landing page
+## Main pages
 
-Stack: HTML, JavaScript and CSS.
+Template from [Prerak Raja](https://github.com/rajaprerak/rajaprerak.github.io).
 
-Template from: https://startbootstrap.com/theme/creative
+Just needs a browser because it's based on HTML, JavaScript and CSS.
 
-## Pro webpage and gallery
+## Resume
 
-Only the gallery is available in English.
+Made with [Reactive Resume](https://rxresu.me/).
 
-Stack: React and Gatsby.
+Used locally with [Docker Compose](https://docs.docker.com/compose/).
 
-Template from: https://github.com/RyanFitzgerald/devfolio
+PDF generated and process controlled with [Playwright](https://playwright.dev/).
 
-Generated pages made with: NodeJs and TypeScript.
+## Complete resume
+
+Made with [RenderCV](https://rendercv.com/).
+
+Needs Python: https://www.python.org/downloads/.
+
+Then install with `pip install "rendercv[full]"` and regenerate files with:
+
+```shell
+rendercv render "thomas-cicognani-complete-resume.yaml"
+```
+
+## Format and lint
+
+Uses [Biome](https://biomejs.dev/).
+
+A [Deno](https://deno.com/) shortcut is available, so you can run `deno task format` (or check `deno.json` for the command line).
