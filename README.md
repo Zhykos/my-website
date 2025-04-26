@@ -10,6 +10,14 @@ Template from [Prerak Raja](https://github.com/rajaprerak/rajaprerak.github.io).
 
 Just needs a browser because it's based on HTML, JavaScript and CSS.
 
+## Resume
+
+Made with [Reactive Resume](https://rxresu.me/).
+
+Used locally with [Docker Compose](https://docs.docker.com/compose/).
+
+PDF generated and process controlled with [Playwright](https://playwright.dev/).
+
 ## Complete resume
 
 Made with [RenderCV](https://rendercv.com/).
