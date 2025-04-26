@@ -7,3 +7,23 @@
 ## Main pages
 
 Template from [Prerak Raja](https://github.com/rajaprerak/rajaprerak.github.io).
+
+Just needs a browser because it's based on HTML, JavaScript and CSS.
+
+## Complete resume
+
+Made with [RenderCV](https://rendercv.com/).
+
+Needs Python: https://www.python.org/downloads/.
+
+Then install with `pip install "rendercv[full]"` and regenerate files with:
+
+```shell
+rendercv render "thomas-cicognani-complete-resume.yaml"
+```
+
+## Format and lint
+
+Uses [Biome](https://biomejs.dev/).
+
+A [Deno](https://deno.com/) shortcut is available, so you can run `deno task format` (or check `deno.json` for the command line).

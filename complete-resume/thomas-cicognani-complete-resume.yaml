@@ -1,0 +1,215 @@
+cv:
+  name: Thomas Cicognani
+  location: Luxembourg
+  email: contact@thomascicognani.mailer.me
+  website: https://zhykos.fr/
+  social_networks:
+    - network: LinkedIn
+      username: thomas-cicognani
+    - network: GitHub
+      username: zhykos
+
+  sections:
+    Ingénieur d’études et développement:
+      - En 13 ans d’expérience dans l’architecture logicielle et l’analyse de Systèmes d’Information de divers clients, j’ai acquis une forte exigence de qualité afin de livrer des produits les plus stables possibles.
+      - J’aime aussi travailler en équipe, partager mes connaissances, monter en compétence et apprendre de nouvelles technologies via des formations au service du produit et des clients.
+      - Je mets également en pratique ces connaissances dans le monde de l’Open Source.
+      - Je porte aussi une très grande importance à des techniques comme le Domain-Driven Design, l’architecture hexagonale, la qualité et l’agilité qui apporte une certaine rigueur et un cadre sein dans une équipe afin de produire le plus efficacement et qualitativement possible.
+      - J’apprécie également être au service des autres que ce soit professionnellement ou personnellement. Je suis dans le monde associatif depuis 2008 où j’ai notamment participé à une émission de radio et été rédacteur web. Enfin, j'ai également eu l'opportunité de m'engager pendant deux ans dans une association de secourisme (PSE2 en juin 2022) afin d’avoir un sentiment d’utilité envers la population.
+
+    Education:
+      - institution: Université des Sciences de Nantes, France
+        area: Master ALMA, option architecture distribuée
+        degree: M
+        start_date: 2006-09
+        end_date: 2009-06
+      - institution: IUT de Reims, France
+        area: DUT informatique, option imagerie numérique
+        degree: DUT
+        start_date: 2004-09
+        end_date: 2006-06
+
+    Autres formations:
+      - bullet: "2024 : formation accessibilité web par Access 42, 3 jours"
+      - bullet: "2022 : formation interne norsys (qualité, ingénierie logicielle), 5 jours"
+      - bullet: "2019 : formation Kubernetes par Liksi, 3 jours"
+      - bullet: "2013 : formation Eclipse RCP par ENI, 3 jours"
+      - bullet: "2002 : Brevet d'Initiation Aéronautique"
+
+    Expériences professionnelles:
+      - company: Sfeir - Projet pour Post
+        position: Ingénieur full-stack
+        location: Luxembourg, Luxembourg
+        start_date: 2024-01
+        highlights:
+          - Equipe MyPost Courrier
+          - Maintenance et création d'applications et fonctionnalités pour les clients de Post sur le web et l'application mobile
+          - "Principale fonctionnalité : recommandés électroniques"
+      - company: Ippon - Projet pour la Fédération Française de Tennis
+        position: Ingénieur test
+        location: Nantes, France
+        start_date: 2023-07
+        end_date: 2023-11
+        highlights:
+          - Responsable des tests de performance pour les projets B2C de la FFT.
+          - Rédaction de protocoles de tests.
+          - Mise en place de tests, exécutions et analyses.
+      - company: Ippon - Projet pour Beneteau
+        position: Ingénieur front-end
+        location: Nantes, France
+        start_date: 2023-06
+        end_date: 2023-07
+        highlights:
+          - POC d'un projet d'éditeur de carte maritime
+      - company: norsys - Projet pour Operis, équipe Expert
+        position: Ingénieur d’études
+        location: Orvault, France
+        start_date: 2022-10
+        end_date: 2023-04
+        highlights:
+          - "Développement de la nouvelle version de l’application Expert : gestion de permis de construire pour les collectivités"
+      - company: norsys - Projet pour cbp / Kereis, équipe Adhésion
+        position: Ingénieur d’études
+        location: Saint-Herblain, France
+        start_date: 2022-02
+        end_date: 2022-09
+        highlights:
+          - Maintenance et développement de fonctionnalités mineures d’un produit de sélection de risque médical.
+          - Suivi quotidien d’un stagiare pendant 2 mois.
+          - Refonte totale des logs d’une douzaine d’applications.
+          - Refactoring d’une ancienne application pour transformer d’anciens accès à la base de données vers un accès Spring JPA.
+          - Développement d’API pour que l’ancienne application appelle la nouvelle ayant les nouveaux accès à la base de données.
+          - Développement d’une nouvelle couche de sécurité basée sur les token.
+      - company: Mia-Software - Projet pour MMA
+        position: Expert technique
+        location: Nantes et Le Mans, France
+        start_date: 2018-07
+        end_date: 2018-09
+        highlights:
+          - Développement d’une nouvelle fonctionnalité ayant pour but de consolider toutes les bases de données en une seule par copie incrémentale (cible pour du Big Data).
+      - company: Mia-Software - Projet pour MAAF
+        position: Ingénieur front-end
+        location: Nantes, France
+        start_date: 2013-05
+        end_date: 2013-08
+        highlights:
+          - Développement de la partie front-end des simulateurs d’assurance automobile et habitation.
+          - "Récupération des pages HTML, des programmes JavaScript et CSS générés par une chaine de migration automatisée (source : Flex), puis correction et amélioration post génération, et développement du manquant."
+          - Vérifications manuelles d’après les cahiers de tests.
+      - company: Mia-Software - Projet pour RCI Banque
+        position: Ingénieur full-stack
+        location: Nantes, France
+        start_date: 2013-04
+        end_date: 2013-05
+        highlights:
+          - Développement des parties front-end et back-end d’une application de la flotte de véhicules.
+          - "Récupération du code GWT généré par une chaine de migration automatisée (source : Struts), puis correction et amélioration post génération, et développement du manquant."
+          - Vérifications manuelles d’après les cahiers de tests.
+      - company: Mia-Software - Projet PUMA pour MAAF
+        position: Ingénieur d’études et développement
+        location: Nantes et Niort, France
+        start_date: 2012-02
+        end_date: 2013-02
+        highlights:
+          - Co-conception d’architectures de logiciels ayant pour but de remplacer le patrimoine Pacbase
+          - Accès au dictionnaire de données MagicDraw par une API Rest
+          - Générateur de copy Cobol à l'aide d'un éditeur de type no-code
+          - Métriques de qualité Cobol
+          - Adaptation des produits Mia-Software pour les rendre compatible avec la plateforme IBM RDz.
+          - "Développement de fonctionnalités dans Mia-Mining pour ajouter des vues d'analyses Cobol à partir de l'éditeur de Cobol ouvert (exemple : système comme en Java pour afficher l'enchainement des méthodes)."
+      - company: Mia-Software - Pôle édition logiciel
+        position: Ingénieur Concepteur
+        location: Nantes, France
+        start_date: 2009-09
+        end_date: 2022-01
+        highlights:
+          - Conception de la maquette web de la future application front-end en React et spécification des API de communication avec le back-end.
+          - Développement de la toute première page du front-end en React.
+          - Définition d’architecture d’une nouvelle fonctionnalité du logiciel pour créer puis exécuter des requêtes et des graphes à l’aide d’un éditeur de type no-code.
+          - Définition d’architecture d’une nouvelle fonctionnalité du logiciel pour exécuter des requêtes ensemblistes et conception d’une IHM de type no-code pour créer ces requêtes.
+          - Sélection technique d’une fonctionnalité de calcul de carte proportionnelle.
+          - Développement d’une fonctionnalité de reporting basé sur les matrices d’adjacence.
+          - Définition d’architecture et développement d’un nouveau logiciel de dictionnaire de données se reposant sur l’architecture de GitLab.
+          - Suivi quotidien d’une personne en alternance pendant 2 ans.
+          - Architecture et développement d’un produit d’analyse et de suivi de versions des logiciels développés et des frameworks utilisés dans un souci de sécurité.
+          - Architecture et développement d’un produit de reporting des jobs Jenkins.
+          - Mise en place d’une architecture de tests d’intégration afin que les produits n’utilisent plus les bases de données de recette.
+          - Développement d’une couche réseau basée Socket pour transformer un monolithe écrit en Smalltalk en back-end, puis développement d’IHM en Eclipse SWT pour la partie front-end.
+          - Contribution aux projets open source EMF Facet et MoDisco chez Eclipse.
+          - "Autres exemples de stacks techniques des logiciels développés : Mia-Mining, portail qualité Cobol."
+
+    Stages et projets de fin d’études:
+      - bullet: "2009 - Stage de master chez Mia-Software (6 mois) : création d’une couche de communication entre un back en Smalltalk et un front en Java."
+      - bullet: "2008 - Projet de fin de maitrise avec Code Lutin (environ 5 mois) : création du projet Pollen, plateforme de sondage libre (Java, Tapestry)."
+      - bullet: "2006 - Stage de DUT à Coventry University (2,5 mois) : évolution de l’application de visite 3D de l’université (VRML)."
+      - bullet: "2006 - Projet de fin d’année d’IUT (environ 5 mois) : simulateur 3D temps réel de cheveux (C++, OpenGL, SDL)."
+
+    Projets:
+      - name: deno-server-openapi-generator
+        date: '[github.com/Zhykos/deno-server-openapi-generator](https://github.com/Zhykos/deno-server-openapi-generator)'
+        highlights:
+          - Generate a backend server based on Deno and the middleware oak
+          - 'Java, TypeScript, Mustache'
+      - name: My generated website
+        date: '[gitlab.com/zhykos/website](https://gitlab.com/zhykos/website)'
+        highlights:
+          - My website
+          - 'Tools Used: HTML, CSS, React, Gatsby'
+
+    Technologies:
+      - label: Meilleures compétences
+        details: Java, Spring Boot, JPA, Node.js, Open API, HTML, JavaScript, TypeScript, React, Vue 3, PostgreSQL, Eclipse (RCP, SWT, Nebula, EMF Facet, MoDisco), UML, EMF, Neo4j, Cypher, Git, Jenkins, tests unitaires (front et back), Smalltalk, agilité.
+      - label: Compétences moyennes
+        details: Spring Security, Groovy, Spock, logs (Slf4j, Log4j, Kibana), ElasticSearch, Express, PUG, Shell, CSS, OpenTelemetry, React Native, OctoPerf, MongoDB
+      - label: Connaissances de base
+        details: Cobol, Perl, Ansible, PHP
+
+    Langues:
+      - bullet: "Français : langue natale"
+      - bullet: "Anglais : niveau professionnel"
+      - bullet: "Espagnol : niveau lycéen, sans pratique"
+      - bullet: "Japonais : bases de lecture katakana et hiragana, et quelques kanji JLPT 5"
+
+    Bénévolat:
+      - bullet: "Équipier secouriste (PSE2) : UNASS Loire-Atlantique d'octobre 2021 à août 2023"
+      - bullet: "Chroniqueur et réalisateur radio : SUN Radio - Émission sur le jeu vidéo et le numérique. Entre 2012 et 2016."
+
+design:
+  theme: classic
+  font: Source Sans 3
+  font_size: 10pt
+  page_size: letterpaper
+  color: '#004f90'
+  disable_external_link_icons: false
+  disable_page_numbering: false
+  page_numbering_style: NAME - Page PAGE_NUMBER de TOTAL_PAGES
+  disable_last_updated_date: false
+  last_updated_date_style: Mise à jour TODAY
+  header_font_size: 30 pt
+  text_alignment: justified
+  seperator_between_connections: ''
+  use_icons_for_connections: true
+  margins:
+    page:
+      top: 2 cm
+      bottom: 2 cm
+      left: 2 cm
+      right: 2 cm
+    section_title:
+      top: 0.3 cm
+      bottom: 0.2 cm
+    entry_area:
+      left_and_right: 0.2 cm
+      vertical_between: 0.2 cm
+      date_and_location_width: 4.5 cm
+      education_degree_width: 1 cm
+    highlights_area:
+      top: 0.10 cm
+      left: 0.4 cm
+      vertical_between_bullet_points: 0.10 cm
+    header:
+      vertical_between_name_and_connections: 0.3 cm
+      bottom: 0.3 cm
+      horizontal_between_connections: 0.5 cm
+  show_timespan_in:
+    - Experience
