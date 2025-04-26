@@ -1,6 +1,6 @@
 cv:
   name: Thomas Cicognani
-  location: Luxembourg
+  location: Luxembourg, Luxembourg
   email: contact@thomascicognani.mailer.me
   website: https://zhykos.fr/
   social_networks:
@@ -10,7 +10,7 @@ cv:
       username: zhykos
 
   sections:
-    Ingénieur d’études et développement:
+    Ingénieur full-stack:
       - En 13 ans d’expérience dans l’architecture logicielle et l’analyse de Systèmes d’Information de divers clients, j’ai acquis une forte exigence de qualité afin de livrer des produits les plus stables possibles.
       - J’aime aussi travailler en équipe, partager mes connaissances, monter en compétence et apprendre de nouvelles technologies via des formations au service du produit et des clients.
       - Je mets également en pratique ces connaissances dans le monde de l’Open Source.
@@ -44,7 +44,8 @@ cv:
         highlights:
           - Equipe MyPost Courrier
           - Maintenance et création d'applications et fonctionnalités pour les clients de Post sur le web et l'application mobile
-          - "Principale fonctionnalité : recommandés électroniques"
+          - "Principale fonctionnalité développée : recommandés électroniques"
+          - Accessibilité de l'application mobile
       - company: Ippon - Projet pour la Fédération Française de Tennis
         position: Ingénieur test
         location: Nantes, France
@@ -144,17 +145,26 @@ cv:
       - bullet: "2006 - Stage de DUT à Coventry University (2,5 mois) : évolution de l’application de visite 3D de l’université (VRML)."
       - bullet: "2006 - Projet de fin d’année d’IUT (environ 5 mois) : simulateur 3D temps réel de cheveux (C++, OpenGL, SDL)."
 
-    Projets:
-      - name: deno-server-openapi-generator
+    Projets open source:
+      - name: My website
+        date: '[https://github.com/Zhykos/my-website](https://github.com/Zhykos/my-website)'
+        highlights:
+          - Mon site personnel
+          - 'Outils et langages : HTML, CSS, JavaScript, RenderCV, Reactive Resume'
+      - name: autophoto
+        date: '[https://github.com/Zhykos/autophoto](https://github.com/Zhykos/autophoto)'
+        highlights:
+          - Logiciel pour lister et publier automatiquement des photos
+          - 'Langages: Deno et TypeScript'
+      - name: cool tools
+        date: '[https://github.com/Zhykos/cool-tools](https://github.com/Zhykos/cool-tools)'
+        highlights:
+          - Exemples d'outils et logiciels gratuits et open source
+      - name: deno-server-openapi-generator (archivé)
         date: '[github.com/Zhykos/deno-server-openapi-generator](https://github.com/Zhykos/deno-server-openapi-generator)'
         highlights:
-          - Generate a backend server based on Deno and the middleware oak
-          - 'Java, TypeScript, Mustache'
-      - name: My generated website
-        date: '[gitlab.com/zhykos/website](https://gitlab.com/zhykos/website)'
-        highlights:
-          - My website
-          - 'Tools Used: HTML, CSS, React, Gatsby'
+          - Génération d'un serveur back-end basé sur Deno et oak
+          - 'Langages: Java, TypeScript et Mustache'
 
     Technologies:
       - label: Meilleures compétences
@@ -173,6 +183,7 @@ cv:
     Bénévolat:
       - bullet: "Équipier secouriste (PSE2) : UNASS Loire-Atlantique d'octobre 2021 à août 2023"
       - bullet: "Chroniqueur et réalisateur radio : SUN Radio - Émission sur le jeu vidéo et le numérique. Entre 2012 et 2016."
+      - bullet: "Chroniques et articles sur le jeu vidéo entre 2008 et 2021, sur divers sites comme GameSideStory.com"
 
 design:
   theme: classic
