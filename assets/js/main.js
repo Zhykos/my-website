@@ -26,7 +26,7 @@
 
 				if (!$("#header").hasClass("header-top")) {
 					$("#header").addClass("header-top");
-					setTimeout( ()=> {
+					setTimeout(() => {
 						$("section").removeClass("section-show");
 						$(hash).addClass("section-show");
 					}, 350);
@@ -58,7 +58,7 @@
 				.find(`a[href="${initial_nav}"]`)
 				.parent("li")
 				.addClass("active");
-			setTimeout( () =>{
+			setTimeout(() => {
 				$("section").removeClass("section-show");
 				$(initial_nav).addClass("section-show");
 			}, 350);
@@ -76,7 +76,7 @@
 		);
 		$("body").append('<div class="mobile-nav-overly"></div>');
 
-		$(document).on("click", ".mobile-nav-toggle",  ()=> {
+		$(document).on("click", ".mobile-nav-toggle", () => {
 			$("body").toggleClass("mobile-nav-active");
 			$(".mobile-nav-toggle i").toggleClass(
 				"icofont-navigation-menu icofont-close",
@@ -84,7 +84,7 @@
 			$(".mobile-nav-overly").toggle();
 		});
 
-		$(document).click( (e)=> {
+		$(document).click((e) => {
 			const container = $(".mobile-nav, .mobile-nav-toggle");
 			if (
 				!container.is(e.target) &&
@@ -111,7 +111,7 @@
 
 	// Skills section
 	$(".skills-content").waypoint(
-		 () => {
+		() => {
 			$(".progress .progress-bar").each(function () {
 				$(this).css("width", `${$(this).attr("aria-valuenow")}%`);
 			});
