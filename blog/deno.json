@@ -3,7 +3,7 @@
     "lume/": "https://deno.land/x/lume@v2.5.3/"
   },
   "tasks": {
-    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+    "lume": "cp ../assets/css/style.css style.css && echo \"import 'lume/cli.ts'\" | deno run -A -",
     "build": "deno task lume",
     "serve": "deno task lume -s"
   },
