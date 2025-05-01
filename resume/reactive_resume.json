@@ -1,199 +1,390 @@
 {
-	"basics": {
-		"name": "Thomas Cicognani",
-		"headline": "",
-		"email": "contact@thomascicognani.mailer.me",
-		"phone": "",
-		"location": "",
-		"url": {
-			"label": "",
-			"href": ""
-		},
-		"customFields": [],
-		"picture": {
-			"url": "",
-			"size": 64,
-			"aspectRatio": 1,
-			"borderRadius": 0,
-			"effects": {
-				"hidden": false,
-				"border": false,
-				"grayscale": false
-			}
-		}
-	},
-	"sections": {
-		"summary": {
-			"name": "Summary",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "summary",
-			"content": ""
-		},
-		"awards": {
-			"name": "Awards",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "awards",
-			"items": []
-		},
-		"certifications": {
-			"name": "Certifications",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "certifications",
-			"items": []
-		},
-		"education": {
-			"name": "Education",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "education",
-			"items": []
-		},
-		"experience": {
-			"name": "Experience",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "experience",
-			"items": [
-				{
-					"id": "r9hl896g7aqtingwdf94liot",
-					"visible": true,
-					"company": "Sfeir",
-					"position": "Ingénieur fullstack",
-					"location": "Luxembourg",
-					"date": "Janvier 2024",
-					"summary": "",
-					"url": {
-						"label": "",
-						"href": ""
-					}
-				}
-			]
-		},
-		"volunteer": {
-			"name": "Volunteering",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "volunteer",
-			"items": []
-		},
-		"interests": {
-			"name": "Interests",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "interests",
-			"items": []
-		},
-		"languages": {
-			"name": "Languages",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "languages",
-			"items": []
-		},
-		"profiles": {
-			"name": "Profiles",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "profiles",
-			"items": []
-		},
-		"projects": {
-			"name": "Projects",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "projects",
-			"items": []
-		},
-		"publications": {
-			"name": "Publications",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "publications",
-			"items": []
-		},
-		"references": {
-			"name": "References",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "references",
-			"items": []
-		},
-		"skills": {
-			"name": "Skills",
-			"columns": 1,
-			"separateLinks": true,
-			"visible": true,
-			"id": "skills",
-			"items": []
-		},
-		"custom": {}
-	},
-	"metadata": {
-		"template": "chikorita",
-		"layout": [
-			[
-				[
-					"profiles",
-					"summary",
-					"experience",
-					"education",
-					"projects",
-					"volunteer",
-					"references"
-				],
-				[
-					"skills",
-					"interests",
-					"certifications",
-					"awards",
-					"publications",
-					"languages"
-				]
-			]
-		],
-		"css": {
-			"value": "* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}",
-			"visible": false
-		},
-		"page": {
-			"margin": 18,
-			"format": "a4",
-			"options": {
-				"breakLine": true,
-				"pageNumbers": true
-			}
-		},
-		"theme": {
-			"background": "#ffffff",
-			"text": "#000000",
-			"primary": "#dc2626"
-		},
-		"typography": {
-			"font": {
-				"family": "IBM Plex Serif",
-				"subset": "latin",
-				"variants": ["regular", "italic", "600"],
-				"size": 14
-			},
-			"lineHeight": 1.5,
-			"hideIcons": false,
-			"underlineLinks": true
-		},
-		"notes": ""
-	}
+  "basics": {
+    "url": {
+      "href": "https://www.zhykos.fr/",
+      "label": ""
+    },
+    "name": "Thomas Cicognani",
+    "email": "contact@thomascicognani.mailer.me",
+    "phone": "",
+    "picture": {
+      "url": "http://192.168.1.10:9000/default/cma5r9f4y00006ra0ofej7p07/pictures/ges65cmtyzll7z5xw1nag58q.jpg",
+      "size": 64,
+      "effects": {
+        "border": false,
+        "hidden": false,
+        "grayscale": false
+      },
+      "aspectRatio": 1,
+      "borderRadius": 6
+    },
+    "headline": "Ingénieur fullstack",
+    "location": "Luxembourg, Luxembourg",
+    "customFields": []
+  },
+  "metadata": {
+    "css": {
+      "value": "* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}",
+      "visible": false
+    },
+    "page": {
+      "format": "a4",
+      "margin": 18,
+      "options": {
+        "breakLine": true,
+        "pageNumbers": true
+      }
+    },
+    "notes": "",
+    "theme": {
+      "text": "#000000",
+      "primary": "#0891b2",
+      "background": "#ffffff"
+    },
+    "layout": [
+      [
+        [
+          "profiles",
+          "summary",
+          "experience",
+          "projects",
+          "volunteer",
+          "references"
+        ],
+        [
+          "skills",
+          "interests",
+          "certifications",
+          "awards",
+          "publications",
+          "education",
+          "languages"
+        ]
+      ]
+    ],
+    "template": "gengar",
+    "typography": {
+      "font": {
+        "size": 12,
+        "family": "PT Sans",
+        "subset": "latin",
+        "variants": [
+          "regular"
+        ]
+      },
+      "hideIcons": false,
+      "lineHeight": 1.4,
+      "underlineLinks": true
+    }
+  },
+  "sections": {
+    "awards": {
+      "id": "awards",
+      "name": "Awards",
+      "items": [],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "custom": {},
+    "skills": {
+      "id": "skills",
+      "name": "Skills",
+      "items": [
+        {
+          "id": "v7ioudebzc0uirybz6lk2vyw",
+          "visible": true,
+          "name": "Java",
+          "description": "",
+          "level": 5,
+          "keywords": []
+        },
+        {
+          "id": "q5gmxehm7uh2m124m6ateexz",
+          "visible": true,
+          "name": "React Native",
+          "description": "",
+          "level": 3,
+          "keywords": []
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "summary": {
+      "id": "summary",
+      "name": "Présentation",
+      "columns": 1,
+      "content": "<p>En 13 ans d’expérience dans l’architecture logicielle et l’analyse de Systèmes d’Information de divers clients, j’ai acquis une forte exigence de qualité afin de livrer des produits les plus stables possibles.</p><p>J’aime aussi travailler en équipe, partager mes connaissances, monter en compétence et apprendre de nouvelles technologies via des formations au service du produit et des clients. Je porte alors une attention particulière au Craft.</p><p>Je mets également en pratique ces connaissances dans le monde de l’Open Source. J’apprécie ainsi être au service des autres que ce soit professionnellement ou personnellement. Je suis dans le monde associatif depuis 2008 où j’ai notamment participé à une émission de radio et été rédacteur web. Enfin, j’ai aussi eu l’opportunité de m’engager pendant deux ans dans une association de secourisme.</p>",
+      "visible": true,
+      "separateLinks": true
+    },
+    "profiles": {
+      "id": "profiles",
+      "name": "Profils",
+      "items": [
+        {
+          "id": "btxlhi3126kdzt3pb4vndfzf",
+          "visible": true,
+          "network": "GitHub",
+          "username": "zhykos",
+          "icon": "github",
+          "url": {
+            "label": "",
+            "href": "https://github.com/Zhykos"
+          }
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "projects": {
+      "id": "projects",
+      "name": "Projects",
+      "items": [],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "education": {
+      "id": "education",
+      "name": "Scolarité",
+      "items": [
+        {
+          "id": "ds7f064ne2fgileoot9uivnx",
+          "visible": true,
+          "institution": "Université des Sciences de Nantes",
+          "studyType": "",
+          "area": "Master ALMA (architecture logicielle)",
+          "score": "",
+          "date": "2009",
+          "summary": "<p>Stage chez Mia-Software : mise en place d'une architecture pour faire communiquer des applications Java et Smalltalk</p><p>Projet de fin d'étude avec Code Lutin : création d'une plateforme de vote</p>",
+          "url": {
+            "label": "Site des Masters informatique",
+            "href": "https://sciences-techniques.univ-nantes.fr/formations/masters/master-informatique"
+          }
+        },
+        {
+          "id": "h42n4lvicsmcrhirqir5ythn",
+          "visible": true,
+          "institution": "IUT de Reims",
+          "studyType": "",
+          "area": "DUT Informatique, option Imagerie Numérique",
+          "score": "",
+          "date": "2006",
+          "summary": "<p>Stage à Coventry, Angleterre : modélisation 3D de la faculté.</p><p>Projet de fin d'année : génération 3D temps réel de cheveux.</p>",
+          "url": {
+            "label": "Site de l'IUT",
+            "href": "https://iut-info.univ-reims.fr/"
+          }
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "interests": {
+      "id": "interests",
+      "name": "Interests",
+      "items": [],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "languages": {
+      "id": "languages",
+      "name": "Langues",
+      "items": [
+        {
+          "id": "hitzmlu5fqv8ukzk41ef5z0q",
+          "visible": true,
+          "name": "Français",
+          "description": "",
+          "level": 5
+        },
+        {
+          "id": "nbaiej3syjrqd1k0bbv2q6z6",
+          "visible": true,
+          "name": "Anglais",
+          "description": "",
+          "level": 4
+        },
+        {
+          "id": "hqvlo1e0gjlkp0vyczmjjkui",
+          "visible": true,
+          "name": "Espagnol",
+          "description": "",
+          "level": 2
+        },
+        {
+          "id": "ykjmprf9oult3xmyfrpp2qdp",
+          "visible": true,
+          "name": "Japonais",
+          "description": "",
+          "level": 1
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "volunteer": {
+      "id": "volunteer",
+      "name": "Bénévolat",
+      "items": [
+        {
+          "id": "pln5vzrljahfb1he13xrb79h",
+          "visible": true,
+          "organization": "UNASS 44",
+          "position": "Équipier secouriste",
+          "location": "Nantes, France",
+          "date": "Octobre 2021 - Août 2023",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": "https://www.unass.fr/unass-loire-atlantique"
+          }
+        },
+        {
+          "id": "bn1yanc6ewjyqt1dl8anyt0j",
+          "visible": true,
+          "organization": "SUN",
+          "position": "Chroniqueur radio jeu vidéo et actualité numérique",
+          "location": "Nantes, France",
+          "date": "2012 à 2016",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": "https://lesonunique.com/"
+          }
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "experience": {
+      "id": "experience",
+      "name": "Expériences principales",
+      "items": [
+        {
+          "id": "r9hl896g7aqtingwdf94liot",
+          "visible": true,
+          "company": "Sfeir",
+          "position": "Ingénieur fullstack",
+          "location": "Luxembourg, Luxembourg",
+          "date": "Depuis janvier 2024",
+          "summary": "<p>Projet pour <strong>Post</strong>, équipe MyPost Courrier</p><p>• Maintenance et création d’applications et fonctionnalités pour les clients de Post sur le web (<a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.mypost.lu/\">https://www.mypost.lu/</a>) et l’application mobile (POST Colis &amp; Courrier)</p><p>• Principale fonctionnalité développée : recommandés électroniques</p><p>• Accessibilité de l’application mobile</p>",
+          "url": {
+            "label": "",
+            "href": "https://sfeir.com/fr/"
+          }
+        },
+        {
+          "id": "e0ai4vre0jookn8x5d573ppq",
+          "visible": true,
+          "company": "Ippon",
+          "position": "Ingénieur test",
+          "location": "Nantes, France",
+          "date": "Juillet à novembre 2023",
+          "summary": "<p>Projet pour la <strong>Fédération Française de Tennis</strong> : </p><p>• Responsable des tests de performance pour les projets B2C de la FFT.</p><p>• Rédaction de protocoles de tests.</p><p>• Mise en place de tests, exécutions et analyses.</p>",
+          "url": {
+            "label": "",
+            "href": "https://fr.ippon.tech/"
+          }
+        },
+        {
+          "id": "fgbxbyj3bju1nfphd1mnh2z5",
+          "visible": true,
+          "company": "Mia-Software",
+          "position": "Ingénieur concepteur",
+          "location": "Nantes, France",
+          "date": "Septembre 2009 - Janvier 2022",
+          "summary": "<p>Équipe conception des logiciels <strong>Mia-Discovery</strong> et Mia-Mining : </p><p>• Conception et développement de la future application front-end en React et spécification des API de communication avec le back-end.</p><p>• Définition d’architecture d’une nouvelle fonctionnalité du logiciel pour créer puis exécuter des requêtes et des graphes à l’aide d’un éditeur de type no-code</p><p>• Architecture et développement d’une fonctionnalité de calcul de carte proportionnelle, de reporting basé sur les matrices d’adjacence et autres composants.</p><p>• Suivi quotidien d’une personne en alternance pendant deux ans.</p><p>• Contribution aux projets open source EMF Facet et MoDisco chez Eclipse.</p>",
+          "url": {
+            "label": "",
+            "href": "https://www.soprasteria.com/"
+          }
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "references": {
+      "id": "references",
+      "name": "References",
+      "items": [],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "publications": {
+      "id": "publications",
+      "name": "Publications",
+      "items": [],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "certifications": {
+      "id": "certifications",
+      "name": "Formations",
+      "items": [
+        {
+          "id": "zgoxsuea2qyy08tkbyal6b6c",
+          "visible": true,
+          "name": "Accessibilité sur le web",
+          "issuer": "",
+          "date": "2024",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "f91vm3hzeohr0v7dv3z65cf5",
+          "visible": true,
+          "name": "Kubernetes",
+          "issuer": "",
+          "date": "2019",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "zj5966w8dyyu0rlrh29p8pgj",
+          "visible": true,
+          "name": "Eclipse RCP",
+          "issuer": "",
+          "date": "2013",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "l0b9eu0pzuepqjssb6npheln",
+          "visible": true,
+          "name": "Brevet d'Initiation Aéronautique",
+          "issuer": "",
+          "date": "2002",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    }
+  }
 }
