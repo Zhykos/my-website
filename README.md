@@ -18,6 +18,12 @@ Used locally with [Docker Compose](https://docs.docker.com/compose/).
 
 PDF generated and process controlled with [Playwright](https://playwright.dev/).
 
+To use, in the file `./resume/docker-compose.yml` replace `[your-server-ip]` by your actual IP local address of your machine.
+
+Then: `docker compose up -d`.
+
+Finally, go to http://localhost:3000/ and create an account.
+
 ## Complete resume
 
 Made with [RenderCV](https://rendercv.com/).
@@ -29,6 +35,10 @@ Then install with `pip install "rendercv[full]"` and regenerate files with:
 ```shell
 rendercv render "thomas-cicognani-complete-resume.yaml"
 ```
+
+## Blog
+
+Made with [Lume](https://lume.land/) and [Deno](https://deno.com/).
 
 ## Format and lint
 
