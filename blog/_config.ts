@@ -1,50 +1,53 @@
 import lume from "lume/mod.ts";
-import attributes from "lume/plugins/attributes.ts";
-import base_path from "lume/plugins/base_path.ts";
-import brotli from "lume/plugins/brotli.ts";
-import check_urls from "lume/plugins/check_urls.ts";
-import code_highlight from "lume/plugins/code_highlight.ts";
 import date from "lume/plugins/date.ts";
-import feed from "lume/plugins/feed.ts";
-import katex from "lume/plugins/katex.ts";
-import lightningcss from "lume/plugins/lightningcss.ts";
-import metas from "lume/plugins/metas.ts";
-import minify_html from "lume/plugins/minify_html.ts";
-import multilanguage from "lume/plugins/multilanguage.ts";
-import nav from "lume/plugins/nav.ts";
-import pagefind from "lume/plugins/pagefind.ts";
-import picture from "lume/plugins/picture.ts";
-import transform_images from "lume/plugins/transform_images.ts";
-import purgecss from "lume/plugins/purgecss.ts";
-//import relations from "lume/plugins/relations.ts";
-import robots from "lume/plugins/robots.ts";
-import sitemap from "lume/plugins/sitemap.ts";
-import tailwindcss from "lume/plugins/tailwindcss.ts";
 import postcss from "lume/plugins/postcss.ts";
+import codeHighlight from "lume/plugins/code_highlight.ts";
+import basePath from "lume/plugins/base_path.ts";
+import slugifyUrls from "lume/plugins/slugify_urls.ts";
+import resolveUrls from "lume/plugins/resolve_urls.ts";
+import decapCMS from "lume/plugins/decap_cms.ts";
+import pageFind from "lume/plugins/pagefind.ts";
+import sitemap from "lume/plugins/sitemap.ts";
+import feed from "lume/plugins/feed.ts";
+import nunjucks from "lume/plugins/nunjucks.ts";
 
-const site = lume();
+const site = lume({
+  location: new URL("https://zhykos.fr/"),
+});
 
-site.use(attributes());
-site.use(base_path());
-site.use(brotli());
-site.use(check_urls());
-site.use(code_highlight());
-site.use(date());
-site.use(feed());
-site.use(katex());
-site.use(lightningcss());
-site.use(metas());
-site.use(minify_html());
-site.use(multilanguage({ languages: ["fr", "en"] }));
-site.use(nav());
-site.use(pagefind());
-site.use(picture());
-site.use(transform_images());
-site.use(purgecss());
-//site.use(relations()); // https://lume.land/plugins/relations/
-site.use(robots());
-site.use(sitemap());
-site.use(tailwindcss());
-site.use(postcss());
+site
+  .ignore("README.md")
+  .copy("img")
+  .use(postcss())
+  .use(date())
+  .use(codeHighlight())
+  .use(basePath())
+  .use(sitemap())
+  .use(nunjucks())
+  .use(
+    pageFind({
+      ui: {
+        resetStyles: false,
+        highlightParam: "highlight",
+      },
+    }),
+  )
+  .use(slugifyUrls({ alphanumeric: false }))
+  .use(
+    feed({
+      output: ["/feed.json", "/feed.xml"],
+      query: "type=posts",
+      info: {
+        title: "=site.title",
+        description: "=site.description",
+      },
+      items: {
+        title: "=title",
+        content: "$.post-body",
+      },
+    }),
+  )
+  .use(resolveUrls())
+  .use(decapCMS({ identity: "netlify" }));
 
 export default site;

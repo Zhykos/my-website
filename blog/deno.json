@@ -1,15 +1,11 @@
 {
   "imports": {
-    "lume/": "https://deno.land/x/lume@v2.5.3/"
+    "lume/": "https://deno.land/x/lume@v2.1.4/"
   },
+  "lock": false,
   "tasks": {
-    "lume": "cp ../assets/css/style.css style.css && echo \"import 'lume/cli.ts'\" | deno run -A -",
     "build": "deno task lume",
-    "serve": "deno task lume -s"
-  },
-  "compilerOptions": {
-    "types": [
-      "lume/types.ts"
-    ]
+    "serve": "deno task lume -s",
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -"
   }
 }
