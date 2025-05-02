@@ -9,3 +9,4 @@ coverage/
 .DS_Store
 *resume*.pdf
 /complete-resume/rendercv_output/
+/www/
