@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:3000/</loc>
+    <lastmod>1984-01-24T08:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:3000/about/</loc>
+    <lastmod>1984-01-24T08:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:3000/admin/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/posts/firstpost/</loc>
+    <lastmod>2018-05-01T00:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:3000/posts/fourthpost/</loc>
+    <lastmod>2018-09-30T00:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:3000/posts/secondpost/</loc>
+    <lastmod>2018-07-04T00:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:3000/posts/thirdpost/</loc>
+    <lastmod>2018-08-24T00:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:3000/tags/</loc>
+    <lastmod>1984-01-24T08:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:3000/www/assets/vendor/owl.carousel/readme/</loc>
+    <lastmod>2025-05-02T10:46:53.230Z</lastmod>
+  </url>
+</urlset>
