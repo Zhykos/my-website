@@ -15,7 +15,7 @@ cv:
       - J’aime aussi travailler en équipe, partager mes connaissances, monter en compétence et apprendre de nouvelles technologies via des formations au service du produit et des clients. Je porte alors une attention particulière au Craft.
       - Je mets également en pratique ces connaissances dans le monde de l’Open Source. J’apprécie ainsi être au service des autres que ce soit professionnellement ou personnellement. Je suis dans le monde associatif depuis 2008 où j’ai notamment participé à une émission de radio et été rédacteur web. Enfin, j’ai aussi eu l’opportunité de m’engager pendant deux ans dans une association de secourisme.
 
-    Education:
+    Scolarité:
       - institution: Université des Sciences de Nantes, France
         area: Master ALMA, option architecture distribuée
         degree: M
@@ -26,6 +26,10 @@ cv:
         degree: DUT
         start_date: 2004-09
         end_date: 2006-06
+      - institution: Lycée François 1er de Vitry-le-François, France
+        area: BAC S, option Sciences de l'ingénieur
+        start_date: 2001-09
+        end_date: 2004-06
 
     Autres formations:
       - bullet: "2024 : formation accessibilité web par Access 42, 3 jours"
@@ -182,43 +186,3 @@ cv:
       - bullet: "Équipier secouriste (PSE2) : UNASS Loire-Atlantique d'octobre 2021 à août 2023"
       - bullet: "Chroniqueur et réalisateur radio : SUN Radio - Émission sur le jeu vidéo et le numérique. Entre 2012 et 2016."
       - bullet: "Chroniques et articles sur le jeu vidéo entre 2008 et 2021, sur divers sites comme GameSideStory.com"
-
-design:
-  theme: classic
-  font: Source Sans 3
-  font_size: 10pt
-  page_size: letterpaper
-  color: '#004f90'
-  disable_external_link_icons: false
-  disable_page_numbering: false
-  page_numbering_style: NAME - Page PAGE_NUMBER de TOTAL_PAGES
-  disable_last_updated_date: false
-  last_updated_date_style: Mise à jour TODAY
-  header_font_size: 30 pt
-  text_alignment: justified
-  seperator_between_connections: ''
-  use_icons_for_connections: true
-  margins:
-    page:
-      top: 2 cm
-      bottom: 2 cm
-      left: 2 cm
-      right: 2 cm
-    section_title:
-      top: 0.3 cm
-      bottom: 0.2 cm
-    entry_area:
-      left_and_right: 0.2 cm
-      vertical_between: 0.2 cm
-      date_and_location_width: 4.5 cm
-      education_degree_width: 1 cm
-    highlights_area:
-      top: 0.10 cm
-      left: 0.4 cm
-      vertical_between_bullet_points: 0.10 cm
-    header:
-      vertical_between_name_and_connections: 0.3 cm
-      bottom: 0.3 cm
-      horizontal_between_connections: 0.5 cm
-  show_timespan_in:
-    - Experience
