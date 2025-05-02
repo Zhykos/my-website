@@ -54,7 +54,7 @@ jobs:
       working-directory: complete-resume
       run: |
         pip install "rendercv[full]"
-        rendercv render "thomas-cicognani-complete-resume.yaml"
+        rendercv render -nohtml -nopng -nomd "thomas-cicognani-complete-resume.yaml"
         cp rendercv_output/Thomas_Cicognani_CV.pdf ../www/files/thomas-cicognani-complete-resume.pdf
 
     - name: Replace IP address in files
