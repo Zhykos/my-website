@@ -13,44 +13,47 @@ import feed from "lume/plugins/feed.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
 
 const site = lume({
-  location: new URL("https://www.zhykos.fr/"),
+    location: new URL("https://www.zhykos.fr/"),
 });
 
-site
-  .ignore("README.md")
-  .ignore("BACKUP")
-  .ignore("complete-resume")
-  .ignore("resume")
-  .ignore("www")
-  .ignore("_site")
-  .copy("img")
-  .use(tailwindcss())
-  .use(postcss())
-  .use(date())
-  .use(codeHighlight())
-  .use(basePath())
-  .use(sitemap())
-  .use(nunjucks())
-  .use(pageFind({
-    ui: {
-      resetStyles: false,
-      highlightParam: "highlight",
-    },
-  }))
-  .use(slugifyUrls({ alphanumeric: false }))
-  .use(feed({
-    output: ["/feed.json", "/feed.xml"],
-    query: "type=posts",
-    info: {
-      title: "=site.title",
-      description: "=site.description",
-    },
-    items: {
-      title: "=title",
-      content: "$.post-body",
-    },
-  }))
-  .use(resolveUrls())
-  .use(decapCMS({ identity: "netlify" }));
+site.ignore("README.md")
+    .ignore("BACKUP")
+    .ignore("complete-resume")
+    .ignore("resume")
+    .ignore("www")
+    .ignore("_site")
+    .copy("img")
+    .use(tailwindcss())
+    .use(postcss())
+    .use(date())
+    .use(codeHighlight())
+    .use(basePath())
+    .use(sitemap())
+    .use(nunjucks())
+    .use(
+        pageFind({
+            ui: {
+                resetStyles: false,
+                highlightParam: "highlight",
+            },
+        }),
+    )
+    .use(slugifyUrls({ alphanumeric: false }))
+    .use(
+        feed({
+            output: ["/feed.json", "/feed.xml"],
+            query: "type=posts",
+            info: {
+                title: "=site.title",
+                description: "=site.description",
+            },
+            items: {
+                title: "=title",
+                content: "$.post-body",
+            },
+        }),
+    )
+    .use(resolveUrls())
+    .use(decapCMS({ identity: "netlify" }));
 
 export default site;

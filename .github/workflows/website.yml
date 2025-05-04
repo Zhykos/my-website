@@ -27,9 +27,8 @@ jobs:
     - name: Install Deno
       run: curl -fsSL https://deno.land/install.sh | sh
 
-    - name: Deno lint code
-      run: |
-        echo "TODO when vendor are deleted"
+    - name: Deno check format code
+      run: /home/runner/.deno/bin/deno run -A npm:@biomejs/biome format
 
     - name: Install Python
       run: |

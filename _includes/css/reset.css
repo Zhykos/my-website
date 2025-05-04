@@ -16,7 +16,7 @@ body {
   background-color: var(--white);
 
   /** Pagefind variables */
-  --pagefind-ui-scale: .8;
+  --pagefind-ui-scale: 0.8;
   --pagefind-ui-primary: var(--darkgray);
   --pagefind-ui-text: var(--darkgray);
   --pagefind-ui-background: var(--white);
@@ -58,7 +58,8 @@ table {
 
 pre,
 code {
-  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  font-family:
+    Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
   line-height: 1.5;
   font-size: 1rem;
 }

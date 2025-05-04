@@ -4,11 +4,11 @@
     "daisyui": "npm:daisyui@^5.0.35",
     "lume/": "https://deno.land/x/lume@v2.5.3/"
   },
-	"nodeModulesDir": "auto",
-	"tasks": {
-	"build": "deno task lume",
+  "nodeModulesDir": "auto",
+  "tasks": {
+    "build": "deno task lume",
     "serve": "deno task lume -s",
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
-		"format": "deno run -A npm:@biomejs/biome format --write"
-	}
+    "format": "deno run -A npm:@biomejs/biome format --write"
+  }
 }

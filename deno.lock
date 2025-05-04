@@ -28,6 +28,7 @@
     "jsr:@std/toml@^1.0.2": "1.0.2",
     "jsr:@std/yaml@1.0.5": "1.0.5",
     "jsr:@std/yaml@^1.0.5": "1.0.5",
+    "npm:@biomejs/biome@*": "1.9.4",
     "npm:@biomejs/biome@^1.9.4": "1.9.4",
     "npm:@js-temporal/polyfill@0.4.4": "0.4.4",
     "npm:autoprefixer@10.4.19": "10.4.19_postcss@8.4.38",
