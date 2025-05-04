@@ -1,5 +1,6 @@
 import lume from "lume/mod.ts";
 import date from "lume/plugins/date.ts";
+import tailwindcss from "lume/plugins/tailwindcss.ts";
 import postcss from "lume/plugins/postcss.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
 import basePath from "lume/plugins/base_path.ts";
@@ -18,7 +19,12 @@ const site = lume({
 site
   .ignore("README.md")
   .ignore("BACKUP")
+  .ignore("complete-resume")
+  .ignore("resume")
+  .ignore("www")
+  .ignore("_site")
   .copy("img")
+  .use(tailwindcss())
   .use(postcss())
   .use(date())
   .use(codeHighlight())
