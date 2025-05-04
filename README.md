@@ -40,8 +40,8 @@ rendercv render "thomas-cicognani-complete-resume.yaml"
 
 Made with [Lume](https://lume.land/) and [Deno](https://deno.com/).
 
-## Format and lint
+## Format and lint for Typescript and CSS
 
 Uses [Biome](https://biomejs.dev/).
 
-A [Deno](https://deno.com/) shortcut is available, so you can run `deno task format` (or check `deno.json` for the command line).
+A [Deno](https://deno.com/) shortcut is available, so you can run `deno task check` (or check `deno.json` for the command line).

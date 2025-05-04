@@ -28,7 +28,7 @@ jobs:
       run: curl -fsSL https://deno.land/install.sh | sh
 
     - name: Deno check format code
-      run: /home/runner/.deno/bin/deno run -A npm:@biomejs/biome format
+      run: /home/runner/.deno/bin/deno run -A npm:@biomejs/biome check
 
     - name: Install Python
       run: |
