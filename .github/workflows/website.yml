@@ -39,16 +39,13 @@ jobs:
     - name: Initialize www production directory
       run: |
         mkdir www
-        cp favicon.png www/
-        cp index.html www/
-        cp -R assets www/
-        cp -R files www/
+        mkdir www/files
 
-    - name: Build blog
-      working-directory: blog
-      run: |
-        /home/runner/.deno/bin/deno task build
-        cp -R _site ../www/blog
+    #- name: Build blog
+    #  working-directory: blog
+    #  run: |
+    #    /home/runner/.deno/bin/deno task build
+    #    cp -R _site ../www/blog
 
     - name: Build complete resume
       working-directory: complete-resume
