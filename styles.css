@@ -10,7 +10,7 @@
 @import "css/tag.css";
 */
 
-/*@tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities;*/
+@tailwind utilities;
 @plugin "daisyui";

@@ -2,27 +2,34 @@
 layout: layouts/home.njk
 menu:
   visible: true
-  title: Home
+  title: Accueil
   order: 0
 ---
 
-{% set postslist = search.pages("type=posts", "date=desc", 3) %}
-<h1>
-    Latest
-    {% if postslist.length == 1 %}
-        Post
-    {% else %}
-        {{ postslist.length }} Posts
-    {% endif %}
-</h1>
-{% include "templates/postslist.njk" %}
-<hr />
-{% set postslist = search.pages("pinned=true") %}
-{% if postslist.length %}
-    <h2>Pinned Post:</h2>
-    {% include "templates/postslist.njk" %}
-    <hr />
-{% endif %}
-<p>
-    More posts can be found in <a href="/posts/">the archive</a>.
-</p>
+<div class="container">
+<h1><a href="index.html" class="text-lg">Thomas Cicognani</a></h1>
+                <h2>
+                    Je suis <span class="typing" style="color: #12d640"></span>
+                </h2>
+
+<div class="social-links">
+                    <a
+                        href="https://www.linkedin.com/in/thomas-cicognani"
+                        target="_blank"
+                        class="linkedin"
+                        ><i class="bx bxl-linkedin"></i
+                    ></a>
+                    <a
+                        href="https://www.github.com/zhykos"
+                        target="_blank"
+                        class="github"
+                        ><i class="bx bxl-github"></i
+                    ></a>
+                    <a
+                        href="mailto:contact@thomascicognani.mailer.me"
+                        target="_blank"
+                        class="gmail"
+                        ><i class="bx bx-envelope"></i
+                    ></a>
+                </div>
+</div>
