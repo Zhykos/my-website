@@ -27,13 +27,18 @@ jobs:
     - name: Install Deno
       run: curl -fsSL https://deno.land/install.sh | sh
 
-    - name: Deno check format code
-      run: /home/runner/.deno/bin/deno run -A npm:@biomejs/biome check
-
     - name: Install Python
       run: |
         sudo apt update
         sudo apt install -y python3-pip
+
+    - name: "Check format code: TypeScript and CSS"
+      run: /home/runner/.deno/bin/deno run -A npm:@biomejs/biome check
+
+    - name: "Check format code: Nunjuncks"
+      run: |
+        pip install djlint
+        djlint . --check --lint
 
     - name: Initialize www production directory
       run: |
