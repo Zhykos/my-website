@@ -40,8 +40,18 @@ rendercv render "thomas-cicognani-complete-resume.yaml"
 
 Made with [Lume](https://lume.land/) and [Deno](https://deno.com/).
 
-## Format and lint for Typescript and CSS
+## Formatters and linters
+
+To verify and format the project files, a [Deno](https://deno.com/) shortcut is available, so you can run `deno task check` (or see `deno.json` for the detailed command line).
+
+### For Typescript and CSS
 
 Uses [Biome](https://biomejs.dev/).
 
-A [Deno](https://deno.com/) shortcut is available, so you can run `deno task check` (or check `deno.json` for the command line).
+### For Nunjuncks
+
+Uses [djLint](https://www.djlint.com/).
+
+Needs Python: https://www.python.org/
+
+Then run `pip install djlint`. Maybe you'll need to add djlint to PATH.
