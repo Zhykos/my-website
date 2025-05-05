@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
+    <link rel="alternate" href="/feed.json" type="application/json" title="{{ site.title }}">
+  </head>
+  <body>
+
+<nav class="navbar bg-base-100 shadow-sm">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <menu>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        {%- for entry in search.pages("menu.visible=true", "menu.order") %}
+        <li>
+          <a href="{{ entry.url }}"{% if entry.url == url %} aria-current="page"{% endif %}>
+            {{ entry.menu.title or entry.title }}
+          </a>
+        </li>
+      {%- endfor %}
+      </ul>
+      </menu>
+    </div>
+    <a class="btn btn-ghost text-xl" href="/">{{ site.title }}</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+  <menu>
+    <ul class="menu menu-horizontal px-1">
+    {%- for entry in search.pages("menu.visible=true", "menu.order") %}
+        <li>
+          <a href="{{ entry.url }}"{% if entry.url == url %} aria-current="page"{% endif %}>
+            {{ entry.menu.title or entry.title }}
+          </a>
+        </li>
+      {%- endfor %}
+    </ul>
+    </menu>
+  </div>
+  <div class="navbar-end">
+          <div class="navbar-search">
+        <div id="search"></div>
+      </div>
+
+  </div>
+</nav>
+
+    <main class="{{ bodyClass }}">
+      {{ content | safe }}
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: {{ url }} -->
+  </body>
+</html>

@@ -68,9 +68,7 @@
         "size": 12,
         "family": "PT Sans",
         "subset": "latin",
-        "variants": [
-          "regular"
-        ]
+        "variants": ["regular"]
       },
       "hideIcons": false,
       "lineHeight": 1.4,
