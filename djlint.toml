@@ -1,0 +1,5 @@
+exclude="BACKUP"
+extension="njk"
+indent=4
+profile="nunjucks"
+close_void_tags=true
