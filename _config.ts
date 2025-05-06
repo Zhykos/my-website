@@ -11,9 +11,15 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
+import icons from "lume/plugins/icons.ts";
 
 const site = lume({
     location: new URL("https://www.zhykos.fr/"),
+    watcher: {
+        ignore: [
+          "./node_modules/"
+        ],
+      }
 });
 
 site.ignore("README.md")
@@ -21,12 +27,6 @@ site.ignore("README.md")
     .ignore("complete-resume")
     .ignore("resume")
     .ignore("www")
-    .ignore("_site")
-    .ignore("/node_modules/**")
-    .ignore(".zed")
-    .ignore(".vscode")
-    .ignore(".github")
-    .ignore(".git")
     .copy("img")
     .use(tailwindcss())
     .use(postcss())
@@ -59,6 +59,7 @@ site.ignore("README.md")
         }),
     )
     .use(resolveUrls())
-    .use(decapCMS({ identity: "netlify" }));
+    .use(decapCMS({ identity: "netlify" }))
+    .use(icons());
 
 export default site;
