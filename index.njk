@@ -5,31 +5,55 @@ menu:
   title: Accueil
   order: 0
 ---
-
-<div class="container">
-<h1><a href="index.html" class="text-lg">Thomas Cicognani</a></h1>
-                <h2>
-                    Je suis <span class="typing" style="color: #12d640"></span>
-                </h2>
-
-<div class="social-links">
-                    <a
+<div class="hero bg-base-200 min-h-screen">
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <h1 class="text-5xl font-bold">Thomas Cicognani</h1>
+      <p class="py-6">
+        Je suis <span style="color: #12d640">développeur fullstack</span><br />
+        <span style="color: #12d640">entousiaste de Deno</span><br />
+        <span style="color: #12d640">pour l'Open source</span><br />
+        <span style="color: #12d640">chroniqueur jeux vidéo à temps perdu</span><br />
+      </p>
+      <div>
+      <div class="avatar">
+  <div class="ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2 mx-4">
+    <a
                         href="https://www.linkedin.com/in/thomas-cicognani"
                         target="_blank"
                         class="linkedin"
-                        ><i class="bx bxl-linkedin"></i
+                        ><img src="{{ "linkedin" | icon("boxicons", "logos") }}"/></i
                     ></a>
-                    <a
+  </div>
+</div>
+
+<div class="avatar">
+<div class="ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2 mx-4">
+    <a
                         href="https://www.github.com/zhykos"
                         target="_blank"
                         class="github"
-                        ><i class="bx bxl-github"></i
-                    ></a>
-                    <a
+                        ><img src="{{ "github" | icon("boxicons", "logos") }}"/></a>
+  </div>
+</div>
+
+<div class="avatar">
+<div class="ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2 mx-4">
+    <a
                         href="mailto:contact@thomascicognani.mailer.me"
                         target="_blank"
                         class="gmail"
-                        ><i class="bx bx-envelope"></i
-                    ></a>
-                </div>
+                        >
+                        <img src="{{ "envelope" | icon("boxicons", "regular") }}"/>
+                        </a>
+  </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+</div>
 </div>

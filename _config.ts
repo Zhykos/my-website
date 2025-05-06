@@ -11,6 +11,7 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
+import icons from "lume/plugins/icons.ts";
 
 const site = lume({
     location: new URL("https://www.zhykos.fr/"),
@@ -58,6 +59,7 @@ site.ignore("README.md")
         }),
     )
     .use(resolveUrls())
-    .use(decapCMS({ identity: "netlify" }));
+    .use(decapCMS({ identity: "netlify" }))
+    .use(icons());
 
 export default site;
