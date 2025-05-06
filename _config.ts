@@ -4,6 +4,7 @@ import codeHighlight from "lume/plugins/code_highlight.ts";
 import date from "lume/plugins/date.ts";
 import decapCMS from "lume/plugins/decap_cms.ts";
 import feed from "lume/plugins/feed.ts";
+import icons from "lume/plugins/icons.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
 import pageFind from "lume/plugins/pagefind.ts";
 import postcss from "lume/plugins/postcss.ts";
@@ -11,15 +12,12 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
-import icons from "lume/plugins/icons.ts";
 
 const site = lume({
     location: new URL("https://www.zhykos.fr/"),
     watcher: {
-        ignore: [
-          "./node_modules/"
-        ],
-      }
+        ignore: ["./node_modules/"],
+    },
 });
 
 site.ignore("README.md")

@@ -10,6 +10,8 @@
 @import "css/tag.css";
 */
 
+@import "css/site.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
