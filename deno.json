@@ -9,6 +9,6 @@
     "build": "deno task lume",
     "serve": "deno task lume -s",
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
-    "check": "deno run -A npm:@biomejs/biome check --write && /Users/zhykos/Library/Python/3.12/bin/djlint ."
+    "check": "deno run -A npm:@biomejs/biome check --write && /Users/zhykos/Library/Python/3.12/bin/djlint . --reformat --lint"
   }
 }
