@@ -1,0 +1,184 @@
+---
+layout: layouts/page.njk
+---
+
+<div class="breadcrumbs text-sm">
+    <ul>
+        <li>
+            <a href="/">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     class="h-4 w-4 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z">
+                    </path>
+                </svg>
+                Accueil
+            </a>
+        </li>
+        <li>
+            <a href="/pro">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     class="h-4 w-4 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z">
+                    </path>
+                </svg>
+                Mon milieu professionnel
+            </a>
+        </li>
+        <li>
+            <a href="/about">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     class="h-4 w-4 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                    </path>
+                </svg>
+                À propos
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="divider divider-start">À propos</div>
+<div class="columns-1 sm:columns-2 gap-8">
+    <img src="/img/me.webp"
+         class="aspect-square"
+         height="100"
+         width="100"
+         alt="" />
+    <div>
+        <p>
+            Avec 13 ans d’expérience dans l’architecture
+            logicielle et l’analyse de Systèmes d’Information de
+            divers clients, j’ai acquis une forte exigence de
+            qualité afin de livrer des produits les plus stables
+            possibles. J’aime aussi travailler en équipe,
+            partager mes connaissances, monter en compétence et
+            apprendre de nouvelles technologies via des
+            formations au service du produit et des clients. Je
+            mets également en pratique ces connaissances dans le
+            monde de l’Open Source.
+        </p>
+        <p>
+            Je porte aussi une très grande importance à des
+            techniques comme le Domain-Driven Design,
+            l’architecture hexagonale, la qualité et l’agilité
+            qui apporte une certaine rigueur et un cadre sein
+            dans une équipe afin de produire le plus
+            efficacement et qualitativement possible. Depuis
+            2022, je travaille directement avec des clients afin
+            d'acquérir de nouvelles connaissances et partager
+            mon expérience.
+        </p>
+        <p>
+            J’apprécie également être au service des autres que
+            ce soit professionnellement ou personnellement. J'ai
+            été dans le monde associatif depuis 2008 où j’ai
+            notamment participé à une émission de radio, été
+            rédacteur web ou Équipier secouriste.
+        </p>
+        <div>
+            <div>
+                <ul>
+                    <li class="mb-2">
+                        <img height="24"
+                             width="24"
+                             src="{{ "chevron-right" | icon('boxicons', 'regular') }}"
+                             alt=""
+                             class="about-point-list" />
+                        <strong>Année de naissance :</strong>
+                        1986
+                    </li>
+                    <li class="mb-2">
+                        <img height="24"
+                             width="24"
+                             src="{{ "chevron-right" | icon('boxicons', 'regular') }}"
+                             alt=""
+                             class="about-point-list" />
+                        <strong>Début professionnel :</strong>
+                        2009
+                    </li>
+                    <li class="mb-2">
+                        <img height="24"
+                             width="24"
+                             src="{{ "chevron-right" | icon('boxicons', 'regular') }}"
+                             alt=""
+                             class="about-point-list" />
+                        <strong>Région :</strong> Luxembourg
+                    </li>
+                    <li class="mb-2">
+                        <img height="24"
+                             width="24"
+                             src="{{ "chevron-right" | icon('boxicons', 'regular') }}"
+                             alt=""
+                             class="about-point-list" />
+                        <strong>Email :</strong>
+                        contact@thomascicognani.mailer.me
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divider divider-start">Intérêts</div>
+<div class="flex flex-wrap gap-8">
+    <div class="flex gap-2">
+        <img height="24"
+             width="24"
+             src="{{ "Business/global-line" | icon("remix") }}"
+             alt="" />
+        <h3>Développement fullstack</h3>
+    </div>
+    <div class="flex gap-2">
+        <img height="24"
+             width="24"
+             src="{{ "System/settings-5-line" | icon("remix") }}"
+             alt="" />
+        <h3>Software craftmanship</h3>
+    </div>
+    <div class="flex gap-2">
+        <img height="24"
+             width="24"
+             src="{{ "Health & Medical/test-tube-line" | icon("remix") }}"
+             alt="" />
+        <h3>Tests</h3>
+    </div>
+    <div class="flex gap-2">
+        <img height="24"
+             width="24"
+             src="{{ "User & Faces/bear-smile-line" | icon("remix") }}"
+             alt="" />
+        <h3>Deno</h3>
+    </div>
+    <div class="flex gap-2">
+        <img height="24"
+             width="24"
+             src="{{ "Development/code-s-slash-fill" | icon("remix") }}"
+             alt="" />
+        <h3>Software Engineering</h3>
+    </div>
+    <div class="flex gap-2">
+        <img height="24"
+             width="24"
+             src="{{ "User & Faces/spy-line" | icon("remix") }}"
+             alt="" />
+        <h3>OpenTelemetry</h3>
+    </div>
+    <div class="flex gap-2">
+        <img height="24"
+             width="24"
+             src="{{ "Finance/wallet-3-line" | icon("remix") }}"
+             alt="" />
+        <h3>Open source</h3>
+    </div>
+    <div class="flex gap-2">
+        <img height="24"
+             width="24"
+             src="{{ "Map/flight-land-line" | icon("remix") }}"
+             alt="" />
+        <h3>Éthique</h3>
+    </div>
+</div>
