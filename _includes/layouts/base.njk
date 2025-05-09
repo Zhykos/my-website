@@ -48,14 +48,22 @@
             <div class="navbar-center hidden lg:flex">
                 <menu>
                     <ul class="menu menu-horizontal px-1">
-                        {%- for entry in search.pages("menu.visible=true", "menu.order") %}
-                            <li>
-                                <a href="{{ entry.url }}"
-                                   {% if entry.url == url %}aria-current="page"{% endif %}>
-                                    {{ entry.menu.title or entry.title }}
-                                </a>
-                            </li>
-                        {%- endfor %}
+                        <li>
+                            <details>
+                                <summary>Mon milieu professionnel</summary>
+                                <ul class="p-2">
+                                    <li>
+                                        <a href="/about">À propos</a>
+                                    </li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <a>Mon milieu personnel</a>
+                        </li>
+                        <li>
+                            <a>Mon blog</a>
+                        </li>
                     </ul>
                 </menu>
             </div>
