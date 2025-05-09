@@ -58,6 +58,23 @@ site.ignore("README.md")
     )
     .use(resolveUrls())
     .use(decapCMS({ identity: "netlify" }))
-    .use(icons());
+    .use(
+        icons({
+            catalogs: [
+                {
+                    id: "boxicons",
+                    src: "https://cdn.jsdelivr.net/npm/boxicons@2.1.4/svg/{variant}-{name}.svg",
+                    variants: [
+                        { id: "regular", path: "regular/bx" },
+                        { id: "logos", path: "logos/bxl" },
+                    ],
+                },
+                {
+                    id: "remix",
+                    src: "https://cdn.jsdelivr.net/npm/remixicon@4.6.0/icons/{name}.svg",
+                },
+            ],
+        }),
+    );
 
 export default site;
