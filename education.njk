@@ -3,144 +3,98 @@ layout: layouts/page.njk
 ---
 
 {% import "macro-breadcrumbs.njk" as breadcrumbs %}
-{{ breadcrumbs.breadcrumbs3('Mon milieu professionnel', '/summary', 'Scolarité', '/education') }}
-<div class="divider divider-start">Scolarité et formations</div>
-<div class="columns-1 sm:columns-2 gap-8">
-    <img src="/img/me.webp"
-         class="aspect-square"
-         height="100"
-         width="100"
-         alt="" />
-    <div>
+{{ breadcrumbs.breadcrumbs3('Mon milieu professionnel', '/summary', 'Scolarité et formations', '/education') }}
+<div class="divider divider-start">Scolarité</div>
+<div class="gap-8 flex flex-wrap">
+    <div class="flex-1">
+        <img src="/img/education/lycee.webp" alt="" width="300" height="100" />
         <p>
-            Avec 13 ans d’expérience dans l’architecture
-            logicielle et l’analyse de Systèmes d’Information de
-            divers clients, j’ai acquis une forte exigence de
-            qualité afin de livrer des produits les plus stables
-            possibles. J’aime aussi travailler en équipe,
-            partager mes connaissances, monter en compétence et
-            apprendre de nouvelles technologies via des
-            formations au service du produit et des clients. Je
-            mets également en pratique ces connaissances dans le
-            monde de l’Open Source.
+            <em>Lycée François 1er de Vitry-le-François</em>
         </p>
+        <h5>2001 à 2004</h5>
+        <h6>Bac S</h6>
+        <ul>
+            <li>Option Sciences de l'ingénieur</li>
+        </ul>
+    </div>
+    <div class="flex-1">
+        <img src="/img/education/iut.webp" alt="" width="300" height="100" />
         <p>
-            Je porte aussi une très grande importance à des
-            techniques comme le Domain-Driven Design,
-            l’architecture hexagonale, la qualité et l’agilité
-            qui apporte une certaine rigueur et un cadre sein
-            dans une équipe afin de produire le plus
-            efficacement et qualitativement possible. Depuis
-            2022, je travaille directement avec des clients afin
-            d'acquérir de nouvelles connaissances et partager
-            mon expérience.
+            <em>IUT de Reims</em>
         </p>
+        <h5>2004 à 2006</h5>
+        <h6>DUT informatique</h6>
+        <ul>
+            <li>Option Imagerie numérique</li>
+        </ul>
+    </div>
+    <div class="flex-1">
+        <img src="/img/education/fac.webp" alt="" width="300" height="100" />
         <p>
-            J’apprécie également être au service des autres que
-            ce soit professionnellement ou personnellement. J'ai
-            été dans le monde associatif depuis 2008 où j’ai
-            notamment participé à une émission de radio, été
-            rédacteur web ou Équipier secouriste.
+            <em>Faculté des Sciences et des techniques de
+            Nantes</em>
         </p>
-        <div>
-            <div>
-                <ul>
-                    <li class="mb-2">
-                        <img height="24"
-                             width="24"
-                             src="{{ "chevron-right" | icon('boxicons', 'regular') }}"
-                             alt=""
-                             class="about-point-list" />
-                        <strong>Année de naissance :</strong>
-                        1986
-                    </li>
-                    <li class="mb-2">
-                        <img height="24"
-                             width="24"
-                             src="{{ "chevron-right" | icon('boxicons', 'regular') }}"
-                             alt=""
-                             class="about-point-list" />
-                        <strong>Début professionnel :</strong>
-                        2009
-                    </li>
-                    <li class="mb-2">
-                        <img height="24"
-                             width="24"
-                             src="{{ "chevron-right" | icon('boxicons', 'regular') }}"
-                             alt=""
-                             class="about-point-list" />
-                        <strong>Région :</strong> Luxembourg
-                    </li>
-                    <li class="mb-2">
-                        <img height="24"
-                             width="24"
-                             src="{{ "chevron-right" | icon('boxicons', 'regular') }}"
-                             alt=""
-                             class="about-point-list" />
-                        <strong>Email :</strong>
-                        contact@thomascicognani.mailer.me
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <h5>2006 à 2009</h5>
+        <h6>Master informatique</h6>
+        <ul>
+            <li>
+                Master ALMA, architectures logicielles et
+                systèmes distribués
+            </li>
+        </ul>
     </div>
 </div>
-<div class="divider divider-start">Intérêts</div>
-<div class="flex flex-wrap gap-8">
-    <div class="flex gap-2">
-        <img height="24"
-             width="24"
-             src="{{ "Business/global-line" | icon("remix") }}"
-             alt="" />
-        <h3>Développement fullstack</h3>
+<div class="divider divider-start">Autres formations et diplômes</div>
+<div class="gap-8 flex flex-wrap">
+    <div class="flex-1">
+        <img src="/img/certification/acf.webp" alt="" width="300" height="100" />
+        <a href="https://ac-francois1er.fr/"
+           target="_blank"
+           title="Site de l'Aéroclub François 1er">Brevet d’Initiation Aéronautique (2002)</a>
     </div>
-    <div class="flex gap-2">
-        <img height="24"
-             width="24"
-             src="{{ "System/settings-5-line" | icon("remix") }}"
-             alt="" />
-        <h3>Software craftmanship</h3>
+    <div class="flex-1">
+        <img src="/img/education/coventry-university.webp"
+             alt=""
+             width="300"
+             height="100" />
+        <a href="https://www.coventry.ac.uk/"
+           target="_blank"
+           title="Site de la faculté">Modélisation 3D de la faculté de Coventry (stage -
+        2006)</a>
     </div>
-    <div class="flex gap-2">
-        <img height="24"
-             width="24"
-             src="{{ "Health & Medical/test-tube-line" | icon("remix") }}"
-             alt="" />
-        <h3>Tests</h3>
+    <div class="flex-1">
+        <img src="/img/certification/mia.webp" alt="" width="300" height="100" />
+        <a href="https://www.soprasteria.com/fr"
+           target="_blank"
+           title="Site de Sopra-Steria qui a racheté Mia-Software">API entre Smalltalk et Java (stage -
+        2009)</a>
     </div>
-    <div class="flex gap-2">
-        <img height="24"
-             width="24"
-             src="{{ "User & Faces/bear-smile-line" | icon("remix") }}"
-             alt="" />
-        <h3>Deno</h3>
+    <div class="flex-1">
+        <img src="/img/certification/eclipse.webp" alt=""width="300" height="100" />
+        <a href="https://www.eni-service.fr/"
+           target="_blank"
+           title="Site de l'ENI qui nous a donné la formation">Formation Eclipse RCP (2013)</a>
     </div>
-    <div class="flex gap-2">
-        <img height="24"
-             width="24"
-             src="{{ "Development/code-s-slash-fill" | icon("remix") }}"
-             alt="" />
-        <h3>Software Engineering</h3>
+    <div class="flex-1">
+        <img src="/img/certification/kubernetes.webp"
+             alt=""
+             width="300"
+             height="100" />
+        <a href="https://www.liksi.fr/"
+           target="_blank"
+           title="Site de Liksi qui nous a donné la formation">Formation Kubernetes (2019)</a>
     </div>
-    <div class="flex gap-2">
-        <img height="24"
-             width="24"
-             src="{{ "User & Faces/spy-line" | icon("remix") }}"
-             alt="" />
-        <h3>OpenTelemetry</h3>
+    <div class="flex-1">
+        <img src="/img/certification/unass.webp" alt="" width="300" height="100" />
+        <a href="https://www.unass.fr/unass-loire-atlantique"
+           target="_blank"
+           title="Site de l'UNASS Loire-Atlantique">Secouriste (PSE 1), puis Équipier secouriste (PSE 2) de 2021
+        à 2023</a>
     </div>
-    <div class="flex gap-2">
-        <img height="24"
-             width="24"
-             src="{{ "Finance/wallet-3-line" | icon("remix") }}"
-             alt="" />
-        <h3>Open source</h3>
-    </div>
-    <div class="flex gap-2">
-        <img height="24"
-             width="24"
-             src="{{ "Map/flight-land-line" | icon("remix") }}"
-             alt="" />
-        <h3>Éthique</h3>
+    <div class="flex-1">
+        <img src="/img/certification/raweb.webp" alt=""width="300" height="100" />
+        <a href="https://access42.net/"
+           target="_blank"
+           title="Site d'Access42 qui nous a donné la formation">Formation accessibilité, RAWeb (2024)</a>
     </div>
 </div>
