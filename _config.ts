@@ -5,6 +5,7 @@ import date from "lume/plugins/date.ts";
 import decapCMS from "lume/plugins/decap_cms.ts";
 import feed from "lume/plugins/feed.ts";
 import icons from "lume/plugins/icons.ts";
+import multilanguage from "lume/plugins/multilanguage.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
 import pageFind from "lume/plugins/pagefind.ts";
 import postcss from "lume/plugins/postcss.ts";
@@ -74,6 +75,12 @@ site.ignore("README.md")
                     src: "https://cdn.jsdelivr.net/npm/remixicon@4.6.0/icons/{name}.svg",
                 },
             ],
+        }),
+    )
+    .use(
+        multilanguage({
+            languages: ["en", "fr"],
+            defaultLanguage: "fr",
         }),
     );
 
