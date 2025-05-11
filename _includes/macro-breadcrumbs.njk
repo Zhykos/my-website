@@ -1,33 +1,31 @@
 {% macro homecrumb() %}
-            <li>
-                <a class="link" href="/">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         fill="none"
-                         viewBox="0 0 24 24"
-                         class="h-4 w-4 stroke-current">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z">
-                        </path>
-                    </svg>
-                    Accueil
-                </a>
-            </li>
+    <li>
+        <a class="link" href="/">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 class="h-4 w-4 stroke-current">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z">
+                </path>
+            </svg>
+            Accueil
+        </a>
+    </li>
 {% endmacro %}
-
 {% macro lastcrumb(lastName, lastURL) %}
-            <li>
-                <a class="link" href="{{ lastURL }}">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         fill="none"
-                         viewBox="0 0 24 24"
-                         class="h-4 w-4 stroke-current">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                        </path>
-                    </svg>
-                    {{ lastName }}
-                </a>
-            </li>
+    <li>
+        <a class="link" href="{{ lastURL }}">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 class="h-4 w-4 stroke-current">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                </path>
+            </svg>
+            {{ lastName }}
+        </a>
+    </li>
 {% endmacro %}
-
 {% macro breadcrumbs2(lastName, lastURL) %}
     <div class="breadcrumbs text-sm">
         <ul>
@@ -36,11 +34,10 @@
         </ul>
     </div>
 {% endmacro %}
-
 {% macro breadcrumbs3(intermediateName, intermediateURL, lastName, lastURL) %}
     <div class="breadcrumbs text-sm">
         <ul>
-           {{ homecrumb() }}
+            {{ homecrumb() }}
             <li>
                 <a class="link" href="{{ intermediateURL }}">
                     <svg xmlns="http://www.w3.org/2000/svg"
