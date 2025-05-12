@@ -1,9 +1,14 @@
 {
-	"imports": {
-		"@biomejs/biome": "npm:@biomejs/biome@^1.9.4"
-	},
-	"nodeModulesDir": "auto",
-	"tasks": {
-		"format": "deno run -A npm:@biomejs/biome format --write"
-	}
+  "imports": {
+    "@biomejs/biome": "npm:@biomejs/biome@^1.9.4",
+    "daisyui": "npm:daisyui@^5.0.35",
+    "lume/": "https://deno.land/x/lume@v2.5.3/"
+  },
+  "nodeModulesDir": "auto",
+  "tasks": {
+    "build": "deno task lume",
+    "serve": "deno task lume -s",
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+    "check": "deno run -A npm:@biomejs/biome check --write && djlint . --reformat --lint"
+  }
 }

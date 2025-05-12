@@ -27,28 +27,29 @@ jobs:
     - name: Install Deno
       run: curl -fsSL https://deno.land/install.sh | sh
 
-    - name: Deno lint code
-      run: |
-        echo "TODO when vendor are deleted"
-
     - name: Install Python
       run: |
         sudo apt update
         sudo apt install -y python3-pip
 
+    - name: "Check format code: TypeScript and CSS"
+      run: /home/runner/.deno/bin/deno run -A npm:@biomejs/biome check
+
+    - name: "Check format code: Nunjuncks"
+      run: |
+        pip install djlint
+        djlint . --check --lint
+
     - name: Initialize www production directory
       run: |
         mkdir www
-        cp favicon.png www/
-        cp index.html www/
-        cp -R assets www/
-        cp -R files www/
+        mkdir www/files
 
-    - name: Build blog
-      working-directory: blog
-      run: |
-        /home/runner/.deno/bin/deno task build
-        cp -R _site ../www/blog
+    #- name: Build blog
+    #  working-directory: blog
+    #  run: |
+    #    /home/runner/.deno/bin/deno task build
+    #    cp -R _site ../www/blog
 
     - name: Build complete resume
       working-directory: complete-resume

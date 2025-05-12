@@ -68,9 +68,7 @@
         "size": 12,
         "family": "PT Sans",
         "subset": "latin",
-        "variants": [
-          "regular"
-        ]
+        "variants": ["regular"]
       },
       "hideIcons": false,
       "lineHeight": 1.4,
@@ -302,7 +300,7 @@
           "position": "Ingénieur concepteur",
           "location": "Nantes, France",
           "date": "Septembre 2009 - Janvier 2022",
-          "summary": "<p>Équipe conception des logiciels <strong>Mia-Discovery</strong> et Mia-Mining : </p><p>• Conception et développement de la future application front-end en React et spécification des API de communication avec le back-end.</p><p>• Définition d’architecture d’une nouvelle fonctionnalité du logiciel pour créer puis exécuter des requêtes et des graphes à l’aide d’un éditeur de type no-code</p><p>• Architecture et développement d’une fonctionnalité de calcul de carte proportionnelle, de reporting basé sur les matrices d’adjacence et autres composants.</p><p>• Suivi quotidien d’une personne en alternance pendant deux ans.</p><p>• Contribution aux projets open source EMF Facet et MoDisco chez Eclipse.</p>",
+          "summary": "<p>Équipe conception des logiciels <strong>Mia-Discovery</strong> et Mia-Mining : </p><p>• Conception et développement de la future application front-end en React et spécification des API de communication avec le back-end.</p><p>• Définition d’architecture d’une nouvelle fonctionnalité du logiciel pour créer puis exécuter des requêtes et des graphes à l’aide d’un éditeur de type no-code</p><p>• Architecture et développement d’une fonctionnalité de calcul de carte proportionnelle, de reporting basé sur les matrices d’adjacence et autres composants.</p><p>• Suivi quotidien d’une personne en alternance pendant deux ans.</p><p>• Contribution aux projets Open source EMF Facet et MoDisco chez Eclipse.</p>",
           "url": {
             "label": "",
             "href": "https://www.soprasteria.com/"
