@@ -11,13 +11,13 @@ bodyClass: body-tag
     <ul>
         {%- if pagination.previous %}
             <li>
-                <a href="{{ pagination.previous }}" rel="prev">← Previous</a>
+                <a class="link" href="{{ pagination.previous }}" rel="prev">← Previous</a>
             </li>
         {% endif %}
         <li>Page {{ pagination.page }}</li>
         {%- if pagination.next %}
             <li>
-                <a href="{{ pagination.next }}" rel="next">Next →</a>
+                <a class="link" href="{{ pagination.next }}" rel="next">Next →</a>
             </li>
         {% endif %}
     </ul>
