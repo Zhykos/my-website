@@ -74,6 +74,10 @@ site.ignore("README.md")
                     id: "remix",
                     src: "https://cdn.jsdelivr.net/npm/remixicon@4.6.0/icons/{name}.svg",
                 },
+                {
+                    id: "vector",
+                    src: "https://www.vectorlogo.zone/logos/{name}.svg",
+                },
             ],
         }),
     )
