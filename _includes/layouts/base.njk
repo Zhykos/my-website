@@ -45,11 +45,12 @@
                     </ul>
                 </menu>
             </div>
-            <div class="navbar-end">
-                <div class="navbar-search">
-                    <div id="search"></div>
-                </div>
-            </div>
+            <button class="btn btn-ghost btn-circle" onclick="search_modal.showModal()">
+                <img height="24"
+                     width="24"
+                     src="{{ "bx-search-alt" | icon('boxicons', 'regular') }}"
+                     alt="Search" />
+            </button>
         </nav>
         <main class="{{ bodyClass }}">
             {{ content | safe }}
@@ -62,6 +63,21 @@
                          alt="Scroll to top" />
                 </button>
             </div>
+            <dialog id="search_modal" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                    </form>
+                    <h3 class="text-lg font-bold">Recherche</h3>
+                    <p class="py-4">Recherchez des éléments dans le site ou pressez ESC pour fermer</p>
+                    <div class="navbar-search">
+                        <div id="search"></div>
+                    </div>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
         </main>
     </body>
 </html>
