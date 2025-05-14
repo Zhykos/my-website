@@ -45,11 +45,15 @@
                     </ul>
                 </menu>
             </div>
-            <div class="navbar-end">
-                <div class="navbar-search">
-                    <div id="search"></div>
-                </div>
-            </div>
+            <button class="btn btn-ghost btn-circle" onclick="search_modal.showModal()">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="h-5 w-5"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
         </nav>
         <main class="{{ bodyClass }}">
             {{ content | safe }}
@@ -62,6 +66,21 @@
                          alt="Scroll to top" />
                 </button>
             </div>
+            <dialog id="search_modal" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                    </form>
+                    <h3 class="text-lg font-bold">Recherche</h3>
+                    <p class="py-4">Recherchez des éléments dans le site ou pressez ESC pour fermer</p>
+                    <div class="navbar-search">
+                        <div id="search"></div>
+                    </div>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
         </main>
     </body>
 </html>
