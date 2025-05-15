@@ -8,6 +8,7 @@ tags:
   - a
   - e
   - r
+pinned: true
 ---
 
 To see this post, run `lume --dev`

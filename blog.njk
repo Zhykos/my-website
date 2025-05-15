@@ -5,14 +5,13 @@ layout: layouts/home.njk
 {% import "macro-breadcrumbs.njk" as breadcrumbs %}
 {{ breadcrumbs.breadcrumbs2('Blog', '/blog') }}
 <div class="divider divider-start">Bienvenue sur mon blog</div>
+{% set postslist = search.pages("type=posts", "date=desc", 3) %}
 {% include "templates/postslist.njk" %}
 <div class="divider divider-start">Archives et articles épinglés</div>
-{% set postslist = search.pages("pinned=true") %}
-{% if postslist.length %}
-    <h2>Articles épinglés :</h2>
-    {% include "templates/postslist.njk" %}
-    <hr />
-{% endif %}
 <p>
     Plus d'articles peuvent être trouvés via la page des <a class="link" href="/posts/">archives</a>.
 </p>
+{% set postslist = search.pages("pinned=true") %}
+{% if postslist.length %}
+    {% include "templates/postslist.njk" %}
+{% endif %}

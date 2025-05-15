@@ -1,5 +1,4 @@
 <ul class="list bg-base-100 rounded-box shadow-md">
-    {% set postslist = search.pages("type=posts", "date=desc", 3) %}
     <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">
         {% if postslist.length == 1 %}
             Dernier article :
