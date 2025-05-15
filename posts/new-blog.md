@@ -1,0 +1,17 @@
+---
+title: Ouverture du blog
+description: Avec la 3e version de mon site, j'ouvre une partie pour y écrire des articles.
+date: 2025-05-15
+tags:
+  - divers
+---
+
+Bonsoir, la nouvelle version de mon site pro et perso vient d'éclore et avec, une section blog.
+
+J'ai commencé un blog en 2008 (via nozzhy, mais je ne mets pas de lien, car le site est devenu merdique), ainsi que l'écriture d'articles en rapport avec le jeu vidéo. Après quelques années à ne plus trop savoir que faire, j'ai décidé d'arrêter en 2021.
+
+Depuis quelques années, une envie qui va et vient de faire des vidéos sur le JV me taraude. J'ai fait plusieurs essais, mais jamais rien sorti. Mon plus grand souhait serait de reprendre les [interviews](https://www.youtube.com/playlist?list=PLHSVTi6lTLZPibjjoviimQ8v6VPIk6oPD) de personnes travaillant sur des jeux, mais comme je suis dorénavant loin de ce milieu, ce n'est pas gagné (et [Marion fait ça](https://www.youtube.com/watch?v=UueWqc2AwAg&list=PLZRiqJjIUlDROhdmjjCNmVlZQqm1B1hqc) de la meilleure des façons, à mon avis).
+
+Tout ça pour dire que je vais surement m'y remettre et qu'en attendant qu'une vidéo ne sorte (j'ai déjà trois sujets), je sortirais surement des petits blablas par ici. Et cela ne sera pas uniquement sur le pro gaming, mais également sur des bouquins, le développement ou toute autre chose qui me vient en tête.
+
+Bisous.
