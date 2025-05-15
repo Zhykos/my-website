@@ -34,6 +34,7 @@
     "npm:autoprefixer@10.4.19": "10.4.19_postcss@8.4.38",
     "npm:autoprefixer@10.4.21": "10.4.21_postcss@8.4.38",
     "npm:daisyui@^5.0.35": "5.0.35",
+    "npm:date-fns@*": "3.6.0",
     "npm:date-fns@3.6.0": "3.6.0",
     "npm:date-fns@4.1.0": "4.1.0",
     "npm:decap-server@*": "3.2.0",

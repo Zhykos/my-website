@@ -1,28 +1,18 @@
 ---
 layout: layouts/home.njk
-menu:
-  visible: true
-  title: Blog
-  order: 0
 ---
 
-{% set postslist = search.pages("type=posts", "date=desc", 3) %}
-<h1>
-    Latest
-    {% if postslist.length == 1 %}
-        Post
-    {% else %}
-        {{ postslist.length }} Posts
-    {% endif %}
-</h1>
+{% import "macro-breadcrumbs.njk" as breadcrumbs %}
+{{ breadcrumbs.breadcrumbs2('Blog', '/blog') }}
+<div class="divider divider-start">Bienvenue sur mon blog</div>
 {% include "templates/postslist.njk" %}
-<hr />
+<div class="divider divider-start">Archives et articles épinglés</div>
 {% set postslist = search.pages("pinned=true") %}
 {% if postslist.length %}
-    <h2>Pinned Post:</h2>
+    <h2>Articles épinglés :</h2>
     {% include "templates/postslist.njk" %}
     <hr />
 {% endif %}
 <p>
-    More posts can be found in <a class="link" href="/posts/">the archive</a>.
+    Plus d'articles peuvent être trouvés via la page des <a class="link" href="/posts/">archives</a>.
 </p>

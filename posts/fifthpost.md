@@ -2,9 +2,12 @@
 title: This is the fifth post (in draft).
 description: This post shouldn't be visible in production
 date: 2021-01-01
-tags: 
+tags:
   - second-tag
-draft: true
+  - coucou
+  - a
+  - e
+  - r
 ---
 
 To see this post, run `lume --dev`
