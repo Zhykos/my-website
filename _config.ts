@@ -72,8 +72,9 @@ site.ignore("README.md")
                     id: "boxicons",
                     src: "https://cdn.jsdelivr.net/npm/boxicons@2.1.4/svg/{variant}-{name}.svg",
                     variants: [
-                        { id: "regular", path: "regular/bx" },
                         { id: "logos", path: "logos/bxl" },
+                        { id: "regular", path: "regular/bx" },
+                        { id: "solid", path: "solid/bxs" },
                     ],
                 },
                 {
