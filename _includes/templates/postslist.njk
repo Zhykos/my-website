@@ -12,7 +12,8 @@
                 <div>
                     <a href="{{ post.url }}" class="link">{{ post.title }}</a>
                 </div>
-                <div class="text-xs uppercase font-semibold opacity-60">{{ post.date | date('HUMAN_DATE', 'fr') }}</div>
+                <time class="text-xs uppercase font-semibold opacity-60"
+                      datetime="{{ date | date("DATETIME") }}">{{ post.date | date('HUMAN_DATE', 'fr') }}</time>
             </div>
             <div>
                 {% for tag in post.tags %}
