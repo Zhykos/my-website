@@ -4,11 +4,63 @@ layout: layouts/page.njk
 
 {% import "macro-breadcrumbs.njk" as breadcrumbs %}
 {{ breadcrumbs.breadcrumbs3(i18n.proxp, '/summary', 'Projets professionnels', '/professional') }}
-<div class="divider divider-start">Projets professionnels</div>
-<p>
-    Vous trouverez plus de détails dans le <a class="link" href="/complete-resume/">CV exhaustif</a>.
-</p>
+<div class="divider divider-start">Résumé de mes employeurs</div>
 <div class="columns-1">
+    <ul class="timeline timeline-vertical lg:timeline-horizontal">
+        <li>
+            <div class="timeline-start">Septembre 2009</div>
+            <div class="timeline-middle">
+                <img height="20"
+                     width="20"
+                     src="{{ "check-circle" | icon('boxicons', 'solid') }}"
+                     alt="" />
+            </div>
+            <div class="timeline-end timeline-box">Mia-Software</div>
+            <hr />
+        </li>
+        <li>
+            <hr />
+            <div class="timeline-start">Février 2022</div>
+            <div class="timeline-middle">
+                <img height="20"
+                     width="20"
+                     src="{{ "check-circle" | icon('boxicons', 'solid') }}"
+                     alt="" />
+            </div>
+            <div class="timeline-end timeline-box">norsys</div>
+            <hr />
+        </li>
+        <li>
+            <hr />
+            <div class="timeline-start">Mai 2023</div>
+            <div class="timeline-middle">
+                <img height="20"
+                     width="20"
+                     src="{{ "check-circle" | icon('boxicons', 'solid') }}"
+                     alt="" />
+            </div>
+            <div class="timeline-end timeline-box">Ippon</div>
+            <hr />
+        </li>
+        <li>
+            <hr />
+            <div class="timeline-start">Janvier 2024</div>
+            <div class="timeline-middle">
+                <img height="20"
+                     width="20"
+                     src="{{ "check-circle" | icon('boxicons', 'solid') }}"
+                     alt="" />
+            </div>
+            <div class="timeline-end timeline-box">Sfeir Luxembourg</div>
+            <hr class="bg-primary" />
+        </li>
+    </ul>
+</div>
+<div class="divider divider-start">Liste des projets professionnels en entreprises et écoles</div>
+<div class="columns-1">
+    <p>
+        Vous trouverez plus de détails dans le <a class="link" href="/complete-resume/">CV exhaustif</a>.
+    </p>
     <div>
         <h4>
             <a href="https://www.iut-rcc.fr/" class="link">IUT de Reims</a>
