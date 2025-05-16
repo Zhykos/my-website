@@ -40,6 +40,8 @@ rendercv render "thomas-cicognani-complete-resume.yaml"
 
 Made with [Lume](https://lume.land/) and [Deno](https://deno.com/).
 
+Posts template from https://willpinha.github.io/daisy-components/card/.
+
 ## Formatters and linters
 
 To verify and format the project files, a [Deno](https://deno.com/) shortcut is available, so you can run `deno task check` (or see `deno.json` for the detailed command line).

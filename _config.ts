@@ -1,3 +1,4 @@
+import { fr } from "npm:date-fns/locale/fr";
 import lume from "lume/mod.ts";
 import basePath from "lume/plugins/base_path.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
@@ -30,7 +31,11 @@ site.ignore("README.md")
     .copy("img")
     .use(tailwindcss())
     .use(postcss())
-    .use(date())
+    .use(
+        date({
+            locales: { fr },
+        }),
+    )
     .use(codeHighlight())
     .use(basePath())
     .use(sitemap())
