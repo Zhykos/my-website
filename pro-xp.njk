@@ -1,0 +1,28 @@
+---
+layout: layouts/page.njk
+---
+
+{% import "macro-breadcrumbs.njk" as breadcrumbs %}
+{{ breadcrumbs.breadcrumbs2(i18n.proxp, '/pro-xp') }}
+<div class="divider divider-start">Page résumé des expériences professionnelles</div>
+<ul class="list bg-base-100 rounded-box shadow-md">
+    <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Veuillez choisir une page</li>
+    <li class="list-row">
+        <a href="/about" class="link">À propos</a>
+    </li>
+    <li class="list-row">
+        <a href="/education" class="link">Scolarité et formations</a>
+    </li>
+    <li class="list-row">
+        <a href="/professional" class="link">Projets professionnels</a>
+    </li>
+    <li class="list-row">
+        <a href="/skills" class="link">Skills</a>
+    </li>
+    <li class="list-row">
+        <a href="/files/thomas-cicognani-resume.pdf" class="link">CV (en PDF)</a>
+    </li>
+    <li class="list-row">
+        <a href="/files/thomas-cicognani-complete-resume.pdf" class="link">CV exhaustif (en PDF)</a>
+    </li>
+</ul>
