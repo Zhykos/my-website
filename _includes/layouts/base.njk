@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{{ title or site.title }}</title>
         <meta name="description" content="{{ description or site.description }}" />
-        <meta name="keywords" content="dddd" />
+        <meta name="keywords"
+              content="thomas cicognani zhykos développeur ingénieur luxembourg java react native fullstack opentelemetry deno" />
         <link rel="stylesheet" href="/styles.css" />
         <link rel="alternate"
               href="/feed.xml"
@@ -51,6 +52,19 @@
                      src="{{ "search-alt" | icon('boxicons', 'regular') }}"
                      alt="Search" />
             </button>
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="dim" />
+                <img height="24"
+                     width="24"
+                     class="swap-off fill-current"
+                     src="{{ "sun" | icon('boxicons', 'regular') }}"
+                     alt="Light theme" />
+                <img height="24"
+                     width="24"
+                     class="swap-on fill-current"
+                     src="{{ "moon" | icon('boxicons', 'regular') }}"
+                     alt="Dark theme" />
+            </label>
         </nav>
         <main>
             {{ content | safe }}
