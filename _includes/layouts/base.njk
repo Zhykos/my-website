@@ -16,6 +16,7 @@
               href="/feed.json"
               type="application/json"
               title="{{ site.title }}" />
+        <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
     </head>
     <body>
         <nav class="navbar bg-base-100 shadow-sm">
@@ -52,7 +53,9 @@
                      src="{{ "search-alt" | icon('boxicons', 'regular') }}"
                      alt="Search" />
             </button>
-            <label class="swap swap-rotate">
+            <button class="swap swap-rotate"
+                    data-toggle-theme="dim,light"
+                    data-act-class="ACTIVECLASS">
                 <input type="checkbox" class="theme-controller" value="dim" />
                 <img height="24"
                      width="24"
@@ -64,7 +67,7 @@
                      class="swap-on fill-current"
                      src="{{ "moon" | icon('boxicons', 'regular') }}"
                      alt="Dark theme" />
-            </label>
+            </button>
         </nav>
         <main>
             {{ content | safe }}
