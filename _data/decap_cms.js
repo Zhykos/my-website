@@ -30,24 +30,4 @@ config.collections.push(
         .toJSON(),
 );
 
-const pageFields = [
-    f.string("Title"),
-    f.string("Url"),
-    f.markdown("Body"),
-    f.object("Menu", [f.boolean("Visible"), f.number("Order")]),
-    f.hidden("templateClass"),
-    f.hidden("layout"),
-];
-
-// Individual pages
-config.collections.push(
-    f
-        .files("Pages")
-        .description("Here you can edit your individual pages")
-        .preview(false)
-        .file("About", "about.md", pageFields)
-        .file("404", "404.md", pageFields)
-        .toJSON(),
-);
-
 export default config;
