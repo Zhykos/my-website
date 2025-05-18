@@ -22,54 +22,52 @@
     </head>
     <body>
         <nav class="navbar bg-base-100 shadow-sm">
-            <div class="navbar-start">
-                <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                             class="h-5 w-5"
-                             fill="none"
-                             viewBox="0 0 24 24"
-                             stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </div>
-                    <menu>
-                        <ul tabindex="0"
-                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            {% include "list-menu-header.njk" %}
-                        </ul>
-                    </menu>
+            <div class="dropdown flex-none">
+                <div tabindex="0" role="button" class="btn btn-circle">
+                    <img height="24"
+                         width="24"
+                         src="{{ "menu-alt-left" | icon('boxicons', 'regular') }}"
+                         alt="Menu"
+                         title="Cliquez pour ouvrir le menu des liens" />
                 </div>
-                <a class="btn btn-ghost text-xl link" href="/">{{ site.title }}</a>
-            </div>
-            <div class="navbar-center hidden lg:flex">
                 <menu>
-                    <ul class="menu menu-horizontal px-1">
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {% include "list-menu-header.njk" %}
                     </ul>
                 </menu>
             </div>
-            <button class="btn btn-ghost btn-circle" onclick="search_modal.showModal()">
-                <img height="24"
-                     width="24"
-                     src="{{ "search-alt" | icon('boxicons', 'regular') }}"
-                     alt="Search" />
-            </button>
-            <button class="swap swap-rotate"
-                    data-toggle-theme="dim,light"
-                    data-act-class="ACTIVECLASS">
-                <input type="checkbox" class="theme-controller" value="dim" />
-                <img height="24"
-                     width="24"
-                     class="swap-off fill-current"
-                     src="{{ "sun" | icon('boxicons', 'regular') }}"
-                     alt="Light theme" />
-                <img height="24"
-                     width="24"
-                     class="swap-on fill-current"
-                     src="{{ "moon" | icon('boxicons', 'regular') }}"
-                     alt="Dark theme" />
-            </button>
+            <div class="flex-1">
+                <a class="btn btn-ghost text-xl link"
+                   href="/"
+                   title="Aller à l'accueil du site">{{ site.title }}</a>
+            </div>
+            <div class="flex-none">
+                <button class="btn btn-circle" onclick="search_modal.showModal()">
+                    <img height="24"
+                         width="24"
+                         src="{{ "search-alt" | icon('boxicons', 'regular') }}"
+                         alt="Search"
+                         title="Cliquez pour ouvrir une modale et faire une recherche sur le site" />
+                </button>
+                <button class="swap swap-rotate btn btn-circle"
+                        data-toggle-theme="dim,light"
+                        data-act-class="ACTIVECLASS">
+                    <input type="checkbox" class="theme-controller" value="dim" />
+                    <img height="24"
+                         width="24"
+                         class="swap-off fill-current"
+                         src="{{ "sun" | icon('boxicons', 'regular') }}"
+                         alt="Thème clair actif"
+                         title="Cliquez pour activer le thème clair" />
+                    <img height="24"
+                         width="24"
+                         class="swap-on fill-current"
+                         src="{{ "moon" | icon('boxicons', 'regular') }}"
+                         alt="Thème sombre actif"
+                         title="Cliquez pour activer le thème sombre" />
+                </button>
+            </div>
         </nav>
         <main>
             {{ content | safe }}
@@ -79,7 +77,8 @@
                     <img height="32"
                          width="32"
                          src="{{ "up-arrow-alt" | icon('boxicons', 'regular') }}"
-                         alt="Scroll to top" />
+                         alt="Aller en haut"
+                         title="Cliquez pour retourner en haut de la page" />
                 </button>
             </div>
             <dialog id="search_modal" class="modal">
