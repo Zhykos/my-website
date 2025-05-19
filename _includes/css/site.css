@@ -7,8 +7,12 @@
 }
 
 :root {
-  --tw-ring-color: var(--color-primary);
+  --tw-ring-color: var(--color-success);
   --tw-shadow: 0 0 #0000;
   --tw-ring-offset-color: var(--color-base-100);
   --tw-ring-inset: ;
+}
+
+.check-icon {
+  stroke: currentColor;
 }

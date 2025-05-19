@@ -6,6 +6,7 @@ import date from "lume/plugins/date.ts";
 import decapCMS from "lume/plugins/decap_cms.ts";
 import feed from "lume/plugins/feed.ts";
 import icons from "lume/plugins/icons.ts";
+import inline from "lume/plugins/inline.ts";
 import multilanguage from "lume/plugins/multilanguage.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
 import pageFind from "lume/plugins/pagefind.ts";
@@ -93,6 +94,7 @@ site.ignore("README.md")
             languages: ["en", "fr"],
             defaultLanguage: "fr",
         }),
-    );
+    )
+    .use(inline());
 
 export default site;
