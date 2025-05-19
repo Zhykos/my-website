@@ -13,6 +13,6 @@
   --tw-ring-inset: ;
 }
 
-.check-icon {
-  stroke: currentColor;
+.fill-current-color {
+  fill: currentColor;
 }
