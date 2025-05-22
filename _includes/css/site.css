@@ -4,6 +4,7 @@
 
 .about-point-list {
   display: inline;
+  fill: currentColor;
 }
 
 :root {
