@@ -4,10 +4,10 @@ layout: layouts/home.njk
 
 {% import "macro-breadcrumbs.njk" as breadcrumbs %}
 {{ breadcrumbs.breadcrumbs2('Blog', '/blog') }}
-<div class="divider divider-start">Bienvenue sur mon blog</div>
+<div class="divider divider-primary divider-start">Bienvenue sur mon blog</div>
 {% set postslist = search.pages("type=posts", "date=desc", 3) %}
 {% include "templates/postslist.njk" %}
-<div class="divider divider-start">Archives et articles épinglés</div>
+<div class="divider divider-primary divider-start">Archives et articles épinglés</div>
 <p>
     Plus d'articles peuvent être trouvés via la page des <a class="link" href="/posts/">archives</a>.
 </p>
