@@ -77,7 +77,7 @@ cv:
         start_date: 2022-02
         end_date: 2022-09
         highlights:
-          - Maintenance et développement de fonctionnalités mineures d’un produit de sélection de risque médical.
+          - Maintenance et développement de fonctionnalités d’un produit de sélection de risque médical.
           - Suivi quotidien d’un stagiare pendant 2 mois.
           - Refonte totale des logs d’une douzaine d’applications.
           - Refactoring d’une ancienne application pour transformer d’anciens accès à la base de données vers un accès Spring JPA.
