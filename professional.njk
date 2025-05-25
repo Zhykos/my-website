@@ -6,14 +6,16 @@ layout: layouts/page.njk
 {{ breadcrumbs.breadcrumbs2('Projets professionnels', '/professional') }}
 <div class="divider divider-primary divider-start">Résumé de mes employeurs</div>
 <div class="columns-1">
-    <ul class="timeline timeline-vertical lg:timeline-horizontal">
+    <ul class="timeline timeline-vertical">
         <li>
             <div class="timeline-start">Septembre 2009</div>
             <div class="timeline-middle">
                 <img height="20"
                      width="20"
                      src="{{ "check-circle" | icon('boxicons', 'solid') }}"
-                     alt="" />
+                     alt=""
+                     class="fill-current-color"
+                     inline />
             </div>
             <div class="timeline-end timeline-box">Mia-Software</div>
             <hr />
@@ -25,7 +27,9 @@ layout: layouts/page.njk
                 <img height="20"
                      width="20"
                      src="{{ "check-circle" | icon('boxicons', 'solid') }}"
-                     alt="" />
+                     alt=""
+                     class="fill-current-color"
+                     inline />
             </div>
             <div class="timeline-end timeline-box">norsys</div>
             <hr />
@@ -37,7 +41,9 @@ layout: layouts/page.njk
                 <img height="20"
                      width="20"
                      src="{{ "check-circle" | icon('boxicons', 'solid') }}"
-                     alt="" />
+                     alt=""
+                     class="fill-current-color"
+                     inline />
             </div>
             <div class="timeline-end timeline-box">Ippon</div>
             <hr />
@@ -49,7 +55,9 @@ layout: layouts/page.njk
                 <img height="20"
                      width="20"
                      src="{{ "check-circle" | icon('boxicons', 'solid') }}"
-                     alt="" />
+                     alt=""
+                     class="fill-current-color"
+                     inline />
             </div>
             <div class="timeline-end timeline-box">Sfeir Luxembourg</div>
             <hr class="bg-primary" />
@@ -57,259 +65,176 @@ layout: layouts/page.njk
     </ul>
 </div>
 <div class="divider divider-primary divider-start">Liste des projets professionnels en entreprises et écoles</div>
-<div class="columns-1">
-    <p>
-        Vous trouverez plus de détails dans le <a class="link" href="/complete-resume/">CV exhaustif</a>.
-    </p>
-    <div>
-        <h4>
-            <a href="https://www.iut-rcc.fr/" class="link">IUT de Reims</a>
-        </h4>
-        <h5>2006 (environ 5 mois)</h5>
-        <p>
-            <em>Projet de fin d'étude</em>
-        </p>
-        <ul>
-            <li>
-                Simulateur 3D temps réel de cheveux (OpenGL,
-                SDL, C++)
-            </li>
-            <li>(Aucune archive trouvable)</li>
-        </ul>
+<div class="card card-dash bg-base-100 mb-8">
+    <div class="card-body">
+        <h2 class="card-title">Mon CV</h2>
+        <p>Vous trouverez plus de détails dans les pages dédiées au CV</p>
+        <div class="card-actions justify-end">
+            <button class="btn btn-primary link">
+                <a href="/files/thomas-cicognani-resume.pdf">CV</a>
+            </button>
+            <button class="btn btn-primary link">
+                <a href="/files/thomas-cicognani-complete-resume.pdf">CV exhaustif</a>
+            </button>
+        </div>
     </div>
-    <div>
-        <h4>
-            <a href="https://www.coventry.ac.uk/" class="link">Coventry University</a>
-        </h4>
-        <h5>2006 (10 semaines)</h5>
-        <p>
-            <em>Stage</em>
-        </p>
-        <ul>
-            <li>
-                Évolution de l'application de visite
-                virtuelle de l'université (VRML)
-            </li>
-            <li>Introduction aux outils 3D (3ds Max)</li>
-            <li>(Aucune archive trouvable)</li>
-        </ul>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <div class="card-body">
+        <h2 class="card-title">Simulateur 3D temps réel de cheveux</h2>
+        <p>Projet de fin d'étude</p>
+        <p>IUT de Reims - 2006 (environ 5 mois)</p>
+        <p>C++, OpenGL, SDL</p>
     </div>
-    <div>
-        <img src="/img/project/pollen.webp" height="300" width="100" alt="" />
-        <h4>
-            <a href="https://sciences-techniques.univ-nantes.fr/" class="link">Université de Nantes</a> et <a href="https://www.codelutin.com/" class="link">Code Lutin</a>
-        </h4>
-        <h5>2008 (environ 5 mois)</h5>
-        <p>
-            <em>Projet de fin de maitrise</em>
-        </p>
-        <ul>
-            <li>
-                Première version de la plateforme <a href="https://pollen.cl/" class="link">Pollen</a>,
-                pour créer des sondages en ligne (Java,
-                Apache Tapestry)
-            </li>
-        </ul>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <div class="card-body">
+        <h2 class="card-title">Évolution de l'application de visite virtuelle de l'université</h2>
+        <p>Stage</p>
+        <p>Coventry University - 2006 (10 semaines)</p>
+        <p>VRML</p>
+        <p>Introduction aux outils 3D (3ds Max)</p>
     </div>
-    <div>
-        <h4>
-            <a href="https://www.soprasteria.com/fr" class="link">Mia-Software</a>
-        </h4>
-        <h5>2009 (6 mois)</h5>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <figure>
+        <img src="/img/project/pollen.webp"
+             height="300"
+             width="100"
+             class="w-40"
+             alt="" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">
+            Première version de la plateforme <a href="https://pollen.cl/" class="link">Pollen</a>, pour créer des sondages en ligne
+        </h2>
+        <p>Projet de fin de maitrise</p>
         <p>
-            <em>Stage</em>
+            Université de Nantes et <a href="https://www.codelutin.com/" class="link">Code Lutin</a> - 2008 (environ 5 mois)
         </p>
-        <ul>
-            <li>
-                Création d’une couche de communication entre
-                un backend en Smalltalk et un frontend en
-                Java (Eclipse RCP)
-            </li>
-            <li>(Aucune archive trouvable)</li>
-        </ul>
+        <p>Java, Apache Tapestry</p>
     </div>
-    <div>
-        <img src="/img/project/mia-software.webp" height="300" width="100" alt="" />
-        <h4>
-            <a href="https://www.soprasteria.com/fr" class="link">Mia-Software</a>
-        </h4>
-        <h5>Septembre 2009 à janvier 2022</h5>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <div class="card-body">
+        <h2 class="card-title">Création d’une couche de communication réseau</h2>
+        <p>Stage</p>
+        <p>Mia-Software - 2009 (6 mois)</p>
+        <p>Smalltalk, Java, Eclipse RCP</p>
+    </div>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <figure>
+        <img src="/img/project/mia-software.webp"
+             height="300"
+             width="100"
+             class="w-40"
+             alt="" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">Mia-Software - Édition logiciels</h2>
+        <p>Ingénieur Concepteur</p>
+        <p>Septembre 2009 à janvier 2022</p>
         <p>
-            <em>Ingénieur Concepteur</em>
+            Maintenance et évolution des logiciels Mia-Mining, Mia-Discovery, Mia-Generation, Mia-Transformation et Task-Manager (Java, Eclipse RCP, SmallTalk, etc.)
         </p>
-        <ul>
-            <li>
-                Maintenance et évolution des logiciels
-                Mia-Mining, Mia-Discovery, Mia-Generation,
-                Mia-Transformation et Task-Manager (Java,
-                Eclipse RCP et bien d'autres)
-            </li>
-            <li>
-                Suivi d'une personne en alternance pendant 2
-                ans
-            </li>
-            <li>
-                Détails complets dans le <a class="link" href="/complete-resume/">CV exhaustif</a>
-            </li>
-            <li>(Le site web n'existe plus)</li>
-        </ul>
+        <p>Suivi d'une personne en alternance pendant 2 ans</p>
     </div>
-    <div>
-        <h4>
-            <a href="https://www.soprasteria.com/fr" class="link">Mia-Software</a> pour le compte de la <a href="https://www.covea.com/fr" class="link">MAAF</a>
-        </h4>
-        <h5>Février 2012 à février 2013</h5>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <div class="card-body">
+        <h2 class="card-title">Mia-Software, pour le compte de la MAAF</h2>
+        <p>Ingénieur consultant, Projet PUMA</p>
+        <p>Février 2012 à février 2013</p>
         <p>
-            <em>Ingénieur d’études et développement -
-            Projet PUMA</em>
+            Co-conception d’architectures et développement de logiciels ayant pour but de remplacer le patrimoine Pacbase (Java, Eclipse RCP)
         </p>
-        <ul>
-            <li>
-                Co-conception d’architectures de logiciels
-                ayant pour but de remplacer le patri- moine
-                Pacbase (Java, Eclipse RCP)
-            </li>
-        </ul>
     </div>
-    <div>
-        <h4>
-            <a href="https://www.soprasteria.com/fr" class="link">Mia-Software</a> pour le compte de <a href="https://www.mobilize-fs.ch/fr" class="link">RCI
-            Banque</a>
-        </h4>
-        <h5>Avril à mai 2013</h5>
-        <p>
-            <em>Ingénieur full-stack</em>
-        </p>
-        <ul>
-            <li>
-                Développement des parties front-end et
-                back-end d’une application de gestion de
-                flotte de véhicules (GWT)
-            </li>
-        </ul>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <div class="card-body">
+        <h2 class="card-title">Mia-Software, pour le compte de RCI Banque</h2>
+        <p>Ingénieur consultant fullstack</p>
+        <p>Avril et mai 2013</p>
+        <p>Développement des parties front-end et back-end d’une application de gestion de flotte de véhicules (GWT)</p>
     </div>
-    <div>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <figure>
         <img src="/img/project/maaf-simulateur.webp"
              height="300"
              width="100"
+             class="w-40"
              alt="" />
-        <h4>
-            <a href="https://www.maaf.fr/fr/assurance-habitation" class="link">Mia-Software, pour le compte de la MAAF</a>
-        </h4>
-        <h5>Mai à août 2013</h5>
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">Mia-Software, pour le compte de la MAAF</h2>
+        <p>Ingénieur consultant frontend</p>
+        <p>Mai à août 2013</p>
         <p>
-            <em>Ingénieur front-stack</em>
+            Développement de la partie frontend des simulateurs d’assurance automobile et habitation (HTML, JavaScript et CSS)
         </p>
-        <ul>
-            <li>
-                Développement de la partie front-end des
-                simulateurs d’assurance automobile et
-                habitation (HTML, JavaScript et CSS)
-            </li>
-        </ul>
     </div>
-    <div>
-        <h4>
-            <a href="https://www.soprasteria.com/fr" class="link">Mia-Software</a> pour le compte des <a href="https://www.mma.fr/" class="link">MMA</a>
-        </h4>
-        <h5>Juillet à septembre 2018</h5>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <div class="card-body">
+        <h2 class="card-title">Mia-Software, pour le compte des MMA</h2>
+        <p>Ingénieur consultant, expertise SmallTalk</p>
+        <p>Juillet à septembre 2018</p>
         <p>
-            <em>Expert technique</em>
+            Développement d’une nouvelle fonctionnalité ayant pour but de consolider toutes les bases de données en une seule par copie incrémentale (Smalltalk, Big Data)
         </p>
-        <ul>
-            <li>
-                Développement d’une nouvelle fonctionnalité
-                ayant pour but de consolider toutes les
-                bases de données en une seule par copie
-                incrémentale (Smalltalk).
-            </li>
-        </ul>
     </div>
-    <div>
-        <h4>
-            <a href="https://www.norsys.fr/" class="link">norsys</a> pour le compte de <a href="https://www.kereisfrance.com/" class="link">cbp / Kereis</a>
-        </h4>
-        <h5>Février à septembre 2022</h5>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <div class="card-body">
+        <h2 class="card-title">norsys, pour le compte de cbp (Kereis)</h2>
+        <p>Ingénieur consultant - Équipe Adhésion</p>
+        <p>Février à septembre 2022</p>
+        <p>Maintenance et développement de fonctionnalités d’un produit de sélection de risque médical (Java)</p>
+        <p>Suivi quotidien d’un stagiare pendant 2 mois</p>
+    </div>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <div class="card-body">
+        <h2 class="card-title">norsys, pour le compte d'Operis</h2>
+        <p>Ingénieur consultant - Équipe Expert</p>
+        <p>Octobre 2022 à avril 2023</p>
         <p>
-            <em>Ingénieur d’études - Équipe Adhésion</em>
+            Développement de la nouvelle version de l’application Expert : gestion de permis de construire pour les collectivités (TypeScript, NestJS, Node.js)
         </p>
-        <ul>
-            <li>
-                Maintenance et développement de
-                fonctionnalités mineures d’un produit de
-                sélection de risque médical (Java)
-            </li>
-            <li>Suivi quotidien d’un stagiare pendant 2 mois</li>
-        </ul>
     </div>
-    <div>
-        <h4>
-            <a href="https://www.norsys.fr/" class="link">norsys</a> pour le compte d'<a href="https://web.operis.fr/" class="link">Operis</a>
-        </h4>
-        <h5>Octobre 2022 à avril 2023</h5>
-        <p>
-            <em>Ingénieur d’études back-end - Équipe
-            Expert</em>
-        </p>
-        <ul>
-            <li>
-                Développement de la nouvelle version de
-                l’application Expert : gestion de permis de
-                construire pour les collectivités
-                (TypeScript, Node.js)
-            </li>
-        </ul>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <div class="card-body">
+        <h2 class="card-title">Ippon, pour le compte de Beneteau</h2>
+        <p>Ingénieur frontend</p>
+        <p>Juin et juillet 2023</p>
+        <p>POC d’un projet d’éditeur de carte maritime (Vue 3, TypeScript, AWS)</p>
     </div>
-    <div>
-        <h4>
-            <a href="https://fr.ippon.tech/" class="link">Ippon</a> pour le compte de <a href="https://www.beneteau.com/fr" class="link">Beneteau</a>
-        </h4>
-        <h5>Juin à juillet 2023</h5>
-        <p>
-            <em>Ingénieur front-end</em>
-        </p>
-        <ul>
-            <li>
-                POC d’un projet d’éditeur de carte maritime
-                (Vue 3, TypeScript)
-            </li>
-        </ul>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <div class="card-body">
+        <h2 class="card-title">Ippon, pour le compte de la Fédération Française de Tennis</h2>
+        <p>Ingénieur consultant</p>
+        <p>Juillet à novembre 2023</p>
+        <p>Responsable des tests de performance pour les projets B2C de la FFT (OctoPerf)</p>
     </div>
-    <div>
-        <h4>
-            <a href="https://fr.ippon.tech/" class="link">Ippon</a> pour le compte de la <a href="https://www.fft.fr/" class="link">Fédération
-            Française de Tennis</a>
-        </h4>
-        <h5>Juillet à novembre 2023</h5>
-        <p>
-            <em>Ingénieur test</em>
-        </p>
-        <ul>
-            <li>
-                Responsable des tests de performance pour
-                les projets B2C de la FFT (OctoPerf)
-            </li>
-        </ul>
-    </div>
-    <div>
-        <img src="/img/project/mypost.webp" height="300" width="100" alt="" />
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <figure>
         <img src="/img/project/courrier_colis_android.webp"
              height="300"
              width="100"
+             class="w-40"
              alt="" />
-        <h4>
-            <a href="https://sfeir.com/fr/" class="link">SFEIR</a> pour le compte de <a href="https://www.post.lu/fr/particuliers/mypost" class="link">Post Luxembourg</a>
-        </h4>
-        <h5>Depuis janvier 2024</h5>
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">Sfeir, pour le compte de Post Luxembourg</h2>
+        <p>Ingénieur consultant - Équipe Courrier</p>
+        <p>Depuis janvier 2024</p>
         <p>
-            <em>Ingénieur full-stack - Équipe Courrier</em>
+            Maintenance et création d’applications et fonctionnalités pour les clients de Post sur le web (MyPost) et l’application mobile (Colis & Courrier)
         </p>
-        <ul>
-            <li>
-                Maintenance et création d’applications et
-                fonctionnalités pour les clients de Post sur
-                le web et l’application mobile
-            </li>
-        </ul>
     </div>
 </div>
