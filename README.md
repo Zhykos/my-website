@@ -16,6 +16,15 @@ Templates and components:
 - https://tailspark.co/components?component=Blog&category=marketing
 - https://willpinha.github.io/daisy-components/card/
 
+Images:
+- https://boxicons.com/
+- https://remixicon.com/
+- https://unsplash.com/fr/photos/ordinateur-portable-asus-noir-affichage-3-00-sxiSod0tyYQ
+- https://www.vectorlogo.zone/
+
+And logos and screenshots from official websites (IUT de Reims, Faculté de Nantes, etc.)
+
+
 ## Resume
 
 Made with [Reactive Resume](https://rxresu.me/).
