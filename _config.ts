@@ -79,6 +79,10 @@ site.ignore("README.md")
                     ],
                 },
                 {
+                    id: "openmoji",
+                    src: "https://openmoji.org/data/color/svg/{name}.svg",
+                },
+                {
                     id: "remix",
                     src: "https://cdn.jsdelivr.net/npm/remixicon@4.6.0/icons/{name}.svg",
                 },
