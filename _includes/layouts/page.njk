@@ -25,8 +25,13 @@ bodyClass: body-post
     <nav>
         <h6 class="footer-title">Blog</h6>
         <a class="link" href="/blog">Accueil de mon blog</a>
+        <a class="link" href="/posts">Tous les articles</a>
         {% set postslist = search.pages("type=posts", "date=desc", 3) %}
-        {% for post in postslist %}<a href="{{ post.url }}" class="link">{{ post.title }}</a>{% endfor %}
+        {% for post in postslist %}
+            <div class="flex items-center">
+                <span aria-label="status" class="status status-accent mr-2"></span><a href="{{ post.url }}" class="link">{{ post.title }}</a>
+            </div>
+        {% endfor %}
     </nav>
 </footer>
 <footer class="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
