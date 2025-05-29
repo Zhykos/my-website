@@ -1,34 +1,48 @@
 ---
 layout: layouts/base.njk
-bodyClass: body-post
 ---
 
-<article class="post" data-pagefind-body>
-    <div class="post-header">
-        <h1 class="post-title">{{ title }}</h1>
-        <nav class="post-tags">
-            {% for tag in tags %}<a href="/tags/{{ tag }}/" class="tag">{{ tag }}</a>{% endfor %}
-        </nav>
-        <time class="post-date" datetime="{{ date | date("DATETIME") }}">
-            {{ date | date("HUMAN_DATE") }}
-        </time>
+{% import "macro-breadcrumbs.njk" as breadcrumbs %}
+{{ breadcrumbs.breadcrumbs3('Blog', '/blog', title, page_url) }}
+<div class="divider divider-primary divider-start"></div>
+<article data-pagefind-body>
+    <div class="flex flex-col gap-6 bg-base-200 rounded-box p-6 m-6">
+        <div class="flex flex-col gap-2">
+            <span class="text-2xl font-bold">{{ title }}</span>
+        </div>
+        <div class="flex justify-between items-center">
+            <time class="text-sm" datetime="{{ date | date("DATETIME") }}">
+                {{ date | date('HUMAN_DATE', 'fr') }}
+            </time>
+            <span class="post-tags">
+                {% for tag in tags %}<div class="badge badge-primary m-1">{{ tag }}</div>{% endfor %}
+            </span>
+        </div>
+        <div class="flex flex-col">
+            <span class="text-sm">{{ readingInfo.words }} mots, {{ readingInfo.minutes }} minute
+                {% if readingInfo.minutes > 1 %}s{% endif %}
+            de lecture environ</span>
+        </div>
+        <div class="flex flex-col gap-2">
+            <span>{{ description | safe }}</span>
+            <span>{{ content | safe }}</span>
+        </div>
     </div>
-    <div class="post-body">{{ content | safe }}</div>
 </article>
-<hr />
-<nav class="post-navigation">
-    <ul>
+<div class="flex text-center">
+    <nav class="flex-1 mb-4">
         {%- set previousPost = search.previousPage(url, "type=posts") %}
         {%- if previousPost %}
-            <li>
-                ← Previous: <a href="{{ previousPost.url }}" rel="prev">{{ previousPost.title }}</a>
-            </li>
+            <button class="btn btn-ghost">
+                <a class="link" href="{{ previousPost.url }}" rel="prev">Article précédent : {{ previousPost.title }}</a>
+            </button>
         {% endif %}
         {%- set nextPost = search.nextPage(url, "type=posts") %}
         {%- if nextPost %}
-            <li>
-                <strong>Next: <a href="{{ nextPost.url }}" rel="next">{{ nextPost.title }}</a> →</strong>
-            </li>
+            <button class="btn btn-ghost">
+                <a class="link" href="{{ nextPost.url }}" rel="next">Article suivant : {{ nextPost.title }}</a>
+            </button>
         {% endif %}
-    </ul>
-</nav>
+    </nav>
+</div>
+{% include "layouts/footer.njk" %}

@@ -1,8 +1,9 @@
 {
   "imports": {
-    "@biomejs/biome": "npm:@biomejs/biome@^1.9.4",
-    "daisyui": "npm:daisyui@^5.0.35",
-    "lume/": "https://deno.land/x/lume@v2.5.3/"
+    "@biomejs/biome": "npm:@biomejs/biome@1.9.4",
+    "daisyui": "npm:daisyui@5.0.42",
+    "lume/": "https://deno.land/x/lume@v3.0.2/",
+    "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.10/jsx-runtime.ts"
   },
   "nodeModulesDir": "auto",
   "tasks": {
@@ -10,5 +11,15 @@
     "serve": "deno task lume -s",
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
     "check": "deno run -A npm:@biomejs/biome check --write && /Users/zhykos/Library/Python/3.12/bin/djlint . --reformat --lint"
+    "check": "deno lint && deno run -A npm:@biomejs/biome check --write && djlint . --reformat --lint"
+  },
+  "compilerOptions": {
+    "types": ["lume/types.ts"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "lume"
+  },
+  "unstable": ["temporal"],
+  "lint": {
+    "plugins": ["https://deno.land/x/lume@v3.0.2/lint.ts"]
   }
 }

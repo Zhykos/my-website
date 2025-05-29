@@ -11,3 +11,5 @@ coverage/
 /complete-resume/rendercv_output/
 /www/
 /_site/
+_broken_links.json
+/_cache/

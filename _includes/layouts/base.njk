@@ -1,73 +1,143 @@
 <!DOCTYPE html>
+{# djlint:off H030,H031 #}
 <html lang="fr">
+    {# djlint:on #}
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{ title or site.title }}</title>
-        <meta name="description" content="{{ description or site.description }}" />
-        <meta name="keywords" content="dddd" />
+        <title>Site de Thomas Cicognani</title>
         <link rel="stylesheet" href="/styles.css" />
         <link rel="alternate"
               href="/feed.xml"
               type="application/atom+xml"
-              title="{{ site.title }}" />
+              title="Blog de Thomas" />
         <link rel="alternate"
               href="/feed.json"
               type="application/json"
-              title="{{ site.title }}" />
+              title="Blog de Thomas" />
+        <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
+                integrity="sha384-9l0HtvnB08o05/gpJ0/s/MH6b4qnQsdwaxyvtOJY/j8yiQWS1kAmsRQVMgKxcREb"
+                crossorigin="anonymous"></script>
     </head>
     <body>
         <nav class="navbar bg-base-100 shadow-sm">
-            <div class="navbar-start">
-                <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                             class="h-5 w-5"
-                             fill="none"
-                             viewBox="0 0 24 24"
-                             stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </div>
-                    <menu>
-                        <ul tabindex="0"
-                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            {%- for entry in search.pages("menu.visible=true", "menu.order") %}
-                                <li>
-                                    <a href="{{ entry.url }}"
-                                       {% if entry.url == url %}aria-current="page"{% endif %}>
-                                        {{ entry.menu.title or entry.title }}
-                                    </a>
-                                </li>
-                            {%- endfor %}
-                        </ul>
-                    </menu>
+            <div class="dropdown flex-none">
+                <div tabindex="0" role="button" class="btn btn-circle">
+                    <img height="24"
+                         width="24"
+                         src="{{ "menu-alt-left" | icon('boxicons', 'regular') }}"
+                         alt="Menu"
+                         class="fill-current-color"
+                         title="Cliquez pour ouvrir le menu des liens"
+                         inline />
                 </div>
-                <a class="btn btn-ghost text-xl" href="/">{{ site.title }}</a>
-            </div>
-            <div class="navbar-center hidden lg:flex">
                 <menu>
-                    <ul class="menu menu-horizontal px-1">
-                        {%- for entry in search.pages("menu.visible=true", "menu.order") %}
-                            <li>
-                                <a href="{{ entry.url }}"
-                                   {% if entry.url == url %}aria-current="page"{% endif %}>
-                                    {{ entry.menu.title or entry.title }}
-                                </a>
-                            </li>
-                        {%- endfor %}
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <li>
+                            <a class="link" href="/">Accueil</a>
+                        </li>
+                        <li>
+                            <a class="link" href="/about">À propos</a>
+                        </li>
+                        <li>
+                            <a class="link" href="/education">Scolarité et formations</a>
+                        </li>
+                        <li>
+                            <a class="link" href="/professional">Expériences professionnelles</a>
+                        </li>
+                        <li>
+                            <a class="link" href="/skills">Skills</a>
+                        </li>
+                        <li>
+                            <a class="link" href="/files/thomas-cicognani-resume.pdf">CV</a>
+                        </li>
+                        <li>
+                            <a class="link" href="/files/thomas-cicognani-complete-resume.pdf">CV exhaustif</a>
+                        </li>
+                        <li>
+                            <a class="link" href="/open-source">Projets Open source</a>
+                        </li>
+                        <li>
+                            <a class="link" href="/video-game">Expériences dans le jeu vidéo</a>
+                        </li>
+                        <li>
+                            <a class="link" href="/volunteering">Bénévolat, sport, etc.</a>
+                        </li>
+                        <li>
+                            <a class="link" href="/blog">Blog</a>
+                        </li>
                     </ul>
                 </menu>
             </div>
-            <div class="navbar-end">
-                <div class="navbar-search">
-                    <div id="search"></div>
-                </div>
+            <div class="flex-1">
+                <a class="btn btn-ghost text-xl link"
+                   href="/"
+                   title="Aller à l'accueil du site">Thomas Cicognani</a>
+            </div>
+            <div class="flex-none">
+                <button class="btn btn-circle" onclick="search_modal.showModal()">
+                    <img height="24"
+                         width="24"
+                         src="{{ "search-alt" | icon('boxicons', 'regular') }}"
+                         alt="Search"
+                         class="fill-current-color"
+                         title="Cliquez pour ouvrir une modale et faire une recherche sur le site"
+                         inline />
+                </button>
+                <button class="swap swap-rotate btn btn-circle"
+                        data-toggle-theme="dim,cupcake"
+                        data-act-class="ACTIVECLASS">
+                    <input type="checkbox" class="theme-controller" value="dim" />
+                    <img height="24"
+                         width="24"
+                         class="swap-off fill-current"
+                         src="{{ "sun" | icon('boxicons', 'regular') }}"
+                         alt="Thème clair actif"
+                         class="fill-current-color"
+                         title="Cliquez pour activer le thème clair"
+                         inline />
+                    <img height="24"
+                         width="24"
+                         class="swap-on fill-current"
+                         src="{{ "moon" | icon('boxicons', 'regular') }}"
+                         alt="Thème sombre actif"
+                         class="fill-current-color"
+                         title="Cliquez pour activer le thème sombre"
+                         inline />
+                </button>
             </div>
         </nav>
-        <main class="{{ bodyClass }}">
+        <main>
             {{ content | safe }}
+            <div>
+                <button class="btn btn-circle fixed bottom-10 right-10 z-10 flex"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+                    <img height="32"
+                         width="32"
+                         src="{{ "up-arrow-alt" | icon('boxicons', 'regular') }}"
+                         alt="Aller en haut"
+                         title="Cliquez pour retourner en haut de la page"
+                         class="fill-current-color"
+                         inline />
+                </button>
+            </div>
+            <dialog id="search_modal" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                                title="Fermer la fenêtre de recherche">✕</button>
+                    </form>
+                    <h3 class="text-lg font-bold">Recherche</h3>
+                    <p class="py-4">Recherchez des éléments dans le site, ou pressez ESC ou cliquez en dehors de la fenêtre pour fermer</p>
+                    <div class="navbar-search">
+                        <div id="search"></div>
+                    </div>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
         </main>
-        <!-- Current page: {{ url }} -->
     </body>
 </html>

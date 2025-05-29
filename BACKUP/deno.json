@@ -1,9 +1,0 @@
-{
-	"imports": {
-		"@biomejs/biome": "npm:@biomejs/biome@^1.9.4"
-	},
-	"nodeModulesDir": "auto",
-	"tasks": {
-		"format": "deno run -A npm:@biomejs/biome format --write"
-	}
-}

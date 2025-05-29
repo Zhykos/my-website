@@ -18,35 +18,15 @@ config.collections.push(
         .description("Here you can create or edit your posts")
         .preview(false)
         .create(true)
-        .viewFilter("Draft", "draft", true)
+        //.viewFilter("Draft", "draft", true)
         .fields([
             f.string("Title"),
             f.string("Description"),
             f.datetime("Date"),
             f.list("Tags"),
-            f.boolean("Draft").required(false),
+            //f.boolean("Draft").required(false),
             f.markdown("Body"),
         ])
-        .toJSON(),
-);
-
-const pageFields = [
-    f.string("Title"),
-    f.string("Url"),
-    f.markdown("Body"),
-    f.object("Menu", [f.boolean("Visible"), f.number("Order")]),
-    f.hidden("templateClass"),
-    f.hidden("layout"),
-];
-
-// Individual pages
-config.collections.push(
-    f
-        .files("Pages")
-        .description("Here you can edit your individual pages")
-        .preview(false)
-        .file("About", "about.md", pageFields)
-        .file("404", "404.md", pageFields)
         .toJSON(),
 );
 

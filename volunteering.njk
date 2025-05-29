@@ -1,0 +1,187 @@
+---
+layout: layouts/page.njk
+---
+
+{% import "macro-breadcrumbs.njk" as breadcrumbs %}
+{{ breadcrumbs.breadcrumbs2('Bénévolat, sports, etc.', '/volunteering') }}
+<div class="card bg-base-300 rounded-box grid h-16 grow place-items-center font-bold">Bénévolat, sports, etc.</div>
+<div class="divider divider-primary divider-start">Bénévolat</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <figure>
+        <img src="/img/project/gauloise.webp"
+             height="300"
+             width="100"
+             class="w-40"
+             alt="" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">Basket-ball - table de marque</h2>
+        <p>2002 à 2004 (je crois)</p>
+        <p>
+            Aide aux tables de marque du club (<a href="https://lagauloisevitry.kalisport.com/" class="link">La Gauloise Vitry</a>)
+        </p>
+        <p>Officiel de table de marque en Espoir Pro B et Nationale 3 (ce n'était plus du bénévolat)</p>
+    </div>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <figure>
+        <img src="/img/project/linkirl.webp"
+             height="300"
+             width="100"
+             class="w-40"
+             alt="" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">LinkIRL (association)</h2>
+        <p>2011 et 2012 (je crois)</p>
+        <p>Aide à l'organisation d'événements autour du jeu vidéo, à Nantes</p>
+        <p>Aide à la préparation d'un voyage organisé, en bus, vers la Japan Expo</p>
+    </div>
+</div>
+<div class="card lg:card-side bg-base-200 shadow-sm mb-8">
+    <figure>
+        <img src="/img/project/unass.webp"
+             height="300"
+             width="100"
+             class="w-40"
+             alt="" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">
+            <a class="link" href="https://www.unass.fr/unass-loire-atlantique">UNASS 44</a>
+        </h2>
+        <p>De 2021 à 2023</p>
+        <p>Diplômé Secouriste (PSE 1) en 2021</p>
+        <p>Diplômé Équipier secouriste (PSE 2) en 2022</p>
+        <p>
+            Présence sur de nombreux dispositifs de secours dont le FC Nantes, le HBC Nantes, le Mans (24h moto, 24h auto, 24h vélo, etc.) et bien d'autres
+        </p>
+    </div>
+</div>
+<div class="divider divider-primary divider-start">Sports</div>
+<div class="text-center">
+    <div class="stats shadow stats-vertical lg:stats-horizontal">
+        <div class="stat">
+            <div class="stat-figure text-secondary">
+                <img height="32"
+                     width="32"
+                     src="{{ "run" | icon('boxicons', 'regular') }}"
+                     alt=""
+                     class="fill-current-color"
+                     inline />
+            </div>
+            <div class="stat-title">Record de course</div>
+            <div class="stat-value">47 km</div>
+            <div class="stat-desc">Trail de la digue (2020)</div>
+        </div>
+        <div class="stat">
+            <div class="stat-figure text-secondary">
+                <img height="32"
+                     width="32"
+                     src="{{ "basketball" | icon('boxicons', 'regular') }}"
+                     alt=""
+                     class="fill-current-color"
+                     inline />
+            </div>
+            <div class="stat-title">Basket-ball</div>
+            <div class="stat-value">10 ans</div>
+            <div class="stat-desc">Gauloise de Vitry + Nantes</div>
+        </div>
+        <div class="stat">
+            <div class="stat-figure text-secondary">
+                <img height="32"
+                     width="32"
+                     src="{{ "Business/info-card-line" | icon("remix") }}"
+                     alt=""
+                     class="fill-current-color"
+                     inline />
+            </div>
+            <div class="stat-title">Clubs</div>
+            <div class="stat-value">7</div>
+            <div class="stat-desc">+ université + loisir + entreprise</div>
+        </div>
+    </div>
+    <div class="flex flex-wrap gap-8 mt-6">
+        <div class="flex items-center">
+            <img height="24"
+                 width="24"
+                 src="{{ "1F6A3-200D-2642-FE0F" | icon("openmoji") }}"
+                 alt=""
+                 class="fill-current-color mr-2"
+                 inline />
+            <h3 class="text-xl">Aviron</h3>
+        </div>
+        <div class="flex items-center">
+            <img height="24"
+                 width="24"
+                 src="{{ "1F3C0" | icon("openmoji") }}"
+                 alt=""
+                 class="fill-current-color mr-2"
+                 inline />
+            <h3 class="text-xl">Basket-ball</h3>
+        </div>
+        <div class="flex items-center">
+            <img height="24"
+                 width="24"
+                 src="{{ "1F45F" | icon("openmoji") }}"
+                 alt=""
+                 class="fill-current-color mr-2"
+                 inline />
+            <h3 class="text-xl">Course et trail</h3>
+        </div>
+        <div class="flex items-center">
+            <img height="24"
+                 width="24"
+                 src="{{ "1F9D7" | icon("openmoji") }}"
+                 alt=""
+                 class="fill-current-color mr-2"
+                 inline />
+            <h3 class="text-xl">Escalade</h3>
+        </div>
+        <div class="flex items-center">
+            <img height="24"
+                 width="24"
+                 src="{{ "26BD" | icon("openmoji") }}"
+                 alt=""
+                 class="fill-current-color mr-2"
+                 inline />
+            <h3 class="text-xl">Football</h3>
+        </div>
+        <div class="flex items-center">
+            <img height="24"
+                 width="24"
+                 src="{{ "1F938" | icon("openmoji") }}"
+                 alt=""
+                 class="fill-current-color mr-2"
+                 inline />
+            <h3 class="text-xl">Gymnastique</h3>
+        </div>
+        <div class="flex items-center">
+            <img height="24"
+                 width="24"
+                 src="{{ "1F94B" | icon("openmoji") }}"
+                 alt=""
+                 class="fill-current-color mr-2"
+                 inline />
+            <h3 class="text-xl">Judo</h3>
+        </div>
+        <div class="flex items-center">
+            <img height="24"
+                 width="24"
+                 src="{{ "1F3C9" | icon("openmoji") }}"
+                 alt=""
+                 class="fill-current-color mr-2"
+                 inline />
+            <h3 class="text-xl">Rugby</h3>
+        </div>
+        <div class="flex items-center">
+            <img height="24"
+                 width="24"
+                 src="{{ "1F52B" | icon("openmoji") }}"
+                 alt=""
+                 class="fill-current-color mr-2"
+                 inline />
+            <h3 class="text-xl">Tir 10 mètres</h3>
+        </div>
+    </div>
+</div>

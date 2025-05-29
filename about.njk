@@ -1,0 +1,190 @@
+---
+layout: layouts/page.njk
+---
+
+{% import "macro-breadcrumbs.njk" as breadcrumbs %}
+{{ breadcrumbs.breadcrumbs2('À propos', '/about') }}
+<div class="card bg-base-300 rounded-box grid h-16 grow place-items-center font-bold">
+    À propos de Thomas Cicognani
+</div>
+<div class="divider divider-primary divider-start">Présentation</div>
+<div class="hero bg-base-200 mb-8">
+    <div class="hero-content flex-col lg:flex-row">
+        <img src="/img/me.webp"
+             alt=""
+             height="200"
+             width="200"
+             class="max-w-sm rounded-lg shadow-2xl lg:self-start lg:mt-8 self-center" />
+        <div>
+            <h1 class="text-5xl font-bold">Présentation</h1>
+            <p class="py-6">À propos de Thomas Cicognani (Moi ! Qui ne sait pas sourire, c'est vrai !)</p>
+            <p class="py-6">Bonjour, oui c'est moi ! Moi, qui ne sait pas sourire, c'est vrai.</p>
+            <p class="py-6">
+                Avec 13 ans d’expérience dans l’architecture
+                logicielle et l’analyse de Systèmes d’Information de
+                divers clients, j’ai acquis une forte exigence de
+                qualité afin de livrer des produits les plus stables
+                possibles. J’aime aussi travailler en équipe,
+                partager mes connaissances, monter en compétence et
+                apprendre de nouvelles technologies via des
+                formations au service du produit et des clients. Je
+                mets également en pratique ces connaissances dans le
+                monde de l’Open Source.
+            </p>
+            <p class="py-6">
+                Je porte aussi une très grande importance à des
+                techniques comme le Domain-Driven Design,
+                l’architecture hexagonale, la qualité et l’agilité
+                qui apporte une certaine rigueur et un cadre sein
+                dans une équipe afin de produire le plus
+                efficacement et qualitativement possible. Depuis
+                2022, je travaille directement avec des clients afin
+                d'acquérir de nouvelles connaissances et partager
+                mon expérience.
+            </p>
+            <p class="py-6">
+                J’apprécie également être au service des autres que
+                ce soit professionnellement ou personnellement. J'ai
+                été dans le monde associatif depuis 2008 où j’ai
+                notamment participé à une émission de radio, été
+                rédacteur web ou Équipier secouriste.
+            </p>
+            <div>
+                <ul>
+                    <li class="mb-2">
+                        <img height="24"
+                             width="24"
+                             src="{{ "chevron-right" | icon('boxicons', 'regular') }}"
+                             alt=""
+                             class="about-point-list"
+                             inline />
+                        <strong>Année de naissance :</strong>
+                        1986
+                    </li>
+                    <li class="mb-2">
+                        <img height="24"
+                             width="24"
+                             src="{{ "chevron-right" | icon('boxicons', 'regular') }}"
+                             alt=""
+                             class="about-point-list"
+                             inline />
+                        <strong>Début professionnel :</strong>
+                        2009
+                    </li>
+                    <li class="mb-2">
+                        <img height="24"
+                             width="24"
+                             src="{{ "chevron-right" | icon('boxicons', 'regular') }}"
+                             alt=""
+                             class="about-point-list"
+                             inline />
+                        <strong>Région :</strong> Luxembourg
+                    </li>
+                    <li class="mb-2">
+                        <img height="24"
+                             width="24"
+                             src="{{ "chevron-right" | icon('boxicons', 'regular') }}"
+                             alt=""
+                             class="about-point-list"
+                             inline />
+                        <strong>Email :</strong>
+                        <a href="mailto:contact@thomascicognani.mailer.me" class="link">contact@thomascicognani.mailer.me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divider divider-primary divider-start">Intérêts</div>
+<div class="flex flex-wrap gap-8">
+    <div class="flex">
+        <img height="24"
+             width="24"
+             src="{{ "Business/global-line" | icon("remix") }}"
+             alt=""
+             class="fill-current-color mr-2"
+             inline />
+        <h3>Développement fullstack</h3>
+    </div>
+    <div class="flex">
+        <img height="24"
+             width="24"
+             src="{{ "System/settings-5-line" | icon("remix") }}"
+             alt=""
+             class="fill-current-color mr-2"
+             inline />
+        <h3>Software craftmanship</h3>
+    </div>
+    <div class="flex">
+        <img height="24"
+             width="24"
+             src="{{ "java" | icon('boxicons', 'logos') }}"
+             alt=""
+             class="fill-current-color mr-2"
+             inline />
+        <h3>Java</h3>
+    </div>
+    <div class="flex">
+        <img height="24"
+             width="24"
+             src="{{ "typescript" | icon('boxicons', 'logos') }}"
+             alt=""
+             class="fill-current-color mr-2"
+             inline />
+        <h3>TypeScript</h3>
+    </div>
+    <div class="flex">
+        <img height="24"
+             width="24"
+             src="{{ "test-tube" | icon('boxicons', 'regular') }}"
+             alt=""
+             class="fill-current-color mr-2"
+             inline />
+        <h3>Tests</h3>
+    </div>
+    <div class="flex">
+        <img height="24"
+             width="24"
+             src="{{ "happy-heart-eyes" | icon('boxicons', 'regular') }}"
+             alt=""
+             class="fill-current-color mr-2"
+             inline />
+        <h3>Deno</h3>
+    </div>
+    <div class="flex">
+        <img height="24"
+             width="24"
+             src="{{ "Development/code-s-slash-fill" | icon("remix") }}"
+             alt=""
+             class="fill-current-color mr-2"
+             inline />
+        <h3>Software Engineering</h3>
+    </div>
+    <div class="flex">
+        <img height="24"
+             width="24"
+             src="{{ "glasses" | icon('boxicons', 'regular') }}"
+             alt=""
+             class="fill-current-color mr-2"
+             inline />
+        <h3>OpenTelemetry</h3>
+    </div>
+    <div class="flex">
+        <img height="24"
+             width="24"
+             src="{{ "dollar-circle" | icon('boxicons', 'regular') }}"
+             alt=""
+             class="fill-current-color mr-2"
+             inline />
+        <h3>Open source</h3>
+    </div>
+    <div class="flex">
+        <img height="24"
+             width="24"
+             src="{{ "Map/flight-land-line" | icon("remix") }}"
+             alt=""
+             class="fill-current-color mr-2"
+             inline />
+        <h3>Éthique</h3>
+    </div>
+</div>

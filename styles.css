@@ -1,16 +1,11 @@
-/* Code syntax highlight */
-/*@import "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/github-dark.min.css";*/
 @import "https://cdn.jsdelivr.net/npm/daisyui@5";
+@import "https://cdn.jsdelivr.net/npm/daisyui@5/theme/cupcake.css";
+@import "https://cdn.jsdelivr.net/npm/daisyui@5/theme/dim.css";
+@import "tailwindcss";
 
-/*
-@import "css/reset.css";
-@import "css/navbar.css";
-@import "css/post-list.css";
-@import "css/post.css";
-@import "css/tag.css";
-*/
+@import "css/site.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@plugin "daisyui";
+@plugin "daisyui" {
+  /* biome-ignore lint/correctness/noUnknownProperty: <explanation> */
+  themes: cupcake --default, dim --prefersdark;
+}
