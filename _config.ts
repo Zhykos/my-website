@@ -1,9 +1,11 @@
 import { fr } from "npm:date-fns/locale/fr";
 import lume from "lume/mod.ts";
 import basePath from "lume/plugins/base_path.ts";
-import codeHighlight from "lume/plugins/code_highlight.ts";
+import checkUrls from "lume/plugins/check_urls.ts";
+//import codeHighlight from "lume/plugins/code_highlight.ts";
 import date from "lume/plugins/date.ts";
 import decapCMS from "lume/plugins/decap_cms.ts";
+//import extractDate from "lume/plugins/extract_date.ts";
 import feed from "lume/plugins/feed.ts";
 import icons from "lume/plugins/icons.ts";
 import inline from "lume/plugins/inline.ts";
@@ -37,7 +39,7 @@ site.ignore("README.md")
             locales: { fr },
         }),
     )
-    .use(codeHighlight())
+    //.use(codeHighlight())
     .use(basePath())
     .use(sitemap())
     .use(nunjucks())
@@ -99,6 +101,14 @@ site.ignore("README.md")
             defaultLanguage: "fr",
         }),
     )
-    .use(inline());
+    .use(inline())
+    .use(
+        checkUrls({
+            strict: true,
+            external: true,
+            output: "_broken_links.json",
+        }),
+    );
+//.use(extractDate());
 
 export default site;
