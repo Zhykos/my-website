@@ -19,6 +19,7 @@ import pageFind from "lume/plugins/pagefind.ts";
 //import purgecss from "lume/plugins/purgecss.ts";
 import readingInfo from "lume/plugins/reading_info.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
+import robots from "lume/plugins/robots.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
@@ -50,6 +51,7 @@ site.ignore("README.md")
     //.use(codeHighlight())
     .use(basePath())
     .use(metas())
+    .use(robots())
     .use(sitemap())
     .use(nunjucks())
     .use(
