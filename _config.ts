@@ -12,7 +12,6 @@ import inline from "lume/plugins/inline.ts";
 import multilanguage from "lume/plugins/multilanguage.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
 import pageFind from "lume/plugins/pagefind.ts";
-import postcss from "lume/plugins/postcss.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
@@ -33,7 +32,7 @@ site.ignore("README.md")
     .copy("files")
     .copy("img")
     .use(tailwindcss())
-    .use(postcss())
+    .add("styles.css")
     .use(
         date({
             locales: { fr },
