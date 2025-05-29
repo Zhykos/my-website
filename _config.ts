@@ -2,13 +2,15 @@ import { fr } from "npm:date-fns/locale/fr";
 import lume from "lume/mod.ts";
 import basePath from "lume/plugins/base_path.ts";
 import checkUrls from "lume/plugins/check_urls.ts";
-//import codeHighlight from "lume/plugins/code_highlight.ts";
 import date from "lume/plugins/date.ts";
 import decapCMS from "lume/plugins/decap_cms.ts";
-//import extractDate from "lume/plugins/extract_date.ts";
+import extractDate from "lume/plugins/extract_date.ts";
+import favicon from "lume/plugins/favicon.ts";
 import feed from "lume/plugins/feed.ts";
+import gzip from "lume/plugins/gzip.ts";
 import icons from "lume/plugins/icons.ts";
 import inline from "lume/plugins/inline.ts";
+import lightningCss from "lume/plugins/lightningcss.ts";
 import multilanguage from "lume/plugins/multilanguage.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
 import pageFind from "lume/plugins/pagefind.ts";
@@ -31,7 +33,9 @@ site.ignore("README.md")
     .ignore("www")
     .copy("files")
     .copy("img")
+    .add("favicon.png")
     .use(tailwindcss())
+    .use(lightningCss())
     .add("styles.css")
     .use(
         date({
@@ -107,7 +111,13 @@ site.ignore("README.md")
             external: true,
             output: "_broken_links.json",
         }),
-    );
-//.use(extractDate());
+    )
+    .use(extractDate())
+    .use(
+        favicon({
+            input: "/favicon.png",
+        }),
+    )
+    .use(gzip());
 
 export default site;

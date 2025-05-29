@@ -1,7 +1,7 @@
-@import "tailwindcss";
 @import "https://cdn.jsdelivr.net/npm/daisyui@5";
 @import "https://cdn.jsdelivr.net/npm/daisyui@5/theme/cupcake.css";
 @import "https://cdn.jsdelivr.net/npm/daisyui@5/theme/dim.css";
+@import "tailwindcss";
 
 @import "css/site.css";
 
