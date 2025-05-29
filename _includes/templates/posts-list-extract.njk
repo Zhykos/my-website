@@ -9,7 +9,7 @@
                     {{ post.date | date('HUMAN_DATE', 'fr') }}
                 </time>
                 <span class="post-tags">
-                    {% for tag in post.tags %}<div class="badge badge-soft badge-primary m-1">{{ tag }}</div>{% endfor %}
+                    {% for tag in post.tags %}<div class="badge badge-primary m-1">{{ tag }}</div>{% endfor %}
                 </span>
             </div>
             <div class="flex">

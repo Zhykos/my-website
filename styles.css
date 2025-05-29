@@ -1,4 +1,5 @@
 @import "https://cdn.jsdelivr.net/npm/daisyui@5";
+@import "https://cdn.jsdelivr.net/npm/daisyui@5/theme/cupcake.css";
 @import "https://cdn.jsdelivr.net/npm/daisyui@5/theme/dim.css";
 
 @import "css/site.css";
@@ -7,5 +8,5 @@
 @tailwind utilities;
 @plugin "daisyui" {
   /* biome-ignore lint/correctness/noUnknownProperty: <explanation> */
-  themes: light --default, dim --prefersdark;
+  themes: cupcake --default, dim --prefersdark;
 }

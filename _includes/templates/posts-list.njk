@@ -18,7 +18,7 @@
             <div>
                 {% for tag in post.tags %}
                     {% set page = search.page("type=tag tag='" + tag + "'") %}
-                    <div class="badge badge-soft badge-primary">{{ tag }}</div>
+                    <div class="badge badge-primary">{{ tag }}</div>
                 {% endfor %}
             </div>
         </li>
