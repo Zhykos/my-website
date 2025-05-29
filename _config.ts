@@ -22,6 +22,7 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 import robots from "lume/plugins/robots.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
+import svgo from "lume/plugins/svgo.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 
 const site = lume({
@@ -128,6 +129,7 @@ site.ignore("README.md")
     )
     .use(gzip())
     .use(minifyHTML())
-    .use(readingInfo());
+    .use(readingInfo())
+    .use(svgo());
 
 export default site;
