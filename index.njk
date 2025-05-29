@@ -6,48 +6,150 @@ layout: layouts/home.njk
     <div class="hero-content text-center">
         <div class="max-w-md">
             <h1 class="text-5xl font-bold">Thomas Cicognani</h1>
-            <p class="py-6">
-                Je suis <span class="iam">développeur fullstack</span>
-                <br />
-                <span class="iam">entousiaste de Deno</span>
-                <br />
-                <span class="iam">pour l'Open source</span>
-                <br />
-                <span class="iam">chroniqueur jeux vidéo à temps perdu</span>
-                <br />
-            </p>
+            <h2 class="text-2xl">"Zhykos"</h2>
+            <ul class="mt-6 mb-6 flex flex-col gap-2 text-s">
+                <li>
+                    <img height="8"
+                         width="8"
+                         class="size-4 me-2 inline-block text-success fill-current-color"
+                         src="{{ "check" | icon('boxicons', 'regular') }}"
+                         alt=""
+                         inline />
+                    <span>Développeur fullstack</span>
+                </li>
+                <li>
+                    <img height="8"
+                         width="8"
+                         class="size-4 me-2 inline-block text-success fill-current-color"
+                         src="{{ "check" | icon('boxicons', 'regular') }}"
+                         alt=""
+                         inline />
+                    <span>Java / Spring Boot / TypeScript / React (Native) / Vue</span>
+                </li>
+                <li>
+                    <img height="8"
+                         width="8"
+                         class="size-4 me-2 inline-block text-success fill-current-color"
+                         src="{{ "check" | icon('boxicons', 'regular') }}"
+                         alt=""
+                         inline />
+                    <span>Entousiaste de Deno</span>
+                </li>
+                <li>
+                    <img height="8"
+                         width="8"
+                         class="size-4 me-2 inline-block text-success fill-current-color"
+                         src="{{ "check" | icon('boxicons', 'regular') }}"
+                         alt=""
+                         inline />
+                    <span>Open Source</span>
+                </li>
+                <li>
+                    <img height="8"
+                         width="8"
+                         class="size-4 me-2 inline-block text-success fill-current-color"
+                         src="{{ "check" | icon('boxicons', 'regular') }}"
+                         alt=""
+                         inline />
+                    <span>Engagé</span>
+                </li>
+                <li>
+                    <img height="8"
+                         width="8"
+                         class="size-4 me-2 inline-block text-success fill-current-color"
+                         src="{{ "check" | icon('boxicons', 'regular') }}"
+                         alt=""
+                         inline />
+                    <span>Chroniqueur jeux vidéo</span>
+                </li>
+                <li class="opacity-50">
+                    <img height="8"
+                         width="8"
+                         class="size-4 me-2 inline-block text-base-content/50 fill-current-color"
+                         src="{{ "check" | icon('boxicons', 'regular') }}"
+                         alt=""
+                         inline />
+                    <span class="line-through">Mais pas designer</span>
+                </li>
+            </ul>
             <div>
                 <div class="avatar">
-                    <div class="ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2 mx-4">
-                        <a href="https://www.linkedin.com/in/thomas-cicognani"
-                           class="linkedin link">
-                            <img height="8"
-                                 width="8"
+                    <div class="ring-primary ring-offset-base-100 rounded-full ring-2 ring-offset-2 mx-4">
+                        <a href="https://www.linkedin.com/in/thomas-cicognani">
+                            <img height="36"
+                                 width="36"
                                  src="{{ "linkedin" | icon('boxicons', 'logos') }}"
-                                 alt="LinkedIn" />
+                                 alt="LinkedIn"
+                                 class="fill-current-color"
+                                 title="Ouvrir ma page LinkedIn"
+                                 inline />
                         </a>
                     </div>
                 </div>
                 <div class="avatar">
-                    <div class="ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2 mx-4">
-                        <a href="https://www.github.com/zhykos"  class="github link">
-                            <img height="8"
-                                 width="8"
+                    <div class="ring-primary ring-offset-base-100 rounded-full ring-2 ring-offset-2 mx-4">
+                        <a href="https://www.github.com/zhykos">
+                            <img height="36"
+                                 width="36"
                                  src="{{ "github" | icon('boxicons', 'logos') }}"
-                                 alt="GitHub" />
+                                 alt="GitHub"
+                                 class="fill-current-color"
+                                 title="Ouvrir ma page GitHub"
+                                 inline />
                         </a>
                     </div>
                 </div>
                 <div class="avatar">
-                    <div class="ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2 mx-4">
-                        <a href="mailto:contact@thomascicognani.mailer.me" class="gmail link">
-                            <img height="8"
-                                 width="8"
+                    <div class="ring-primary ring-offset-base-100 rounded-full ring-2 ring-offset-2 mx-4">
+                        <a href="mailto:contact@thomascicognani.mailer.me">
+                            <img height="36"
+                                 width="36"
                                  src="{{ "envelope" | icon('boxicons', 'regular') }}"
-                                 alt="Email" />
+                                 alt="Email"
+                                 class="fill-current-color"
+                                 title="M'envoyer un email"
+                                 inline />
                         </a>
                     </div>
                 </div>
+            </div>
+            <div class="mt-6">
+                <a href="/about" class="link btn m-2">
+                    <img height="16"
+                         width="16"
+                         src="{{ "question-mark" | icon('boxicons', 'regular') }}"
+                         alt=""
+                         class="fill-current-color"
+                         inline />
+                    À propos
+                </a>
+                <a href="/professional" class="link btn m-2">
+                    <img height="16"
+                         width="16"
+                         src="{{ "briefcase-alt" | icon('boxicons', 'regular') }}"
+                         alt=""
+                         class="fill-current-color"
+                         inline />
+                    Expériences professionnelles
+                </a>
+                <a href="/open-source" class="link btn m-2">
+                    <img height="16"
+                         width="16"
+                         src="{{ "home-smile" | icon('boxicons', 'regular') }}"
+                         alt=""
+                         class="fill-current-color"
+                         inline />
+                    Open source
+                </a>
+                <a href="/blog" class="link btn m-2">
+                    <img height="16"
+                         width="16"
+                         src="{{ "pencil" | icon('boxicons', 'regular') }}"
+                         alt=""
+                         class="fill-current-color"
+                         inline />
+                    Blog
+                </a>
             </div>
         </div>
     </div>

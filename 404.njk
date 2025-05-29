@@ -1,38 +1,17 @@
 ---
-layout: layouts/home.njk
+layout: layouts/page.njk
 url: /404.html
 ---
 
-{% import "macro-breadcrumbs.njk" as breadcrumbs %}
-{{ breadcrumbs.breadcrumbs2('Page non trouvée', '/1312') }}
-<div class="divider divider-start">Page non trouvée : liste des pages du site</div>
-<ul class="list bg-base-100 rounded-box shadow-md">
-    <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Veuillez choisir une page</li>
-    <li class="list-row">
-        <a href="/" class="link">Accueil</a>
-    </li>
-    <li class="list-row">
-        <a href="/about" class="link">À propos</a>
-    </li>
-    <li class="list-row">
-        <a href="/education" class="link">Scolarité et formations</a>
-    </li>
-    <li class="list-row">
-        <a href="/professional" class="link">Projets professionnels</a>
-    </li>
-    <li class="list-row">
-        <a href="/skills" class="link">Skills</a>
-    </li>
-    <li class="list-row">
-        <a href="/files/thomas-cicognani-resume.pdf" class="link">CV (en PDF)</a>
-    </li>
-    <li class="list-row">
-        <a href="/files/thomas-cicognani-complete-resume.pdf" class="link">CV exhaustif (en PDF)</a>
-    </li>
-    <li class="list-row">
-        <a href="/personal" class="link">Expériences personnelles</a>
-    </li>
-    <li class="list-row">
-        <a href="/blog" class="link">Blog</a>
-    </li>
-</ul>
+<div class="hero h-64 bg-[url(/img/erik-mclean-sxiSod0tyYQ-unsplash.webp)]">
+    <div class="hero-overlay"></div>
+    <div class="hero-content text-neutral-content text-center">
+        <div class="max-w-md">
+            <h1 class="mb-5 text-5xl font-bold">Oups</h1>
+            <p class="mb-5">La page recherchée n'existe pas. Vous trouverez les possibilités plus bas.</p>
+            <button class="btn btn-primary link">
+                <a href="/">Retourner à l'accueil</a>
+            </button>
+        </div>
+    </div>
+</div>

@@ -4,4 +4,25 @@
 
 .about-point-list {
   display: inline;
+  fill: currentColor;
+}
+
+:root {
+  /* Home, ring icons */
+  --tw-ring-color: var(--color-success);
+  --tw-shadow: 0 0 #0000;
+  --tw-ring-offset-color: var(--color-base-100);
+  --tw-ring-inset: ;
+
+  /* Search component */
+  --pagefind-ui-background: #0000;
+  --pagefind-ui-text: inherit;
+}
+
+#search ::placeholder {
+  color: color-mix(in oklab, currentColor 50%, transparent);
+}
+
+.fill-current-color {
+  fill: currentColor;
 }

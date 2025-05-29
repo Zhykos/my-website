@@ -3,98 +3,138 @@ layout: layouts/page.njk
 ---
 
 {% import "macro-breadcrumbs.njk" as breadcrumbs %}
-{{ breadcrumbs.breadcrumbs3(i18n.proxp, '/pro-xp', 'Scolarité et formations', '/education') }}
-<div class="divider divider-start">Scolarité</div>
-<div class="gap-8 flex flex-wrap">
-    <div class="flex-1">
-        <img src="/img/education/lycee.webp" alt="" width="300" height="100" />
-        <p>
-            <em>Lycée François 1er de Vitry-le-François</em>
-        </p>
-        <h5>2001 à 2004</h5>
-        <h6>Bac S</h6>
-        <ul>
-            <li>Option Sciences de l'ingénieur</li>
-        </ul>
-    </div>
-    <div class="flex-1">
-        <img src="/img/education/iut.webp" alt="" width="300" height="100" />
-        <p>
-            <em>IUT de Reims</em>
-        </p>
-        <h5>2004 à 2006</h5>
-        <h6>DUT informatique</h6>
-        <ul>
-            <li>Option Imagerie numérique</li>
-        </ul>
-    </div>
-    <div class="flex-1">
-        <img src="/img/education/fac.webp" alt="" width="300" height="100" />
-        <p>
-            <em>Faculté des Sciences et des techniques de
-            Nantes</em>
-        </p>
-        <h5>2006 à 2009</h5>
-        <h6>Master informatique</h6>
-        <ul>
-            <li>
-                Master ALMA, architectures logicielles et
-                systèmes distribués
-            </li>
-        </ul>
-    </div>
+{{ breadcrumbs.breadcrumbs2('Scolarité et formations', '/education') }}
+<div class="card bg-base-300 rounded-box grid h-16 grow place-items-center font-bold">
+    Scolarité, formations et diplômes
 </div>
-<div class="divider divider-start">Autres formations et diplômes</div>
-<div class="gap-8 flex flex-wrap">
-    <div class="flex-1">
-        <img src="/img/certification/acf.webp" alt="" width="300" height="100" />
-        <a class="link"
-           href="https://ac-francois1er.fr/"
-           title="Site de l'Aéroclub François 1er">Brevet d’Initiation Aéronautique (2002)</a>
-    </div>
-    <div class="flex-1">
+<div class="divider divider-primary divider-start">Scolarité</div>
+<div class="mb-6 grid gap-4 sm:grid-cols-2 sm:justify-items-stretch md:mb-10 md:grid-cols-3 lg:mb-12 lg:gap-6">
+    <a href="https://www.education.gouv.fr/annuaire/51308/vitry-le-francois/lycee/0510062r/lycee-polyvalent-francois-1er.html"
+       class="flex flex-col gap-4 rounded-md border border-solid border-gray-300 px-4 py-8 md:p-0">
+        <img src="/img/education/lycee.webp"
+             alt=""
+             width="400"
+             height="200"
+             class="h-60 object-cover" />
+        <div class="px-6 py-4">
+            <p class="mb-4 text-sm font-semibold uppercase text-gray-500">BAC S - 2004</p>
+            <p class="mb-4 text-xl font-semibold link">Lycée François 1er de Vitry-le-François</p>
+            <p class="mb-6 text-sm text-gray-500 sm:text-base lg:mb-8">Option Sciences de l'ingénieur</p>
+        </div>
+    </a>
+    <a href="https://iut-info.univ-reims.fr/"
+       class="flex flex-col gap-4 rounded-md border border-solid border-gray-300 px-4 py-8 md:p-0">
+        <img src="/img/education/iut.webp"
+             alt=""
+             width="400"
+             height="200"
+             class="h-60 bg-gray-400" />
+        <div class="px-6 py-4">
+            <p class="mb-4 text-sm font-semibold uppercase text-gray-500">DUT informatique - 2006</p>
+            <p class="mb-4 text-xl font-semibold link">IUT de Reims</p>
+            <p class="mb-6 text-sm text-gray-500 sm:text-base lg:mb-8">Option Imagerie numérique</p>
+        </div>
+    </a>
+    <a href="https://sciences-techniques.univ-nantes.fr/formations/masters/master-informatique"
+       class="flex flex-col gap-4 rounded-md border border-solid border-gray-300 px-4 py-8 md:p-0">
+        <img src="/img/education/fac.webp"
+             alt=""
+             width="400"
+             height="200"
+             class="h-60 bg-gray-400" />
+        <div class="px-6 py-4">
+            <p class="mb-4 text-sm font-semibold uppercase text-gray-500">Master informatique - 2009</p>
+            <p class="mb-4 text-xl font-semibold link">Faculté des Sciences et des techniques de Nantes</p>
+            <p class="mb-6 text-sm text-gray-500 sm:text-base lg:mb-8">
+                Master ALMA, architectures logicielles et systèmes distribués
+            </p>
+        </div>
+    </a>
+</div>
+<div class="divider divider-primary divider-start mb-8">Autres formations et diplômes</div>
+<div class="mb-6 grid gap-4 sm:grid-cols-2 sm:justify-items-stretch md:mb-10 md:grid-cols-3 lg:mb-12 lg:gap-6">
+    <a href="https://ac-francois1er.fr/"
+       class="flex flex-col gap-4 rounded-md border border-solid border-gray-300 px-4 py-8 md:p-0">
+        <img src="/img/certification/acf.webp"
+             alt=""
+             width="200"
+             height="100"
+             class="self-center mt-4" />
+        <div class="px-6 py-4">
+            <p class="mb-4 text-xl font-semibold link">Brevet d’Initiation Aéronautique</p>
+            <p class="mb-6 text-sm text-gray-500 sm:text-base lg:mb-8">2002</p>
+        </div>
+    </a>
+    <a href="https://www.coventry.ac.uk/"
+       class="flex flex-col gap-4 rounded-md border border-solid border-gray-300 px-4 py-8 md:p-0">
         <img src="/img/education/coventry-university.webp"
              alt=""
-             width="300"
-             height="100" />
-        <a class="link"
-           href="https://www.coventry.ac.uk/"
-           title="Site de la faculté">Modélisation 3D de la faculté de Coventry (stage -
-        2006)</a>
-    </div>
-    <div class="flex-1">
-        <img src="/img/certification/mia.webp" alt="" width="300" height="100" />
-        <a class="link"
-           href="https://www.soprasteria.com/fr"
-           title="Site de Sopra-Steria qui a racheté Mia-Software">API entre Smalltalk et Java (stage -
-        2009)</a>
-    </div>
-    <div class="flex-1">
-        <img src="/img/certification/eclipse.webp" alt=""width="300" height="100" />
-        <a class="link"
-           href="https://www.eni-service.fr/"
-           title="Site de l'ENI qui nous a donné la formation">Formation Eclipse RCP (2013)</a>
-    </div>
-    <div class="flex-1">
+             width="200"
+             height="100"
+             class="self-center mt-4" />
+        <div class="px-6 py-4">
+            <p class="mb-4 text-xl font-semibold link">Modélisation 3D de la faculté de Coventry</p>
+            <p class="mb-6 text-sm text-gray-500 sm:text-base lg:mb-8">Stage de DUT - 2006</p>
+        </div>
+    </a>
+    <a href="https://www.soprasteria.com/fr"
+       class="flex flex-col gap-4 rounded-md border border-solid border-gray-300 px-4 py-8 md:p-0">
+        <img src="/img/certification/mia.webp"
+             alt=""
+             width="200"
+             height="100"
+             class="self-center mt-4" />
+        <div class="px-6 py-4">
+            <p class="mb-4 text-xl font-semibold link">API entre Smalltalk et Java</p>
+            <p class="mb-6 text-sm text-gray-500 sm:text-base lg:mb-8">Stage de Master - 2009</p>
+        </div>
+    </a>
+    <a href="https://www.eni-service.fr/"
+       class="flex flex-col gap-4 rounded-md border border-solid border-gray-300 px-4 py-8 md:p-0">
+        <img src="/img/certification/eclipse.webp"
+             alt=""
+             width="200"
+             height="100"
+             class="self-center mt-4" />
+        <div class="px-6 py-4">
+            <p class="mb-4 text-xl font-semibold link">Formation Eclipse RCP</p>
+            <p class="mb-6 text-sm text-gray-500 sm:text-base lg:mb-8">2013</p>
+        </div>
+    </a>
+    <a href="https://www.liksi.fr/"
+       class="flex flex-col gap-4 rounded-md border border-solid border-gray-300 px-4 py-8 md:p-0">
         <img src="/img/certification/kubernetes.webp"
              alt=""
-             width="300"
-             height="100" />
-        <a class="link"
-           href="https://www.liksi.fr/"
-           title="Site de Liksi qui nous a donné la formation">Formation Kubernetes (2019)</a>
-    </div>
-    <div class="flex-1">
-        <img src="/img/certification/unass.webp" alt="" width="300" height="100" />
-        <a class="link"
-           href="https://www.unass.fr/unass-loire-atlantique"
-           title="Site de l'UNASS Loire-Atlantique">Secouriste (PSE 1), puis Équipier secouriste (PSE 2) de 2021
-        à 2023</a>
-    </div>
-    <div class="flex-1">
-        <img src="/img/certification/raweb.webp" alt=""width="300" height="100" />
-        <a class="link"
-           href="https://access42.net/"
-           title="Site d'Access42 qui nous a donné la formation">Formation accessibilité, RAWeb (2024)</a>
-    </div>
+             width="200"
+             height="100"
+             class="self-center mt-4" />
+        <div class="px-6 py-4">
+            <p class="mb-4 text-xl font-semibold link">Formation Kubernetes</p>
+            <p class="mb-6 text-sm text-gray-500 sm:text-base lg:mb-8">2019</p>
+        </div>
+    </a>
+    <a href="https://www.unass.fr/unass-loire-atlantique"
+       class="flex flex-col gap-4 rounded-md border border-solid border-gray-300 px-4 py-8 md:p-0">
+        <img src="/img/certification/unass.webp"
+             alt=""
+             width="200"
+             height="100"
+             class="self-center mt-4" />
+        <div class="px-6 py-4">
+            <p class="mb-4 text-xl font-semibold link">Secouriste (PSE 1), puis Équipier secouriste (PSE 2)</p>
+            <p class="mb-6 text-sm text-gray-500 sm:text-base lg:mb-8">2021 à 2023</p>
+        </div>
+    </a>
+    <a href="https://access42.net/"
+       class="flex flex-col gap-4 rounded-md border border-solid border-gray-300 px-4 py-8 md:p-0">
+        <img src="/img/certification/raweb.webp"
+             alt=""
+             width="200"
+             height="100"
+             class="self-center mt-4" />
+        <div class="px-6 py-4">
+            <p class="mb-4 text-xl font-semibold link">Formation accessibilité, RAWeb</p>
+            <p class="mb-6 text-sm text-gray-500 sm:text-base lg:mb-8">2024</p>
+        </div>
+    </a>
 </div>

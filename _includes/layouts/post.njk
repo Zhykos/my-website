@@ -4,7 +4,7 @@ layout: layouts/base.njk
 
 {% import "macro-breadcrumbs.njk" as breadcrumbs %}
 {{ breadcrumbs.breadcrumbs3('Blog', '/blog', title, page_url) }}
-<div class="divider divider-start"></div>
+<div class="divider divider-primary divider-start"></div>
 <article data-pagefind-body>
     <div class="flex flex-col gap-6 bg-base-200 rounded-box p-6 m-6">
         <div class="flex justify-between items-center">
@@ -12,18 +12,18 @@ layout: layouts/base.njk
                 {{ date | date('HUMAN_DATE', 'fr') }}
             </time>
             <span class="post-tags">
-                {% for tag in tags %}<div class="badge badge-soft badge-primary m-1">{{ tag }}</div>{% endfor %}
+                {% for tag in tags %}<div class="badge badge-primary m-1">{{ tag }}</div>{% endfor %}
             </span>
         </div>
         <div class="flex flex-col gap-2">
-            <a class="text-xl font-bold link" href={{ page_url }}>{{ title }}</a>
+            <span class="text-2xl font-bold">{{ title }}</span>
             <span>{{ description | safe }}</span>
             <span>{{ content | safe }}</span>
         </div>
     </div>
 </article>
 <div class="flex text-center">
-    <nav class="flex-1">
+    <nav class="flex-1 mb-4">
         {%- set previousPost = search.previousPage(url, "type=posts") %}
         {%- if previousPost %}
             <button class="btn btn-ghost">
@@ -38,3 +38,4 @@ layout: layouts/base.njk
         {% endif %}
     </nav>
 </div>
+{% include "layouts/footer.njk" %}

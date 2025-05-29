@@ -4,11 +4,29 @@
 
 👉 https://www.zhykos.fr 👈
 
-## Main pages
+## Website
 
-Template from [Prerak Raja](https://github.com/rajaprerak/rajaprerak.github.io).
+Made with [Lume](https://lume.land/) x [Deno](https://deno.com/) (static site generator with TypeScript, Nunjuncks and Markdown), [Tailwind CSS](https://tailwindcss.com/) and [daisyUI](https://daisyui.com/).
 
 Just needs a browser because it's based on HTML, JavaScript and CSS.
+
+Templates and components:
+- https://daisyui.com/components/
+- https://github.com/rajaprerak/rajaprerak.github.io
+- https://tailspark.co/components?component=Blog&category=marketing
+- https://willpinha.github.io/daisy-components/card/
+
+Images:
+- https://boxicons.com/
+- https://remixicon.com/
+- https://unsplash.com/fr/photos/ordinateur-portable-asus-noir-affichage-3-00-sxiSod0tyYQ
+- https://www.vectorlogo.zone/
+
+And logos and screenshots from official websites (IUT de Reims, Faculté de Nantes, etc.)
+
+Docs:
+- https://deno.com/blog/build-a-static-site-with-lume
+- https://github.com/lumeland/base-blog
 
 ## Resume
 
@@ -35,12 +53,6 @@ Then install with `pip install "rendercv[full]"` and regenerate files with:
 ```shell
 rendercv render "thomas-cicognani-complete-resume.yaml"
 ```
-
-## Blog
-
-Made with [Lume](https://lume.land/) and [Deno](https://deno.com/).
-
-Posts template from https://willpinha.github.io/daisy-components/card/.
 
 ## Formatters and linters
 
