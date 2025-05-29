@@ -16,6 +16,7 @@ import minifyHTML from "lume/plugins/minify_html.ts";
 import multilanguage from "lume/plugins/multilanguage.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
 import pageFind from "lume/plugins/pagefind.ts";
+import purgecss from "lume/plugins/purgecss.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
@@ -39,6 +40,7 @@ site.ignore("README.md")
     .use(tailwindcss())
     .use(lightningCss())
     .add("styles.css")
+    .use(purgecss())
     .use(
         date({
             locales: { fr },
