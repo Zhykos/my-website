@@ -6,4 +6,4 @@ layout: layouts/page.njk
 {{ breadcrumbs.breadcrumbs3('Blog', '/blog', 'Archives du blog', '/posts') }}
 <div class="divider divider-primary divider-start">Tous les posts du blog</div>
 {% set postslist = search.pages("type=posts", "date=desc") %}
-{% include "templates/postslist.njk" %}
+{% include "templates/posts-list.njk" %}

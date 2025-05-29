@@ -24,6 +24,9 @@ Images:
 
 And logos and screenshots from official websites (IUT de Reims, Faculté de Nantes, etc.)
 
+Docs:
+- https://deno.com/blog/build-a-static-site-with-lume
+- https://github.com/lumeland/base-blog
 
 ## Resume
 
