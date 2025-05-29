@@ -11,6 +11,7 @@ import gzip from "lume/plugins/gzip.ts";
 import icons from "lume/plugins/icons.ts";
 import inline from "lume/plugins/inline.ts";
 import lightningCss from "lume/plugins/lightningcss.ts";
+import metas from "lume/plugins/metas.ts";
 import multilanguage from "lume/plugins/multilanguage.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
 import pageFind from "lume/plugins/pagefind.ts";
@@ -44,6 +45,7 @@ site.ignore("README.md")
     )
     //.use(codeHighlight())
     .use(basePath())
+    .use(metas())
     .use(sitemap())
     .use(nunjucks())
     .use(

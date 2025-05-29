@@ -1,21 +1,20 @@
 <!DOCTYPE html>
+{# djlint:off H030,H031 #}
 <html lang="fr">
+    {# djlint:on #}
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{ title or site.title }}</title>
-        <meta name="description" content="{{ description or site.description }}" />
-        <meta name="keywords"
-              content="thomas cicognani zhykos développeur ingénieur luxembourg java react native fullstack opentelemetry deno" />
+        <title>Site de Thomas Cicognani</title>
         <link rel="stylesheet" href="/styles.css" />
         <link rel="alternate"
               href="/feed.xml"
               type="application/atom+xml"
-              title="{{ site.title }}" />
+              title="Blog de Thomas" />
         <link rel="alternate"
               href="/feed.json"
               type="application/json"
-              title="{{ site.title }}" />
+              title="Blog de Thomas" />
         <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
                 integrity="sha384-9l0HtvnB08o05/gpJ0/s/MH6b4qnQsdwaxyvtOJY/j8yiQWS1kAmsRQVMgKxcREb"
                 crossorigin="anonymous"></script>
@@ -74,7 +73,7 @@
             <div class="flex-1">
                 <a class="btn btn-ghost text-xl link"
                    href="/"
-                   title="Aller à l'accueil du site">{{ site.title }}</a>
+                   title="Aller à l'accueil du site">Thomas Cicognani</a>
             </div>
             <div class="flex-none">
                 <button class="btn btn-circle" onclick="search_modal.showModal()">
