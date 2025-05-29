@@ -18,13 +18,13 @@ config.collections.push(
         .description("Here you can create or edit your posts")
         .preview(false)
         .create(true)
-        .viewFilter("Draft", "draft", true)
+        //.viewFilter("Draft", "draft", true)
         .fields([
             f.string("Title"),
             f.string("Description"),
             f.datetime("Date"),
             f.list("Tags"),
-            f.boolean("Draft").required(false),
+            //f.boolean("Draft").required(false),
             f.markdown("Body"),
         ])
         .toJSON(),

@@ -7,6 +7,9 @@ layout: layouts/base.njk
 <div class="divider divider-primary divider-start"></div>
 <article data-pagefind-body>
     <div class="flex flex-col gap-6 bg-base-200 rounded-box p-6 m-6">
+        <div class="flex flex-col gap-2">
+            <span class="text-2xl font-bold">{{ title }}</span>
+        </div>
         <div class="flex justify-between items-center">
             <time class="text-sm" datetime="{{ date | date("DATETIME") }}">
                 {{ date | date('HUMAN_DATE', 'fr') }}
@@ -15,8 +18,12 @@ layout: layouts/base.njk
                 {% for tag in tags %}<div class="badge badge-primary m-1">{{ tag }}</div>{% endfor %}
             </span>
         </div>
+        <div class="flex flex-col">
+            <span class="text-sm">{{ readingInfo.words }} mots, {{ readingInfo.minutes }} minute
+                {% if readingInfo.minutes > 1 %}s{% endif %}
+            de lecture environ</span>
+        </div>
         <div class="flex flex-col gap-2">
-            <span class="text-2xl font-bold">{{ title }}</span>
             <span>{{ description | safe }}</span>
             <span>{{ content | safe }}</span>
         </div>

@@ -1,0 +1,22 @@
+metas:
+  site: Thomas Cicognani
+  icon: /favicon.png
+  image: /favicon.png
+  lang: fr
+  generator: true
+  description: "Mon site personnel et professionnel : mon CV, mes expériences pro et perso, mes projets Open source, mes travaux sur le jeu vidéo, etc."
+  keywords:
+    - thomas
+    - cicognani
+    - zhykos
+    - développeur
+    - ingénieur
+    - luxembourg
+    - java
+    - spring boot
+    - react
+    - react native
+    - vue
+    - fullstack
+    - opentelemetry
+    - deno
