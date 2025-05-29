@@ -12,6 +12,7 @@ import icons from "lume/plugins/icons.ts";
 import inline from "lume/plugins/inline.ts";
 import lightningCss from "lume/plugins/lightningcss.ts";
 import metas from "lume/plugins/metas.ts";
+import minifyHTML from "lume/plugins/minify_html.ts";
 import multilanguage from "lume/plugins/multilanguage.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
 import pageFind from "lume/plugins/pagefind.ts";
@@ -120,6 +121,7 @@ site.ignore("README.md")
             input: "/favicon.png",
         }),
     )
-    .use(gzip());
+    .use(gzip())
+    .use(minifyHTML());
 
 export default site;
